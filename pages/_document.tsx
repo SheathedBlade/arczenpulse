@@ -6,6 +6,7 @@ import Document, { Html,
 } from "next/document";
 
 // Customizes base html and body components
+// Need to preload Titillium fonts
 
 class MainDocument extends Document {
     static async getInitialProps(ctx: DocumentContext){
