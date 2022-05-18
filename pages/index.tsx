@@ -7,12 +7,6 @@ import { format } from 'date-fns'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>ArcZenPulse</title>
-        <meta name="description" content="Home page for personal use." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title} style={{ fontStyle:'normal', fontWeight:200 }}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

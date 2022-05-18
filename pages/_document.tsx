@@ -17,37 +17,8 @@ class MainDocument extends Document {
 
     render() {
         return (
-            <Html>
-                <Head>
-                    <link
-                        rel="preload"
-                        href="/fonts/TitilliumWeb-Light.ttf"
-                        as="font"
-                        type="font/ttf"
-                        crossOrigin="anonymous"
-                    />
-                    <link
-                        rel="preload"
-                        href="/fonts/TitilliumWeb-ExtraLight.ttf"
-                        as="font"
-                        type="font/ttf"
-                        crossOrigin="anonymous"
-                    />
-                    <link
-                        rel="preload"
-                        href="/fonts/TitilliumWeb-Regular.ttf"
-                        as="font"
-                        type="font/ttf"
-                        crossOrigin="anonymous"
-                    />
-                    <link
-                        rel="preload"
-                        href="/fonts/TitilliumWeb-LightItalic.ttf"
-                        as="font"
-                        type="font/ttf"
-                        crossOrigin="anonymous"
-                    />
-                </Head>
+            <Html lang="en">
+                <Head />
                 <body>
                     <Main />
                     <NextScript />
