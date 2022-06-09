@@ -6,7 +6,7 @@ const Main = ({ children, router }) => {
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="ArcZenPulse browser startpage" />
+                <meta name="description" content="ArcZenPulse personal page" />
                 <meta name="author" content="ARC" />
                 <link
                     rel="preload"
