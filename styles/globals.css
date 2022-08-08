@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "TitilliumWeb";
+  /* font-family: "TitilliumWeb" !important; */
 
-  background-image: url(../public/overpass.gif);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+                    url(../public/overpass.gif) !important;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;

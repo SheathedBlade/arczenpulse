@@ -1,16 +1,15 @@
 import type { NextPage } from 'next'
-//import Head from 'next/head'
+import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-//import { format } from 'date-fns'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title} style={{ fontStyle:'normal', fontWeight:200 }}>
+        <Box textStyle='h1'>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </Box>
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -47,19 +46,6 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

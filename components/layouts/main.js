@@ -8,34 +8,6 @@ const Main = ({ children, router }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="ArcZenPulse personal page" />
                 <meta name="author" content="ARC" />
-                <link
-                    rel="preload"
-                    href="/fonts/TitilliumWeb-Light.ttf"
-                    as="font"
-                    type="font/ttf"
-                    crossOrigin="anonymous"
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/TitilliumWeb-ExtraLight.ttf"
-                    as="font"
-                    type="font/ttf"
-                    crossOrigin="anonymous"
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/TitilliumWeb-Regular.ttf"
-                    as="font"
-                    type="font/ttf"
-                    crossOrigin="anonymous"
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/TitilliumWeb-LightItalic.ttf"
-                    as="font"
-                    type="font/ttf"
-                    crossOrigin="anonymous"
-                />
                 <title>ArcZenPulse - Hub</title>
             </Head>
             <Container maxW="container.md" pt={14}>

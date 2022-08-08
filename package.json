@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.2.6",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@fontsource/titillium-web": "^4.5.9",
     "date-fns": "^2.28.0",
     "eslint-config-standard": "^17.0.0",
     "framer-motion": "^7.0.0",
