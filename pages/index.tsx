@@ -1,52 +1,36 @@
 import type { NextPage } from 'next'
-import { Box } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Flex, Text, Image } from '@chakra-ui/react'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <Box textStyle='h1'>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </Box>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-    </div>
+    <Flex justify='center'>
+      <Box
+        w='calc(30% + (0.5rem / 3))'
+        m='0.5rem'
+      >
+        <Image
+          src='/babel_white.png'
+          alt="Logo"
+          w='100%'
+          h='100%'
+          objectFit='contain'
+          align='center'
+          boxSize='250px'
+          m='auto'
+        />
+        <Text textStyle='h1' color="white">I am here!</Text>
+      </Box>
+      <Box
+        w="calc(65% + (0.5rem / 3))"
+        m='0.5rem'
+        bgColor="rgba(0, 0, 0, 0.5)"
+        p="1rem"
+        border='3px solid #e8e8e8'
+      >
+        <Text color="white">Hello!</Text>
+      </Box>
+    </Flex>
   )
 }
 

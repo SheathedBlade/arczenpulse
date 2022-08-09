@@ -9,7 +9,6 @@ import { ColorModeScript } from "@chakra-ui/react"
 import theme from '../libs/theme'
 
 // Customizes base html and body components
-// Need to preload Titillium fonts
 
 class MainDocument extends Document {
     static async getInitialProps(ctx: DocumentContext){
