@@ -11,6 +11,10 @@ module.exports = {
   darkMode: 'class', // or'media' or 'class'  
   theme: {
     extend: {
+      colors: {
+        'cream': '#FFDFBD',
+        'wood': '#460B0B'
+      },
       backgroundImage: {
         'darkModeBG': "linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('~/public/overpass.gif')",
         'lightModeBG': "url('~/public/station.gif')"
