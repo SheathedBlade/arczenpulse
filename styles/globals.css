@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import '~@fontsource/advent-pro/700.css';
+@import '~@fontsource/titillium-web/400.css';

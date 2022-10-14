@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/advent-pro": "^4.5.9",
     "@fontsource/titillium-web": "^4.5.9",
     "@heroicons/react": "^2.0.12",
     "date-fns": "^2.28.0",
