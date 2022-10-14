@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
     return (
-        <div className="flex container justify-evenly">
+        <div className="flex container justify-evenly flex-wrap transition-all">
             <div className="flex container flex-col bg-cream dark:bg-wood rounded-lg justify-center content-center max-w-lg">
                 <h1 className="font-adventProHeader font-black text-5xl text-wood dark:text-cream mb-3 p-4 text-center uppercase">
                     Andrew Chuah
