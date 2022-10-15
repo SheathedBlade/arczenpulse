@@ -29,6 +29,9 @@ module.exports = {
             },
             padding: {
                 break: '0.15rem'
+            },
+            transitionDuration: {
+                short: '0.2s'
             }
         }
     },

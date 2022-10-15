@@ -1,7 +1,7 @@
 const NotFound = () => {
     return (
         <div className="container flex justify-center content-center flex-col bg-cream dark:bg-wood max-w-md rounded-lg drop-shadow-2xl">
-            <h1 className="text-wood dark:text-cream text-center text-5xl my-3 p-5 font-adventPro font-semibold">
+            <h1 className="text-wood dark:text-cream text-center text-5xl my-3 p-5 font-shadows font-semibold">
                 Page Not Found
             </h1>
             <hr className="bg-wood dark:bg-cream my-auto mx-10 p-break rounded-lg border-wood dark:border-cream" />
