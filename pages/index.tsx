@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
     return (
@@ -15,11 +16,11 @@ const Home: NextPage = () => {
             </div>
             <div className="flex container flex-col justify-center content-center items-center max-w-lg gap-y-4">
                 <div className="flex container flex-col bg-cream dark:bg-wood rounded-lg justify-center content-center max-w-sm drop-shadow-2xl hover:-translate-x-3 duration-short">
-                    <a href="/works">
+                    <Link href="/works">
                         <h1 className="text-3xl font-adventPro text-wood dark:text-cream text-center my-1">
                             Works
                         </h1>
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex container flex-col bg-cream dark:bg-wood rounded-lg justify-center content-center max-w-sm drop-shadow-2xl hover:-translate-x-3 duration-short">
                     <h1 className="text-3xl font-adventPro text-wood dark:text-cream text-center my-1">
