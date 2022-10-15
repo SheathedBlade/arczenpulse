@@ -18,9 +18,9 @@ module.exports = {
             },
             backgroundImage: {
                 darkModeBG:
-                    "linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('~/public/overpass.gif')",
+                    "linear-gradient(0deg, rgba(70,0,0,0.3), rgba(0,0,0,0)), url('~/public/chillhop_cafe.jpg')",
                 lightModeBG:
-                    "linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('~/public/station.gif')"
+                    "linear-gradient(0deg, rgba(70,0,0,0.3), rgba(0,0,0,0)), url('~/public/cozy_night.png')"
             },
             fontFamily: {
                 adventPro: ['Advent Pro', 'sans-serif'],
