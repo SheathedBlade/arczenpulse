@@ -10,14 +10,10 @@
 @import '~@fontsource/advent-pro/600.css';
 @import '~@fontsource/advent-pro/700.css';
 
-@import '~@fontsource/titillium-web/200.css';
-@import '~@fontsource/titillium-web/200-italic.css';
-@import '~@fontsource/titillium-web/300.css';
-@import '~@fontsource/titillium-web/300-italic.css';
-@import '~@fontsource/titillium-web/400.css';
-@import '~@fontsource/titillium-web/400-italic.css';
-@import '~@fontsource/titillium-web/600.css';
-@import '~@fontsource/titillium-web/600-italic.css';
-@import '~@fontsource/titillium-web/700.css';
-@import '~@fontsource/titillium-web/700-italic.css';
-@import '~@fontsource/titillium-web/900.css';
+@import '~@fontsource/shadows-into-light-two/400.css';
+
+@import '~@fontsource/zen-maru-gothic/300.css';
+@import '~@fontsource/zen-maru-gothic/400.css';
+@import '~@fontsource/zen-maru-gothic/500.css';
+@import '~@fontsource/zen-maru-gothic/700.css';
+@import '~@fontsource/zen-maru-gothic/900.css';

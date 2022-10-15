@@ -19,11 +19,16 @@ module.exports = {
             backgroundImage: {
                 darkModeBG:
                     "linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05)), url('~/public/overpass.gif')",
-                lightModeBG: "url('~/public/station.gif')"
+                lightModeBG:
+                    "linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('~/public/station.gif')"
             },
             fontFamily: {
-                titillium: ['Titillium Web', 'sans-serif'],
-                adventProHeader: ['Advent Pro', 'sans-serif']
+                adventPro: ['Advent Pro', 'sans-serif'],
+                shadows: ['Shadows Into Light Two', 'cursive'],
+                zenMaru: ['Zen Maru Gothic', 'sans-serif']
+            },
+            padding: {
+                break: '0.15rem'
             }
         }
     },
