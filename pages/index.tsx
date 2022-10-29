@@ -1,7 +1,6 @@
-import { EnvelopeIcon } from '@heroicons/react/24/solid'
+import { Icon } from '@iconify/react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 const Home: NextPage = () => {
     return (
@@ -16,16 +15,25 @@ const Home: NextPage = () => {
                         target={'_blank'}
                         rel="noreferrer noopenner"
                     >
-                        <FaLinkedinIn className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short" />
+                        <Icon
+                            icon="fa6-brands:linkedin-in"
+                            className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short"
+                        />
                     </a>
                     <a
                         href="https://github.com/SheathedBlade/arczenpulse"
                         target={'_blank'}
                         rel="noreferrer noopenner"
                     >
-                        <FaGithub className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short" />
+                        <Icon
+                            icon="fa6-brands:github"
+                            className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short"
+                        />
                     </a>
-                    <EnvelopeIcon className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short" />
+                    <Icon
+                        icon="fa6-solid:envelope"
+                        className="text-wood w-10 h-10 rounded-lg border-2 p-1 border-wood m-2 hover:text-cream hover:bg-wood duration-short"
+                    />
                 </div>
                 <hr className="bg-wood dark:bg-cream my-auto mx-10 p-break rounded-lg border-wood dark:border-cream" />
                 <p className="font-zenMaru font-medium p-4 text-center text-wood dark:text-cream text-lg">
