@@ -34,6 +34,7 @@
     "vite": "^5.0.8"
   },
   "description": "Personal website for Andrew Chuah",
+  "main": "vite.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SheathedBlade/arczenpulse.git"
