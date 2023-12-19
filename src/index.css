@@ -1,0 +1,23 @@
+@import "../node_modules/@fontsource/advent-pro/100.css";
+@import "../node_modules/@fontsource/advent-pro/200.css";
+@import "../node_modules/@fontsource/advent-pro/300.css";
+@import "../node_modules/@fontsource/advent-pro/400.css";
+@import "../node_modules/@fontsource/advent-pro/500.css";
+@import "../node_modules/@fontsource/advent-pro/600.css";
+@import "../node_modules/@fontsource/advent-pro/700.css";
+@import "../node_modules/@fontsource/shadows-into-light-two/400.css";
+@import "../node_modules/@fontsource/zen-maru-gothic/300.css";
+@import "../node_modules/@fontsource/zen-maru-gothic/400.css";
+@import "../node_modules/@fontsource/zen-maru-gothic/500.css";
+@import "../node_modules/@fontsource/zen-maru-gothic/700.css";
+@import "../node_modules/@fontsource/zen-maru-gothic/900.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Advent Pro", sans-serif;
+  }
+}
