@@ -12,8 +12,8 @@
     "@fontsource/advent-pro": "^5.0.18",
     "@fontsource/shadows-into-light-two": "^5.0.18",
     "@fontsource/zen-maru-gothic": "^5.0.17",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@iconify/tailwind": "^0.1.4",
@@ -30,7 +30,7 @@
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.7",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.5",
     "vite": "^5.2.12"
   },
   "description": "Personal website for Andrew Chuah",
