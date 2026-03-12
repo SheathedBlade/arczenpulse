@@ -1,0 +1,15 @@
+@plugin "@iconify/tailwind4";
+
+.nav-label {
+  letter-spacing: 0.15em;
+  text-transform: capitalize;
+  z-index: 2;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+
+}

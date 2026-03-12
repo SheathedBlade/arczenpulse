@@ -1,42 +1,116 @@
+/* =============================================
+   Sakura Theme — Tailwind v4 CSS Config
+   花見 (Hanami) Day · 夜桜 (Yozakura) Night
+   ============================================= */
+
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+
+/* Custom Fonts */
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./assets/fonts/zen-maru-gothic-v19-latin-regular.woff2) format('woff2')
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/jost-v20-latin-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Jost';
+  font-style: italic;
+  font-weight: 400;
+  src: url(./assets/fonts/jost-v20-latin-italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/dm-mono-v16-latin-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/quicksand-v37-latin-regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: url(./assets/fonts/quicksand-v37-latin-700.woff2) format('woff2');
+}
+
+@theme {
+  /* Sakura Day — 花見 · Hanami */
+  --color-sakura-day-bg:      #FDF6F8; /* Blossom Mist    — page background          */
+  --color-sakura-day-surface: #F5E8EE; /* Petal Blush     — surface / nav background */
+  --color-sakura-day-card:    #EDD8E0; /* Pressed Petal   — card background          */
+  --color-sakura-day-stone:   #C8B8BC; /* Stone Ash       — subtle borders / dividers*/
+  --color-sakura-day-cobble:  #A89CA0; /* Worn Cobble     — muted labels / captions  */
+  --color-sakura-day-accent:  #C96478; /* Deep Sakura     — primary accent / buttons */
+  --color-sakura-day-bloom:   #E899A8; /* Soft Bloom      — highlight / hover states */
+  --color-sakura-day-text:    #3A2830; /* Bark Plum       — primary text             */
+
+  /* Sakura Night — 夜桜 · Yozakura */
+  --color-sakura-night-bg:      #1A1418; /* Night Plum        — page background          */
+  --color-sakura-night-surface: #221A20; /* Deep Petal Shadow — surface / nav background */
+  --color-sakura-night-card:    #2E2430; /* Aged Charcoal     — card background          */
+  --color-sakura-night-stone:   #4A4048; /* Slate Stone       — subtle borders / dividers*/
+  --color-sakura-night-cobble:  #7A7078; /* River Mist        — muted labels / captions  */
+  --color-sakura-night-accent:  #E08898; /* Moon Blossom      — primary accent / buttons */
+  --color-sakura-night-bloom:   #F0B8C4; /* Pale Petal        — highlight / hover states */
+  --color-sakura-night-text:    #F0E8EC; /* Frost Bloom       — primary text             */
+
+  --font-zenmaru: 'Zen Maru Gothic', sans-serif;
+  --font-jost: 'Jost', sans-serif;
+  --font-dmmono: 'DM Mono', monospace;
+  --font-quicksand: 'Quicksand', sans-serif;
+}
+
+/* =============================================
+   Base — Day theme default, Night on .dark
+   ============================================= */
+
+@layer base {
+  :root {
+    --sakura-bg:      var(--color-sakura-day-bg);
+    --sakura-surface: var(--color-sakura-day-surface);
+    --sakura-card:    var(--color-sakura-day-card);
+    --sakura-stone:   var(--color-sakura-day-stone);
+    --sakura-cobble:  var(--color-sakura-day-cobble);
+    --sakura-accent:  var(--color-sakura-day-accent);
+    --sakura-bloom:   var(--color-sakura-day-bloom);
+    --sakura-text:    var(--color-sakura-day-text);
+  }
+
+  .dark {
+    --sakura-bg:      var(--color-sakura-night-bg);
+    --sakura-surface: var(--color-sakura-night-surface);
+    --sakura-card:    var(--color-sakura-night-card);
+    --sakura-stone:   var(--color-sakura-night-stone);
+    --sakura-cobble:  var(--color-sakura-night-cobble);
+    --sakura-accent:  var(--color-sakura-night-accent);
+    --sakura-bloom:   var(--color-sakura-night-bloom);
+    --sakura-text:    var(--color-sakura-night-text);
+  }
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  background-color: var(--sakura-bg);
 }
