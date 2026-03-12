@@ -1,10 +1,10 @@
 export default {
-  arrowParens: "avoid",
+  arrowParens: 'avoid',
   singleQuote: true,
   bracketSpacing: true,
-  endOfLine: "lf",
-  semi: false,
+  endOfLine: 'lf',
+  semi: true,
   tabWidth: 2,
-  trailingComma: "none",
-  plugins: ["prettier-plugin-tailwindcss"],
-};
+  trailingComma: 'none',
+  plugins: ['prettier-plugin-tailwindcss']
+}
