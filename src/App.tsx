@@ -6,7 +6,7 @@ function App() {
   // const [theme, setTheme] = useLocalStorage("theme", defaultDark ? "dark" : "light");
 
   return (
-    <div className="bg-sakura-day-surface dark:bg-sakura-night-surface">
+    <div className="bg-sakura-day-bg dark:bg-sakura-night-bg">
       <Navbar />
       <Footer />
     </div>
