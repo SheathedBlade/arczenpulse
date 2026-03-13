@@ -1,4 +1,4 @@
-@plugin "@iconify/tailwind4";
+@plugin '@iconify/tailwind4';
 
 .nav-label {
   letter-spacing: 0.15em;
@@ -11,5 +11,8 @@
 .nav-item {
   position: relative;
   cursor: pointer;
+}
 
+ARCIcon text {
+  letter-spacing: 0.5px;
 }
