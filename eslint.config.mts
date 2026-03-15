@@ -1,8 +1,8 @@
-import js from '@eslint/js'
-import pluginReact from 'eslint-plugin-react'
-import { defineConfig } from 'eslint/config'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import pluginReact from 'eslint-plugin-react';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   {
@@ -13,6 +13,7 @@ export default defineConfig([
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  globalIgnores(['./src/routeTree.gen.ts']),
   {
     rules: {
       'react/jsx-uses-react': 'off',
@@ -21,4 +22,4 @@ export default defineConfig([
       '@typescript-eslint/no-unused-vars': 'off'
     }
   }
-])
+]);

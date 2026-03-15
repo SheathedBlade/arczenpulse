@@ -1,7 +1,13 @@
-import './App.css';
-import { Footer, Navbar } from './components';
+import { createRootRoute } from '@tanstack/react-router';
+import { Footer, Navbar } from '../components';
+import '../styles/fonts.css';
+import '../styles/globals.css';
 
-function App() {
+export const Route = createRootRoute({
+  component: RootLayout
+});
+
+function RootLayout() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   // const [theme, setTheme] = useLocalStorage("theme", defaultDark ? "dark" : "light");
 
@@ -13,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default RootLayout;

@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
       <div className="text-sakura-day-cobble dark:text-sakura-night-cobble mt-8 text-center">
         <div className="font-dmmono text-md">
-          © {new Date().getFullYear()} Andrew Chuah. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Andrew Chuah. All Rights Reserved.
         </div>
       </div>
     </footer>
