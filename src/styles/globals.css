@@ -23,8 +23,17 @@
   --color-sakura-night-stone: #4a4048; /* Slate Stone       — subtle borders / dividers*/
   --color-sakura-night-cobble: #7a7078; /* River Mist        — muted labels / captions  */
   --color-sakura-night-accent: #e08898; /* Moon Blossom      — primary accent / buttons */
-  --color-sakura-night-bloom: #f0b8c4; /* Pale Petal        — highlight / hover states */
+  --color-sakura-night-bloom: #a06078; /* Pale Petal        — highlight / hover states */
   --color-sakura-night-text: #f0e8ec; /* Frost Bloom       — primary text             */
+
+  --color-sakura-bg: var(--sakura-bg);
+  --color-sakura-surface: var(--sakura-surface);
+  --color-sakura-card: var(--sakura-card);
+  --color-sakura-stone: var(--sakura-stone);
+  --color-sakura-cobble: var(--sakura-cobble);
+  --color-sakura-accent: var(--sakura-accent);
+  --color-sakura-bloom: var(--sakura-bloom);
+  --color-sakura-text: var(--sakura-text);
 
   --font-zenmaru: 'Zen Maru Gothic', sans-serif;
   --font-jost: 'Jost', sans-serif;
@@ -58,8 +67,14 @@
     --sakura-bloom: var(--color-sakura-night-bloom);
     --sakura-text: var(--color-sakura-night-text);
   }
-}
 
-#root {
-  background-color: var(--sakura-bg);
+  html,
+  body,
+  #root {
+    background-color: var(--sakura-bg);
+    color: var(--sakura-text);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
 }

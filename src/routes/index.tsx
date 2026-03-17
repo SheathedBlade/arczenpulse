@@ -5,5 +5,7 @@ export const Route = createFileRoute('/')({
 });
 
 function RouteComponent() {
-  return <div>Hello /!</div>;
+  return (
+    <div className="ease h-auto transition-colors duration-300">Hello /!</div>
+  );
 }
