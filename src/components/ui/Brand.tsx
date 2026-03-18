@@ -1,42 +1,87 @@
-import { motion } from 'motion/react';
+import { motion, stagger, Variants } from 'motion/react';
 import { useState } from 'react';
 import ARCIcon from '../../assets/svg/ARC.svg?react';
 import ARC_CN_Icon from '../../assets/svg/ARC_cn_char.svg?react';
 
-const Brand = () => {
-  const [hovered, setHovered] = useState(false);
+type BrandAnimVariant = 'staggerForward' | 'staggerBack' | 'none';
+interface BrandProps {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  animation?: BrandAnimVariant;
+}
+
+const animateVariants: Record<BrandAnimVariant, Variants> = {
+  staggerForward: {
+    idle: { x: 0 },
+    hovered: { x: 8 }
+  },
+  staggerBack: {
+    idle: { x: 0 },
+    hovered: { x: -8 }
+  },
+  none: {
+    idle: {},
+    hovered: {}
+  }
+};
+
+const Brand = ({
+  onMouseEnter,
+  onMouseLeave,
+  animation = 'none'
+}: BrandProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const childVariant: Variants = animateVariants[animation];
+
   return (
-    <a
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      href="/"
-      className="relative flex h-full w-auto cursor-pointer overflow-hidden py-2"
+    <motion.div
+      onMouseEnter={() => {
+        setIsHovered(true);
+        onMouseEnter?.();
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        onMouseLeave?.();
+      }}
+      animate={isHovered ? 'hovered' : 'idle'}
+      variants={{
+        idle: {
+          transition: {
+            delayChildren: stagger(0.05)
+          }
+        },
+        hovered: {
+          transition: {
+            delayChildren: stagger(0.05)
+          }
+        }
+      }}
+      className="flex h-full w-auto py-2"
     >
       <motion.span
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{
-          opacity: hovered ? 1 : 0,
-          scale: hovered ? 1 : 0
-        }}
-        transition={{ duration: 0.2, ease: 'easeInOut' }}
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(circle, var(--sakura-bloom) 10%, transparent 90%',
-          transformOrigin: 'center center'
-        }}
-      />
-
-      <ARCIcon
-        preserveAspectRatio="xMidYMid meet"
-        style={{
-          letterSpacing: '0.5px',
-          transform: 'translateX(1px, 0)'
-        }}
-        className="fill-sakura-text z-10 h-auto w-40"
-      />
-      <ARC_CN_Icon className="fill-sakura-text z-10 -ml-9 h-auto w-14 p-2" />
-    </a>
+        key={1}
+        variants={childVariant}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        className="flex items-center justify-center"
+      >
+        <ARCIcon
+          preserveAspectRatio="xMidYMid meet"
+          style={{
+            letterSpacing: '0.5px',
+            transform: 'translateX(1px, 0)'
+          }}
+          className="fill-sakura-text z-10 h-20 w-40"
+        />
+      </motion.span>
+      <motion.span
+        key={2}
+        variants={childVariant}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        className="flex items-center justify-center"
+      >
+        <ARC_CN_Icon className="fill-sakura-text z-10 -mr-2 -ml-4 h-auto w-14" />
+      </motion.span>
+    </motion.div>
   );
 };
 

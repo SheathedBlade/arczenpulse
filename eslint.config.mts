@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import { ReactThreeFiber } from '@react-three/fiber';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
@@ -7,7 +8,7 @@ import tseslint from 'typescript-eslint';
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    plugins: { js },
+    plugins: { js, '@react-three': ReactThreeFiber },
     extends: ['js/recommended'],
     languageOptions: { globals: { ...globals.browser, ...globals.node } }
   },
@@ -19,7 +20,8 @@ export default defineConfig([
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'off'
+      '@typescript-eslint/no-unused-vars': 'off',
+      'react/no-unknown-property': 'off'
     }
   }
 ]);

@@ -7,13 +7,13 @@
 
 @theme {
   /* Sakura Day — 花見 · Hanami */
-  --color-sakura-day-bg: #fdf6f8; /* Blossom Mist    — page background          */
-  --color-sakura-day-surface: #f5e8ee; /* Petal Blush     — surface / nav background */
-  --color-sakura-day-card: #edd8e0; /* Pressed Petal   — card background          */
+  --color-sakura-day-bg: #f5f0e8; /* Blossom Mist    — page background          */
+  --color-sakura-day-surface: #ede6da; /* Petal Blush     — surface / nav background */
+  --color-sakura-day-card: #e2d8cc; /* Pressed Petal   — card background          */
   --color-sakura-day-stone: #c8b8bc; /* Stone Ash       — subtle borders / dividers*/
   --color-sakura-day-cobble: #a89ca0; /* Worn Cobble     — muted labels / captions  */
   --color-sakura-day-accent: #c96478; /* Deep Sakura     — primary accent / buttons */
-  --color-sakura-day-bloom: #e899a8; /* Soft Bloom      — highlight / hover states */
+  --color-sakura-day-bloom: #e8a0a8; /* Soft Bloom      — highlight / hover states */
   --color-sakura-day-text: #3a2830; /* Bark Plum       — primary text             */
 
   /* Sakura Night — 夜桜 · Yozakura */

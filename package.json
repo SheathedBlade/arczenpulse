@@ -10,19 +10,23 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
+    "@react-three/fiber": "^9.5.0",
     "@tanstack/react-router": "^1.166.7",
     "motion": "^12.37.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@react-three/eslint-plugin": "^0.1.2",
     "@tailwindcss/postcss": "^4.2.1",
     "@tanstack/router-devtools": "^1.166.7",
     "@tanstack/router-plugin": "^1.166.9",
     "@types/node": "^25.4.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.27",
     "eslint-config-prettier": "^10.1.8",

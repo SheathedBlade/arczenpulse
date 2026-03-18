@@ -1,4 +1,5 @@
 import { Icon } from '@phosphor-icons/react';
+import { Link } from '@tanstack/react-router';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 
@@ -49,9 +50,8 @@ const NavItem = ({ item }: NavItemProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-      <a
-        rel="noreferrer"
-        href={item.link}
+      <Link
+        to={item.link}
         className="text-sakura-text font-dmmono relative inset-0 z-10 flex h-full w-full items-center justify-center px-6"
       >
         <motion.span
@@ -61,14 +61,14 @@ const NavItem = ({ item }: NavItemProps) => {
         >
           {Icon && (
             <Icon
-              size={18}
+              size={24}
               weight="duotone"
               className="relative mr-1.5 inline-block"
             />
           )}
           {item.name}
         </motion.span>
-      </a>
+      </Link>
     </li>
   );
 };
