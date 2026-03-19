@@ -27,7 +27,6 @@ const TopoBackground = () => {
 
     // Spawn worker
     workerRef.current = new TopoWorker();
-    console.log('✅ Worker created:', workerRef.current);
 
     const requestCompute = () => {
       if (!isDrawing.current) {
