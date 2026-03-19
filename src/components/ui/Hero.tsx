@@ -3,7 +3,7 @@ import Divider from './Divider';
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="z-2 flex flex-col items-center">
       <div className="mb-2 text-center">
         <h1 className="text-sakura-text font-zenmaru text-6xl leading-snug font-bold">
           Andrew Chuah.

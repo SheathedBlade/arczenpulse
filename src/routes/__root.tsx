@@ -1,4 +1,5 @@
 import { createRootRoute, HeadContent, Outlet } from '@tanstack/react-router';
+import TopoBackground from '../components/effects/TopoBackground';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
 import { ThemeProvider } from '../components/ui/ThemeProvider';
@@ -17,6 +18,7 @@ function RootLayout() {
     <>
       <HeadContent />
       <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
+        <TopoBackground />
         <div className="bg-sakura-bg">
           <Navbar />
           <Outlet />
