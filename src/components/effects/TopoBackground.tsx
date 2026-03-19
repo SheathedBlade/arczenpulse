@@ -41,7 +41,7 @@ const TopoBackground = () => {
     };
 
     workerRef.current.onmessage = e => {
-      const { contours, w, h } = e.data;
+      const { contours } = e.data;
 
       // Draw on next animation frame so it never blocks
       frameRef.current = requestAnimationFrame(() => {
