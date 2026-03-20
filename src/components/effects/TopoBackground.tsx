@@ -18,8 +18,13 @@ const TopoBackground = () => {
     const SCALE = 5; // higher = cheaper
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const OVERFLOW = 20; // extend beyond viewport
+      canvas.width = window.innerWidth + OVERFLOW * 2;
+      canvas.height = window.innerHeight + OVERFLOW * 2;
+      canvas.style.width = `${window.innerWidth + OVERFLOW * 2}px`;
+      canvas.style.height = `${window.innerHeight + OVERFLOW * 2}px`;
+      canvas.style.left = `-${OVERFLOW}px`;
+      canvas.style.top = `-${OVERFLOW}px`;
     };
 
     resize();
@@ -56,7 +61,7 @@ const TopoBackground = () => {
 
         contours.forEach((contour: d3.ContourMultiPolygon, i: number) => {
           const normalizedValue = i / contours.length;
-          const opacity = 0.04 + normalizedValue * 0.09;
+          const opacity = 0.06 + normalizedValue * 0.09;
 
           ctx.beginPath();
           path(contour);

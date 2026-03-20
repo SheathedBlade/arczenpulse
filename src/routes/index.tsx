@@ -1,7 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import Scene from '../components/canvas/Scene';
-import PageContainer from '../components/layout/PageContainer';
-import Hero from '../components/ui/Hero';
+import FeaturedProjects from '../components/layout/FeaturedProjects';
+import Hero from '../components/layout/Hero';
+import PageContainer from '../components/ui/PageContainer';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -12,13 +13,16 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <PageContainer className="ease flex flex-col transition-colors duration-300 md:flex-row">
-      <div className="relative min-h-100 md:min-h-svh md:w-7/12">
-        <Scene />
-      </div>
-      <div className="flex flex-col justify-center gap-6 px-12 py-16 md:w-5/12 md:px-16">
-        <Hero />
-      </div>
-    </PageContainer>
+    <>
+      <PageContainer className="ease mt-12 flex flex-col transition-colors duration-300 lg:flex-row lg:justify-center xl:-mt-12">
+        <div className="relative hidden min-h-100 xl:inline xl:min-h-svh xl:w-7/12">
+          <Scene />
+        </div>
+        <div className="flex w-auto flex-col items-center justify-center px-12 xl:w-5/12 xl:px-16">
+          <Hero />
+        </div>
+      </PageContainer>
+      <FeaturedProjects />
+    </>
   );
 }
