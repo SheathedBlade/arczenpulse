@@ -57,7 +57,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           </h2>
         )}
 
-        <p className="font-zenmaru mx-auto mb-2 max-w-prose text-base">
+        <p className="font-zenmaru text-sakura-text mx-auto mb-2 max-w-prose text-base">
           {description}
         </p>
       </div>
