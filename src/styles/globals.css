@@ -72,6 +72,7 @@
   body,
   #root {
     background-color: var(--sakura-bg);
+    color: var(--sakura-text);
     transition:
       background-color 0.3s ease,
       color 0.3s ease;

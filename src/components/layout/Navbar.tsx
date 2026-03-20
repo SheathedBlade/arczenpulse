@@ -1,8 +1,8 @@
+import Brand from '@/components/ui/Brand';
+import NavItem from '@/components/ui/NavItem';
+import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
 import { GithubLogoIcon } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
-import Brand from '../ui/Brand';
-import NavItem from '../ui/NavItem';
-import ThemeSwitcher from '../ui/ThemeSwitcher';
 
 const navItems = [
   { name: 'About', link: '/about' },

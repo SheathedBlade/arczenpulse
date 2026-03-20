@@ -1,4 +1,4 @@
-import Divider from '../ui/Divider';
+import Divider from '@/components/ui/Divider';
 
 const Hero = () => {
   return (
@@ -19,7 +19,12 @@ const Hero = () => {
       </div>
       <Divider />
       <div className="px-12">
-        <h1 className="font-jost mb-2 text-2xl underline">Bio:</h1>
+        <h1
+          className="font-jost mb-2 text-2xl underline"
+          style={{ textDecorationThickness: '3px' }}
+        >
+          Bio:
+        </h1>
         <p className="font-zenmaru mx-auto mb-2 max-w-prose text-base">
           Andrew (Ren-Jun) Chuah is a full-stack software engineer with a
           passion for . He got his start in cybersecurity and security

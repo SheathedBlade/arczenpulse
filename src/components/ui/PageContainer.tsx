@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 interface PageContainerProps {
   children: ReactNode;
@@ -6,15 +6,19 @@ interface PageContainerProps {
   style?: React.CSSProperties;
 }
 
-const PageContainer = ({ children, className, style }: PageContainerProps) => {
-  return (
-    <div
-      className={`h-auto w-full xl:min-h-svh ${className ?? ''}`}
-      style={style}
-    >
-      {children}
-    </div>
-  );
-};
+const PageContainer = forwardRef<HTMLDivElement, PageContainerProps>(
+  ({ children, className, style }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={`h-auto w-full xl:min-h-svh ${className ?? ''}`}
+        style={style}
+      >
+        {children}
+      </div>
+    );
+  }
+);
 
+PageContainer.displayName = 'PageContainer';
 export default PageContainer;

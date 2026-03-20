@@ -1,7 +1,7 @@
+import ARCIcon from '@/assets/svg/ARC.svg?react';
+import ARC_CN_Icon from '@/assets/svg/ARC_cn_char.svg?react';
 import { motion, stagger, Variants } from 'motion/react';
 import { useState } from 'react';
-import ARCIcon from '../../assets/svg/ARC.svg?react';
-import ARC_CN_Icon from '../../assets/svg/ARC_cn_char.svg?react';
 
 type BrandAnimVariant = 'staggerForward' | 'staggerBack' | 'none';
 interface BrandProps {

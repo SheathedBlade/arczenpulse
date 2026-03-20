@@ -1,4 +1,10 @@
-import { createRootRoute, HeadContent, Outlet } from '@tanstack/react-router';
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  useRouterState
+} from '@tanstack/react-router';
+import { AnimatePresence } from 'motion/react';
 import TopoBackground from '../components/effects/TopoBackground';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
@@ -14,14 +20,17 @@ export const Route = createRootRoute({
 });
 
 function RootLayout() {
+  const { location } = useRouterState();
   return (
     <>
       <HeadContent />
       <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
         <TopoBackground />
-        <div className="bg-sakura-bg">
+        <div className="bg-sakura-bg scrollbar-thin scrollbar-thumb-sakura-stone/50 scrollbar-track-transparent">
           <Navbar />
-          <Outlet />
+          <AnimatePresence mode="wait">
+            <Outlet key={location.pathname} />
+          </AnimatePresence>
           <Footer />
         </div>
       </ThemeProvider>

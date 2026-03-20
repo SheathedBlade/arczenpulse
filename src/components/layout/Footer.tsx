@@ -1,3 +1,4 @@
+import Brand from '@/components/ui/Brand';
 import {
   ArrowUpIcon,
   EnvelopeIcon,
@@ -5,7 +6,6 @@ import {
   ScrollIcon
 } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
-import Brand from '../ui/Brand';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });

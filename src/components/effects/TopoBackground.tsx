@@ -1,6 +1,6 @@
+import TopoWorker from '@/workers/topo.worker.ts?worker';
 import * as d3 from 'd3';
 import { useEffect, useRef } from 'react';
-import TopoWorker from '../../workers/topo.worker.ts?worker';
 
 const TopoBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
