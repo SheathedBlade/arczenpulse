@@ -2,6 +2,7 @@ import Scene from '@/components/canvas/Scene';
 import PageTransition from '@/components/effects/PageTransition';
 import FeaturedProjects from '@/components/layout/FeaturedProjects';
 import Hero from '@/components/layout/Hero';
+import Timeline from '@/components/layout/Timeline';
 import PageContainer from '@/components/ui/PageContainer';
 import { createFileRoute } from '@tanstack/react-router';
 import { motion, Variants } from 'motion/react';
@@ -59,6 +60,14 @@ function RouteComponent() {
           <Hero />
         </motion.div>
       </MotionPageContainer>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <Timeline />
+      </motion.div>
       <motion.div
         variants={childrenVariants}
         initial="hidden"

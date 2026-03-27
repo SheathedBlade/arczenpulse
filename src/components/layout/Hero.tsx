@@ -13,29 +13,33 @@ const Hero = () => {
         <p className="text-sakura-text/70 font-dmmono text-base tracking-wider uppercase">
           [ Developer · Artist · Maker ]
         </p>
-        <p className="font-zenmaru text-sakura-text/90 bg-sakura-card mx-auto mt-6 max-w-sm rounded-md p-1 text-base leading-relaxed">
-          Precise in development, passionate in design, thorough in craft.
-        </p>
       </div>
       <Divider />
       <div className="px-12">
-        <h1
-          className="font-jost mb-2 text-2xl underline"
+        <h2
+          className="font-jost mb-3 text-2xl underline"
           style={{ textDecorationThickness: '3px' }}
         >
           Bio:
-        </h1>
-        <p className="font-zenmaru mx-auto mb-2 max-w-prose text-base">
-          Andrew (Ren-Jun) Chuah is a full-stack software engineer with a
-          passion for . He got his start in cybersecurity and security
-          operations internship roles, where he would gain the skills to shift
-          his career into a full-time software engineer for the NSA.
+        </h2>
+        <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
+          I&apos;m a full-stack software engineer with experience building
+          mission-critical, robust applications for the NSA, where everything
+          must work the first time, every time. Such discipline originates from
+          my start in cybersecurity and SOC roles, where I developed automations
+          and scripts to ensure smooth operations.
         </p>
-        <p className="font-zenmaru mx-auto mb-2 max-w-prose text-base">
-          Andrew&apos;s main interests include 3D designing and printing,
-          electronics, and digital art. He loves traveling, and by far his
-          favorite places he visited are Malaysia, Thailand, and Japan
-          (definitely has the best food).
+        <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
+          Outside of work, I satisfy my creative itch by keeping my hands busy
+          with electronics, digital art, and 3D modeling. For me, every project
+          is a chance to build something memorable, whether it&apos;s digital or
+          physical.
+        </p>
+        <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
+          I love traveling and experiencing all that a culture has to offer, and
+          some of my favorite trips have been through Malaysia, Thailand, and
+          Japan. Those journeys are what inspire my design sensibility and
+          encourages me to keep creating.
         </p>
       </div>
     </div>

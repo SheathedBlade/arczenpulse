@@ -20,7 +20,7 @@ const NavItem = ({ item }: NavItemProps) => {
       key={item.name}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="ease relative isolate inline-flex h-full items-center hover:underline"
+      className="ease relative isolate flex h-full items-center hover:underline"
     >
       <AnimatePresence>
         {hovered && (
