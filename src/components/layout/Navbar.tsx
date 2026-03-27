@@ -2,7 +2,7 @@ import Brand from '@/components/ui/Brand';
 import NavItem from '@/components/ui/NavItem';
 import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
 import { GithubLogoIcon } from '@phosphor-icons/react';
-import { Link } from '@tanstack/react-router';
+import AnimatedLink from '../ui/AnimatedLink';
 
 const navItems = [
   { name: 'About', link: '/about' },
@@ -20,9 +20,9 @@ const Navbar = () => {
     <div className="bg-sakura-surface/80 ease border-sakura-stone/20 sticky top-0 z-50 flex h-20 border-b backdrop-blur-sm transition-colors duration-300">
       <div className="flex-1" />
       <div className="flex h-full items-center gap-4">
-        <Link to="/" className="flex h-full shrink-0 items-center">
+        <AnimatedLink to="/" className="flex h-full shrink-0 items-center">
           <Brand animation="staggerBack" />
-        </Link>
+        </AnimatedLink>
         <ul className="flex h-full flex-1 list-none">
           {navItems.map(item => (
             <NavItem key={item.name} item={item} />

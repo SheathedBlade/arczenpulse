@@ -16,12 +16,6 @@ const Hero = () => {
       </div>
       <Divider />
       <div className="px-12">
-        <h2
-          className="font-jost mb-3 text-2xl underline"
-          style={{ textDecorationThickness: '3px' }}
-        >
-          Bio:
-        </h2>
         <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
           I&apos;m a full-stack software engineer with experience building
           mission-critical, robust applications for the NSA, where everything
@@ -39,7 +33,7 @@ const Hero = () => {
           I love traveling and experiencing all that a culture has to offer, and
           some of my favorite trips have been through Malaysia, Thailand, and
           Japan. Those journeys are what inspire my design sensibility and
-          encourages me to keep creating.
+          encourage me to keep creating.
         </p>
       </div>
     </div>

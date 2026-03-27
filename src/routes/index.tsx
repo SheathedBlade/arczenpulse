@@ -1,8 +1,10 @@
 import Scene from '@/components/canvas/Scene';
-import PageTransition from '@/components/effects/PageTransition';
 import FeaturedProjects from '@/components/layout/FeaturedProjects';
 import Hero from '@/components/layout/Hero';
+import TechStack from '@/components/layout/TechStack';
 import Timeline from '@/components/layout/Timeline';
+import AnimatedLink from '@/components/ui/AnimatedLink';
+import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
 import { createFileRoute } from '@tanstack/react-router';
 import { motion, Variants } from 'motion/react';
@@ -40,7 +42,7 @@ const MotionPageContainer = motion.create(PageContainer);
 
 function RouteComponent() {
   return (
-    <PageTransition>
+    <>
       <MotionPageContainer
         variants={containerVariants}
         initial="hidden"
@@ -69,6 +71,22 @@ function RouteComponent() {
         <Timeline />
       </motion.div>
       <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <Divider />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <TechStack />
+      </motion.div>
+      <motion.div
         variants={childrenVariants}
         initial="hidden"
         whileInView="visible"
@@ -76,6 +94,31 @@ function RouteComponent() {
       >
         <FeaturedProjects />
       </motion.div>
-    </PageTransition>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative z-10 py-16 text-center"
+      >
+        <h2
+          className="font-jost mb-4 text-2xl underline"
+          style={{ textDecorationThickness: '3px' }}
+        >
+          Let&apos;s Work Together
+        </h2>
+        <p className="text-sakura-text/70 font-zenmaru mx-auto mb-6 max-w-md">
+          I&apos;m always interested in hearing about new opportunities and
+          creative collaborations. Whether you have a project in mind or just
+          want to connect, I&apos;d love to hear from you!
+        </p>
+        <AnimatedLink
+          to="/contact"
+          className="bg-sakura-accent text-sakura-bg font-dmmono hover:bg-sakura-bloom inline-block rounded-md px-8 py-3 transition-colors"
+        >
+          Get in Touch!
+        </AnimatedLink>
+      </motion.div>
+    </>
   );
 }

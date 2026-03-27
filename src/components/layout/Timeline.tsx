@@ -34,7 +34,7 @@ const Timeline = () => {
       date: 'January 2022 - July 2022',
       type: 'work',
       title: 'Cybersecurity Analyst',
-      subtitle: 'Fortress Investment Group',
+      subtitle: 'Fortress Investment Group LLC',
       location: 'New York City, NY',
       description:
         'Developed a web application that integrates with Tenable API to track internal IT assets and vulnerabilities using ASP.NET, Python, and SQL.'
@@ -55,7 +55,7 @@ const Timeline = () => {
       subtitle: 'Jefferies, LLC',
       location: 'Jersey City, NJ',
       description:
-        'Developed a security feature using Python to scan Google Chrome extensions on every workstation, and restricts the use of malicious or suspicious extensions. Integrated this feature into the ServiceNow ticketing workflow for SOC review and approval.'
+        'Developed a security feature using Python to scan Google Chrome extensions on every workstation and restrict the use of malicious or suspicious extensions. Integrated this feature into the ServiceNow ticketing workflow for SOC review and approval.'
     }
   ];
 
@@ -65,7 +65,7 @@ const Timeline = () => {
         className="font-jost mb-8 text-center text-2xl underline"
         style={{ textDecorationThickness: '3px' }}
       >
-        Experience & Education:
+        Experience & Education
       </h2>
       <div className="border-sakura-stone/40 relative ml-8 border-l-2 px-8">
         {entries.map((entry, i) => (

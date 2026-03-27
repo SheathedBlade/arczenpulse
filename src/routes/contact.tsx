@@ -1,4 +1,3 @@
-import PageTransition from '@/components/effects/PageTransition';
 import PageContainer from '@/components/ui/PageContainer';
 import { createFileRoute } from '@tanstack/react-router';
 
@@ -10,9 +9,5 @@ export const Route = createFileRoute('/contact')({
 });
 
 function RouteComponent() {
-  return (
-    <PageTransition>
-      <PageContainer>Hello /contact!</PageContainer>
-    </PageTransition>
-  );
+  return <PageContainer>Hello /contact!</PageContainer>;
 }
