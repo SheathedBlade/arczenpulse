@@ -8,7 +8,6 @@ import {
   Outlet,
   useLocation
 } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { AnimatePresence, motion, Variants } from 'motion/react';
 import TopoBackground from '../components/effects/TopoBackground';
 import Footer from '../components/layout/Footer';
@@ -32,16 +31,28 @@ const routeVariants: Record<string, Variants> = {
   }
 };
 
+if (typeof window !== 'undefined') {
+  window.history.scrollRestoration = 'manual';
+}
+
 function PageContent() {
   const location = useLocation();
-  const { isTransitioning } = useTransition();
+  const { pendingPath, commitTransition } = useTransition();
+  const displayPath = pendingPath || location.pathname;
+
+  const handleExitComplete = () => {
+    if (pendingPath) commitTransition();
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
+  };
+  const isExiting = !!pendingPath && displayPath === location.pathname;
+  const animate = isExiting ? 'out' : 'in';
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
       <motion.div
-        key={location.pathname}
+        key={displayPath}
         initial="initial"
-        animate={isTransitioning ? 'in' : 'out'}
+        animate={animate}
         exit="out"
         variants={routeVariants['slideUpThenDown']}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -66,7 +77,6 @@ function RootLayout() {
           </div>
         </TransitionProvider>
       </ThemeProvider>
-      <TanStackRouterDevtools />
     </>
   );
 }

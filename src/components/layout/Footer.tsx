@@ -3,8 +3,10 @@ import {
   ArrowUpIcon,
   EnvelopeIcon,
   GithubLogoIcon,
+  LinkedinLogoIcon,
   ScrollIcon
 } from '@phosphor-icons/react';
+import { Link } from '@tanstack/react-router';
 import AnimatedLink from '../ui/AnimatedLink';
 
 const scrollToTop = () => {
@@ -44,8 +46,10 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mb-1 leading-6">
-                <AnimatedLink
+                <Link
                   to="https://github.com/SheathedBlade"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
                 >
                   <span className="inline-flex items-center justify-center">
@@ -56,7 +60,24 @@ const Footer = () => {
                     />
                     GitHub
                   </span>
-                </AnimatedLink>
+                </Link>
+              </li>
+              <li className="mb-1 leading-6">
+                <Link
+                  to="https://www.linkedin.com/in/andrewchuah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                >
+                  <span className="inline-flex items-center justify-center">
+                    <LinkedinLogoIcon
+                      size={18}
+                      weight="duotone"
+                      className="relative mr-1.5 inline-block"
+                    />
+                    LinkedIn
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -64,7 +85,7 @@ const Footer = () => {
             <div className="font-dmmono mb-4 text-lg">More</div>
             <ul>
               <li>
-                <AnimatedLink
+                <Link
                   to="https://github.com/SheathedBlade"
                   className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
                 >
@@ -76,7 +97,7 @@ const Footer = () => {
                     />
                     Behind the Curtain
                   </span>
-                </AnimatedLink>
+                </Link>
               </li>
             </ul>
           </div>

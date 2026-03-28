@@ -10,36 +10,47 @@ interface AnimatedLinkProps extends Omit<LinkProps, 'onClick'> {
 const AnimatedLink = ({
   to,
   onClick,
+  className,
   children,
-  className = '',
   ...props
 }: AnimatedLinkProps) => {
-  const { navigateWithTransition } = useTransition();
+  const { startTransition } = useTransition();
   const isInternal = typeof to === 'string' && to.startsWith('/');
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    if (
-      e.defaultPrevented ||
-      e.button !== 0 ||
-      e.metaKey ||
-      e.altKey ||
-      e.ctrlKey ||
-      e.shiftKey
-    )
-      return;
+    const isLeftClick = e.button === 0;
+    const hasModifiers = e.metaKey || e.altKey || e.ctrlKey || e.shiftKey;
+    if (!isLeftClick || hasModifiers) return;
 
     if (isInternal) {
       e.preventDefault();
-      if (to !== location.pathname) navigateWithTransition(to);
+      startTransition(to);
     }
 
-    if (onClick) {
-      onClick(e);
-    }
+    if (onClick) onClick(e);
   };
 
+  if (isInternal) {
+    return (
+      <Link
+        to={to}
+        onClick={handleClick}
+        className={`${className}`}
+        {...props}
+        preload="intent"
+      >
+        {children}
+      </Link>
+    );
+  }
   return (
-    <Link to={to} onClick={handleClick} {...props} className={`${className}`}>
+    <Link
+      to={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className}`}
+      {...props}
+    >
       {children}
     </Link>
   );

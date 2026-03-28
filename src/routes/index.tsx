@@ -47,7 +47,7 @@ function RouteComponent() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="ease mt-12 flex flex-col transition-colors duration-300 lg:flex-row lg:justify-center xl:-mt-12"
+        className="ease mt-12 flex max-w-none flex-col transition-colors duration-300 lg:flex-row lg:justify-center xl:-mt-12"
       >
         <motion.div
           variants={childrenVariants}

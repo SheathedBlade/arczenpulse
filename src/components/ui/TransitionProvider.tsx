@@ -1,4 +1,4 @@
-import { useNavigate } from '@tanstack/react-router';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 import {
   createContext,
   ReactNode,
@@ -8,8 +8,10 @@ import {
 } from 'react';
 
 interface TransitionContextType {
-  isTransitioning: boolean;
-  navigateWithTransition: (to: string) => void;
+  // isTransitioning: boolean;
+  startTransition: (to: string) => void;
+  pendingPath: string | null;
+  commitTransition: () => void;
 }
 
 const TransitionContext = createContext<TransitionContextType | undefined>(
@@ -18,26 +20,41 @@ const TransitionContext = createContext<TransitionContextType | undefined>(
 const ANIMATION_DURATION = 500; // in ms
 
 export const TransitionProvider = ({ children }: { children: ReactNode }) => {
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  // const [isTransitioning, setIsTransitioning] = useState(false);
+  const [pendingPath, setPendingPath] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const navigateWithTransition = useCallback(
+  const startTransition = useCallback(
     (to: string) => {
-      if (!isTransitioning) return;
-      setIsTransitioning(false);
-
-      setTimeout(() => {
-        navigate({ to });
-        setIsTransitioning(true);
-      }, ANIMATION_DURATION);
+      if (to === location.pathname) return;
+      setPendingPath(to);
     },
-    [isTransitioning, navigate]
+    [location.pathname]
   );
 
+  const commitTransition = useCallback(() => {
+    if (!pendingPath) return;
+    navigate({ to: pendingPath });
+    setPendingPath(null);
+  }, [pendingPath, navigate]);
+
+  // setTimeout(() => {
+  //   navigate({ to });
+  //   setIsTransitioning(false);
+  //   setTransitioningFrom(null);
+  // }, ANIMATION_DURATION);
+  // },
+  // [isTransitioning, navigate, location.pathname]
+
+  const value = {
+    startTransition,
+    pendingPath,
+    commitTransition
+  };
+
   return (
-    <TransitionContext.Provider
-      value={{ isTransitioning, navigateWithTransition }}
-    >
+    <TransitionContext.Provider value={value}>
       {children}
     </TransitionContext.Provider>
   );
