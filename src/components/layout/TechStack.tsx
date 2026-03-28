@@ -1,13 +1,4 @@
-import {
-  AmazonLogoIcon,
-  AtomIcon,
-  DatabaseIcon,
-  FilePyIcon,
-  FileTsIcon,
-  GitBranchIcon,
-  LeafIcon,
-  WindIcon
-} from '@phosphor-icons/react';
+import { allSkills } from '@/data/skills';
 import { motion, Variants } from 'motion/react';
 
 const TechStack = () => {
@@ -34,49 +25,6 @@ const TechStack = () => {
     }
   };
 
-  const technologies = [
-    {
-      name: 'React',
-      Icon: AtomIcon,
-      desc: 'Frontend Framework'
-    },
-    {
-      name: 'TypeScript',
-      Icon: FileTsIcon,
-      desc: 'Typed JavaScript'
-    },
-    {
-      name: 'AWS',
-      Icon: AmazonLogoIcon,
-      desc: 'Cloud Platform'
-    },
-    {
-      name: 'Tailwind',
-      Icon: WindIcon,
-      desc: 'CSS Framework'
-    },
-    {
-      name: 'PostgreSQL',
-      Icon: DatabaseIcon,
-      desc: 'Relational DB'
-    },
-    {
-      name: 'MongoDB',
-      Icon: LeafIcon,
-      desc: 'NoSQL DB'
-    },
-    {
-      name: 'Python',
-      Icon: FilePyIcon,
-      desc: 'Scripting & Backend'
-    },
-    {
-      name: 'Git',
-      Icon: GitBranchIcon,
-      desc: 'Version Control'
-    }
-  ];
-
   return (
     <section className="relative z-10 py-12">
       <motion.h3
@@ -96,7 +44,7 @@ const TechStack = () => {
         className="mx-auto flex max-w-4xl flex-wrap justify-center gap-6 px-4"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {technologies.map(({ name, Icon, desc }) => (
+        {allSkills.map(({ name, Icon, desc }) => (
           <motion.div
             key={name}
             variants={itemVariants}

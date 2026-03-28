@@ -5,7 +5,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(/public/fonts/zen-maru-gothic-v19-latin-regular.woff2)
+  src: url(../assets/fonts/zen-maru-gothic-v19-latin-regular.woff2)
     format('woff2');
 }
 
@@ -14,7 +14,7 @@
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
-  src: url(/public/fonts/jost-v20-latin-regular.woff2) format('woff2');
+  src: url(../assets/fonts/jost-v20-latin-regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   font-family: 'Jost';
   font-style: italic;
   font-weight: 400;
-  src: url(/public/fonts/jost-v20-latin-italic.woff2) format('woff2');
+  src: url(../assets/fonts/jost-v20-latin-italic.woff2) format('woff2');
 }
 
 @font-face {
@@ -30,7 +30,7 @@
   font-family: 'DM Mono';
   font-style: normal;
   font-weight: 400;
-  src: url(/public/fonts/dm-mono-v16-latin-regular.woff2) format('woff2');
+  src: url(../assets/fonts/dm-mono-v16-latin-regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -38,7 +38,7 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  src: url(/public/fonts/quicksand-v37-latin-regular.woff2) format('woff2');
+  src: url(../assets/fonts/quicksand-v37-latin-regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -46,5 +46,5 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 700;
-  src: url(/public/fonts/quicksand-v37-latin-700.woff2) format('woff2');
+  src: url(../assets/fonts/quicksand-v37-latin-700.woff2) format('woff2');
 }

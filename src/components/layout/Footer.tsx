@@ -7,7 +7,6 @@ import {
   LinkedinLogoIcon,
   ScrollIcon
 } from '@phosphor-icons/react';
-import { Link } from '@tanstack/react-router';
 import AppLink from '../ui/AppLink';
 
 const scrollToTop = () => {
@@ -32,53 +31,37 @@ const Footer = () => {
             <div className="font-dmmono mb-4 text-lg">Contact</div>
             <ul className="list-none">
               <li className="mb-1 leading-6">
-                <a
-                  href="mailto:inquiry@arczenpulse.com"
-                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                <AppLink
+                  to="mailto:inquiry@arczenpulse.com"
+                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
-                  <button className="inline-flex items-center justify-center">
-                    <EnvelopeIcon
-                      size={18}
-                      weight="fill"
-                      className="relative mr-1.5 inline-block"
-                    />
+                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
+                    <EnvelopeIcon size={20} weight="fill" />
                     inquiry@arczenpulse.com
-                  </button>
-                </a>
+                  </span>
+                </AppLink>
               </li>
               <li className="mb-1 leading-6">
-                <Link
+                <AppLink
                   to="https://github.com/SheathedBlade"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
-                  <span className="inline-flex items-center justify-center">
-                    <GithubLogoIcon
-                      size={18}
-                      weight="duotone"
-                      className="relative mr-1.5 inline-block"
-                    />
+                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
+                    <GithubLogoIcon size={20} weight="duotone" />
                     GitHub
                   </span>
-                </Link>
+                </AppLink>
               </li>
               <li className="mb-1 leading-6">
-                <Link
+                <AppLink
                   to="https://www.linkedin.com/in/andrewchuah/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
-                  <span className="inline-flex items-center justify-center">
-                    <LinkedinLogoIcon
-                      size={18}
-                      weight="duotone"
-                      className="relative mr-1.5 inline-block"
-                    />
+                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
+                    <LinkedinLogoIcon size={20} weight="duotone" />
                     LinkedIn
                   </span>
-                </Link>
+                </AppLink>
               </li>
             </ul>
           </div>
@@ -86,36 +69,26 @@ const Footer = () => {
             <div className="font-dmmono mb-4 text-lg">More</div>
             <ul>
               <li>
-                <Link
+                <AppLink
                   to="https://github.com/SheathedBlade"
-                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
-                  <span className="inline-flex items-center justify-center">
-                    <ScrollIcon
-                      size={18}
-                      weight="duotone"
-                      className="relative mr-1.5 inline-block"
-                    />
+                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
+                    <ScrollIcon size={20} weight="duotone" />
                     Behind the Curtain
                   </span>
-                </Link>
+                </AppLink>
               </li>
               <li>
-                <Link
+                <AppLink
                   to="https://sheathblade.itch.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sakura-text hover:bg-sakura-bloom/70 font-zenmaru rounded-md p-1 no-underline transition-colors duration-200"
+                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
-                  <span className="inline-flex items-center justify-center">
-                    <GameControllerIcon
-                      size={18}
-                      weight="duotone"
-                      className="relative mr-1.5 inline-block"
-                    />
+                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
+                    <GameControllerIcon size={20} weight="duotone" />
                     My Itch.io
                   </span>
-                </Link>
+                </AppLink>
               </li>
             </ul>
           </div>
