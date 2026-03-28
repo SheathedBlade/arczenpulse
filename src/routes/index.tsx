@@ -121,7 +121,7 @@ function RouteComponent() {
             Get in Touch!
           </AppLink>
           <a
-            href="/resume.pdf"
+            href="/Andrew_Chuah_Resume.pdf"
             download
             className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
           >
