@@ -1,7 +1,7 @@
 import { Icon } from '@phosphor-icons/react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
-import AnimatedLink from './AnimatedLink';
+import AppLink from './AppLink';
 
 interface NavItemProps {
   item: {
@@ -50,7 +50,7 @@ const NavItem = ({ item }: NavItemProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-      <AnimatedLink
+      <AppLink
         to={item.link}
         className="text-sakura-text font-dmmono relative inset-0 z-10 flex h-full w-full items-center justify-center px-6"
       >
@@ -68,7 +68,7 @@ const NavItem = ({ item }: NavItemProps) => {
           )}
           {item.name}
         </motion.span>
-      </AnimatedLink>
+      </AppLink>
     </li>
   );
 };

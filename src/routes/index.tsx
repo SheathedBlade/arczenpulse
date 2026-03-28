@@ -3,9 +3,10 @@ import FeaturedProjects from '@/components/layout/FeaturedProjects';
 import Hero from '@/components/layout/Hero';
 import TechStack from '@/components/layout/TechStack';
 import Timeline from '@/components/layout/Timeline';
-import AnimatedLink from '@/components/ui/AnimatedLink';
+import AppLink from '@/components/ui/AppLink';
 import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
+import { DownloadIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
 import { motion, Variants } from 'motion/react';
 
@@ -112,12 +113,22 @@ function RouteComponent() {
           creative collaborations. Whether you have a project in mind or just
           want to connect, I&apos;d love to hear from you!
         </p>
-        <AnimatedLink
-          to="/contact"
-          className="bg-sakura-accent text-sakura-bg font-dmmono hover:bg-sakura-bloom inline-block rounded-md px-8 py-3 transition-colors"
-        >
-          Get in Touch!
-        </AnimatedLink>
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <AppLink
+            to="mailto:inquiry@arczenpulse.com"
+            className="bg-sakura-accent text-sakura-bg font-dmmono hover:bg-sakura-bloom inline-flex items-center gap-2 rounded-md px-8 py-3 transition-colors"
+          >
+            Get in Touch!
+          </AppLink>
+          <a
+            href="/resume.pdf"
+            download
+            className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
+          >
+            <DownloadIcon size={20} weight="bold" />
+            Download Resume
+          </a>
+        </div>
       </motion.div>
     </>
   );

@@ -117,7 +117,7 @@ const TopoBackground = () => {
   }, []);
 
   return (
-    <canvas ref={canvasRef} className="pointer-events-none fixed inset-0 z-1" />
+    <canvas ref={canvasRef} className="pointer-events-none fixed inset-0" />
   );
 };
 

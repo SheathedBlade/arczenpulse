@@ -2,18 +2,18 @@ import { Link, LinkProps } from '@tanstack/react-router';
 import { MouseEvent } from 'react';
 import { useTransition } from './TransitionProvider';
 
-interface AnimatedLinkProps extends Omit<LinkProps, 'onClick'> {
+interface AppLinkProps extends Omit<LinkProps, 'onClick'> {
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   className?: string;
 }
 
-const AnimatedLink = ({
+const AppLink = ({
   to,
   onClick,
   className,
   children,
   ...props
-}: AnimatedLinkProps) => {
+}: AppLinkProps) => {
   const { startTransition } = useTransition();
   const isInternal = typeof to === 'string' && to.startsWith('/');
 
@@ -56,4 +56,4 @@ const AnimatedLink = ({
   );
 };
 
-export default AnimatedLink;
+export default AppLink;

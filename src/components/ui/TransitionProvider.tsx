@@ -4,11 +4,11 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useState
 } from 'react';
 
 interface TransitionContextType {
-  // isTransitioning: boolean;
   startTransition: (to: string) => void;
   pendingPath: string | null;
   commitTransition: () => void;
@@ -17,10 +17,8 @@ interface TransitionContextType {
 const TransitionContext = createContext<TransitionContextType | undefined>(
   undefined
 );
-const ANIMATION_DURATION = 500; // in ms
 
 export const TransitionProvider = ({ children }: { children: ReactNode }) => {
-  // const [isTransitioning, setIsTransitioning] = useState(false);
   const [pendingPath, setPendingPath] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,13 +37,11 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     setPendingPath(null);
   }, [pendingPath, navigate]);
 
-  // setTimeout(() => {
-  //   navigate({ to });
-  //   setIsTransitioning(false);
-  //   setTransitioningFrom(null);
-  // }, ANIMATION_DURATION);
-  // },
-  // [isTransitioning, navigate, location.pathname]
+  useEffect(() => {
+    if (pendingPath && location.pathname === pendingPath) {
+      setPendingPath(null);
+    }
+  }, [pendingPath, location.pathname]);
 
   const value = {
     startTransition,
