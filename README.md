@@ -36,7 +36,7 @@ src/
 ├── data/              # Static data
 ├── routes/            # TanStack Router file-based routes
 ├── styles/            # Global CSS, fonts, theme
-└── main.tsx          # App entry point
+└── main.tsx           # App entry point
 ```
 
 ## Getting Started
@@ -93,8 +93,4 @@ Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
 
 ## License
 
-All rights reserved © 2026 Andrew Chuah.
-
----
-
-Built with care in TypeScript and Tailwind.
+All Rights Reserved © 2026 Andrew Chuah.
