@@ -1,30 +1,100 @@
-# React + TypeScript + Vite
+# ARC Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal website/portfolio showcasing my experience and work, as well as stuff about me.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework:** React 19 with TypeScript
+- **Build Tool:** Vite 8
+- **Routing:** TanStack Router v1
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **Icons:** Phosphor Icons
+- **Background:** Custom Three.js canvas with Perlin noise topology
 
-## Expanding the ESLint configuration
+## Design System
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Color Theme: Sakura
 
-- Configure the top-level `parserOptions` property like this:
+I personally love the Japanese color palette, so there is a day and night theme with colors inspired by parchment and sakura (day) and deep plum hues (night).
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Typography
+
+- **Headings:** Jost (sans-serif, geometric)
+- **Body:** Zen Maru Gothic (friendly, readable)
+- **Mono:** DM Mono (technical labels, metadata)
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── canvas/        # Three.js background
+│   ├── effects/       # Visual effects (topography)
+│   ├── layout/        # Page sections
+│   └── ui/            # Reusable UI components
+├── data/              # Static data
+├── routes/            # TanStack Router file-based routes
+├── styles/            # Global CSS, fonts, theme
+└── main.tsx          # App entry point
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- npm or yarn
+
+### Install & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment
+
+This site is configured for deployment on **Cloudflare Pages** with:
+
+- Build command: `npm run build`
+- Output directory: `dist/`
+- Custom domain support with automatic HTTPS
+
+### Redirects
+
+Primary domain: `arczenpulse.dev`
+Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
+
+## Accessibility
+
+- Skip to main content link
+- Focus management in modals
+- Keyboard navigation support
+- Respects `prefers-reduced-motion`
+- ARIA labels on interactive elements
+- Screen-reader announcements for external links
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- ES2020+ output
+- CSS custom properties & Nesting
+- No polyfills for legacy browsers
+
+## License
+
+All rights reserved © 2026 Andrew Chuah.
+
+---
+
+Built with care in TypeScript and Tailwind.
