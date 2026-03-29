@@ -95,15 +95,12 @@ Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
 
 ### Code
 
-The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute
-  the code for any purpose, with attribution.
+The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute the code for any purpose, with attribution.
 
 See [LICENSE](LICENSE) file for full terms.
 
 ### Content
 
-All original content (including but not limited to text, images, designs, graphics, and other creative works) is
-protected under copyright law. All Rights Reserved © 2026 Andrew Chuah.
+All original content (including but not limited to text, images, designs, graphics, and other creative works) is protected under copyright law. All Rights Reserved © 2026 Andrew Chuah.
 
-No part of the original content may be reproduced, distributed, or used for commercial purposes without explicit
-permission.
+No part of the original content may be reproduced, distributed, or used for commercial purposes without explicit permission.
