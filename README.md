@@ -93,20 +93,17 @@ Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
 
 ## License
 
-This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+### Code
 
-You are free to:
+The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute
+  the code for any purpose, with attribution.
 
-- Share — copy and redistribute the material in any medium or format
-- Adapt — remix, transform, and build upon the material for any purpose
+See [LICENSE](LICENSE) file for full terms.
 
-Under the following terms:
+### Content
 
-- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were
-  made.
+All original content (including but not limited to text, images, designs, graphics, and other creative works) is
+protected under copyright law. All Rights Reserved © 2026 Andrew Chuah.
 
-See the full license text at: <https://creativecommons.org/licenses/by/4.0/>
-
----
-
-All Rights Reserved © 2026 Andrew Chuah for original content. Code is CC BY 4.0.
+No part of the original content may be reproduced, distributed, or used for commercial purposes without explicit
+permission.
