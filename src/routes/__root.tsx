@@ -20,7 +20,10 @@ import '../styles/globals.css';
 
 export const Route = createRootRoute({
   head: () => ({
-    meta: [{ title: 'ARC Studio' }]
+    meta: [
+      { title: 'ARC Studio' },
+      { rel: 'canonical', href: 'https://arczenpulse.dev' }
+    ]
   }),
   component: RootLayout,
   notFoundComponent: NotFound
