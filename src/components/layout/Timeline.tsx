@@ -11,7 +11,7 @@ const Timeline = () => {
       >
         Experience & Education
       </h2>
-      <div className="border-sakura-stone/40 relative ml-8 border-l-2 px-8">
+      <div className="border-sakura-stone/40 relative border-l-2 px-8 md:ml-8">
         {experiences.map((entry, i) => (
           <motion.div
             key={i}

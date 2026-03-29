@@ -3,39 +3,19 @@ import AppLink from '@/components/ui/AppLink';
 import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
 import { experiences } from '@/data/experience';
+import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { aboutSkills } from '@/data/skills';
 import { GithubLogoIcon, PencilIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
-import { Variants, motion } from 'motion/react';
+import { motion } from 'motion/react';
 
 export const Route = createFileRoute('/about')({
   head: () => ({
     meta: [{ title: 'About · ARC Studio' }]
   }),
-  component: RouteComponent
+  component: RouteComponent,
+  preload: true
 });
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const childrenVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut'
-    }
-  }
-};
 
 function RouteComponent() {
   return (
@@ -47,11 +27,11 @@ function RouteComponent() {
         className="mx-auto max-w-6xl px-6 py-16"
       >
         <motion.div variants={childrenVariants} className="-mx-6 mb-12 sm:mx-0">
-          <div className="bg-sakura-card relative h-100 w-full overflow-hidden rounded-lg sm:rounded-lg">
+          <div className="bg-sakura-card relative h-auto w-full overflow-hidden rounded-lg sm:rounded-lg">
             <img
               src={banner}
               loading="eager"
-              alt="About banner"
+              alt="Andrew Chuah - banner image"
               onLoad={e => {
                 e.currentTarget.classList.remove('opacity-0');
               }}
@@ -61,10 +41,7 @@ function RouteComponent() {
         </motion.div>
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
           {/* Left Col */}
-          <motion.div
-            variants={childrenVariants}
-            className="mb-6 lg:col-span-2"
-          >
+          <motion.div variants={childrenVariants} className="lg:col-span-2">
             <h2 className="font-jost mb-6 text-3xl font-bold">Origins</h2>
             <div className="font-zenmaru text-sakura-text/80 space-y-4 text-lg leading-relaxed">
               <p>
@@ -74,21 +51,21 @@ function RouteComponent() {
                 interactivity. That fascination never faded—it evolved.
               </p>
               <p>
-                Over the years, I've worn many hats: freelancer, startup
+                Over the years, I&apos;ve worn many hats: freelancer, startup
                 co-founder, agency developer, and now a solo creator building
                 digital experiences that feel human. I believe the best
                 technology disappears, leaving only the joy of use.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring generative art,
-                producing music, or hiking with my camera. These creative
-                pursuits inform my engineering—I approach problems with both
-                logic and intuition.
+                When I&apos;m not coding, you&apos;ll find me exploring
+                generative art, producing music, or hiking with my camera. These
+                creative pursuits inform my engineering—I approach problems with
+                both logic and intuition.
               </p>
             </div>
             <Divider />
 
-            <motion.div className="mt-4 mb-16" variants={childrenVariants}>
+            <motion.div className="mt-4 md:mb-16" variants={childrenVariants}>
               <h2 className="font-jost mb-8 text-3xl font-bold">Experience</h2>
               <div className="space-y-6">
                 {experiences
@@ -131,7 +108,7 @@ function RouteComponent() {
           {/* Right Col */}
           <motion.div
             variants={childrenVariants}
-            className="sticky top-200 space-y-8"
+            className="sticky top-24 space-y-8"
           >
             <div>
               <h3 className="font-jost mb-4 text-2xl font-bold">
@@ -139,7 +116,7 @@ function RouteComponent() {
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {aboutSkills.map(({ name, Icon, desc }) => (
-                  <div
+                  <motion.div
                     key={name}
                     className="group bg-sakura-card border-sakura-stone/20 hover:border-sakura-accent/50 hover:bg-sakura-surface flex min-h-35 w-full flex-col items-center gap-2 rounded-md border p-4 transition-colors"
                   >
@@ -154,7 +131,7 @@ function RouteComponent() {
                     <span className="font-zenmaru text-sakura-cobble mt-1 text-center text-xs">
                       {desc}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

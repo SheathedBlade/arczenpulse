@@ -24,7 +24,7 @@ const ThemeSwitcher = () => {
         }}
         aria-label={isDark ? 'Switch to Light theme' : 'Switch to Dark theme'}
         onClick={toggleTheme}
-        className="bg-sakura-accent hover:bg-sakura-bloom ease mr-4 ml-8 inline-block rounded-md p-1.5 transition-colors duration-150"
+        className="bg-sakura-accent hover:bg-sakura-bloom ease inline-block rounded-md p-1.5 transition-colors duration-150 md:mr-4"
       >
         {isDark ? (
           <SunIcon size={32} className="text-sakura-day-text" />

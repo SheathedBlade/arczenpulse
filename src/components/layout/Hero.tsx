@@ -15,7 +15,7 @@ const Hero = () => {
         </p>
       </div>
       <Divider />
-      <div className="px-12">
+      <div className="md:px-12">
         <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
           I&apos;m a full-stack software engineer with experience building
           mission-critical, robust applications for the NSA, where everything

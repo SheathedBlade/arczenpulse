@@ -1,7 +1,9 @@
+import NotFound from '@/components/layout/NotFound';
 import {
   TransitionProvider,
   useTransition
 } from '@/components/ui/TransitionProvider';
+import { pageVariants } from '@/data/motionVariants';
 import {
   createRootRoute,
   HeadContent,
@@ -20,14 +22,9 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [{ title: 'ARC Studio' }]
   }),
-  component: RootLayout
+  component: RootLayout,
+  notFoundComponent: NotFound
 });
-
-const variants = {
-  initial: { opacity: 0, y: 20 },
-  in: { opacity: 1, y: 0 },
-  out: { opacity: 0, y: 20 }
-};
 
 function PageContent() {
   const location = useLocation();
@@ -46,8 +43,9 @@ function PageContent() {
         initial="initial"
         animate="in"
         exit="out"
-        variants={variants}
+        variants={pageVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
+        className="flex flex-col"
       >
         <Outlet />
         <Footer />
@@ -64,8 +62,16 @@ function RootLayout() {
         <TopoBackground />
         <TransitionProvider>
           <div className="relative z-10">
+            <a
+              href="#main-content"
+              className="focus:bg-sakura-accent focus:text-sakura-bg sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:px-4 focus:py-2 focus:outline-none"
+            >
+              Skip to Main Content
+            </a>
             <Navbar />
-            <PageContent />
+            <div className="flex-1" id="main-content" tabIndex={-1}>
+              <PageContent />
+            </div>
           </div>
         </TransitionProvider>
       </ThemeProvider>

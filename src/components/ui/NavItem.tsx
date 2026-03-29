@@ -64,6 +64,7 @@ const NavItem = ({ item }: NavItemProps) => {
               size={24}
               weight="duotone"
               className="relative mr-1.5 inline-block"
+              aria-hidden="true"
             />
           )}
           {item.name}

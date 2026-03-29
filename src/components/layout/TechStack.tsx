@@ -48,7 +48,7 @@ const TechStack = () => {
           <motion.div
             key={name}
             variants={itemVariants}
-            className="group bg-sakura-card border-sakura-stone/20 hover:bg-sakura-surface flex flex-col items-center gap-2 rounded-md border p-4 transition-colors"
+            className="group bg-sakura-card border-sakura-stone/20 hover:border-sakura-accent/50 hover:bg-sakura-surface flex flex-col items-center gap-2 rounded-md border p-4 transition-colors"
             style={{ width: '140px', height: '140px' }}
           >
             <Icon

@@ -1,5 +1,6 @@
 import { ArrowSquareOutIcon } from '@phosphor-icons/react';
 import { CSSProperties, forwardRef, ReactNode } from 'react';
+import AppLink from './AppLink';
 
 interface CardProps {
   title: string;
@@ -18,7 +19,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
   ) => {
     return (
       <div
-        className={`bg-sakura-card z-3 max-w-sm rounded-md p-4 transition-colors duration-200 ${className ?? ''}`}
+        className={`bg-sakura-card hoverable-card z-10 min-h-87.5 max-w-sm cursor-pointer overflow-hidden rounded-md p-4 ${className ?? ''}`}
         style={style}
         ref={ref}
       >
@@ -26,17 +27,16 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           <img
             src={image}
             alt={imageAlt ?? title}
-            className="mb-4 w-full rounded-sm object-cover"
+            loading="lazy"
+            onLoad={e => {
+              e.currentTarget.classList.remove('opacity-0');
+            }}
+            className="mb-4 h-48 w-full rounded-sm object-cover opacity-0 transition-opacity duration-500"
           />
         )}
 
         {titleLink ? (
-          <a
-            href={titleLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex flex-row items-center"
-          >
+          <AppLink to={titleLink} className="inline-flex flex-row items-center">
             <h2
               className="font-jost text-sakura-text mr-1 mb-2 text-xl font-bold tracking-wide underline"
               style={{ textDecorationThickness: '2px' }}
@@ -47,7 +47,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
               size={24}
               className="text-sakura-text mb-2 inline-block"
             />
-          </a>
+          </AppLink>
         ) : (
           <h2
             className="font-jost text-sakura-text mr-1 mb-2 text-xl font-bold tracking-wide underline"

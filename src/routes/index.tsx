@@ -6,9 +6,10 @@ import Timeline from '@/components/layout/Timeline';
 import AppLink from '@/components/ui/AppLink';
 import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
+import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { DownloadIcon } from '@phosphor-icons/react';
 import { createFileRoute } from '@tanstack/react-router';
-import { motion, Variants } from 'motion/react';
+import { motion } from 'motion/react';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -16,28 +17,6 @@ export const Route = createFileRoute('/')({
   }),
   component: RouteComponent
 });
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const childrenVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut'
-    }
-  }
-};
 
 const MotionPageContainer = motion.create(PageContainer);
 
@@ -100,7 +79,7 @@ function RouteComponent() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 py-16 text-center"
+        className="md:px-auto relative z-10 px-4 py-16 text-center"
       >
         <h2
           className="font-jost mb-4 text-2xl underline"
@@ -123,7 +102,7 @@ function RouteComponent() {
           <a
             href="/Andrew_Chuah_Resume.pdf"
             download
-            className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
+            className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-surface bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
           >
             <DownloadIcon size={20} weight="bold" />
             Download Resume
