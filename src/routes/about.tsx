@@ -46,22 +46,22 @@ function RouteComponent() {
             <h2 className="font-jost mb-6 text-3xl font-bold">Origins</h2>
             <div className="font-zenmaru text-sakura-text/80 space-y-4 text-lg leading-relaxed">
               <p>
-                My journey into web development started with a curiosity about
-                how things worked. I remember dissecting my first website at 15,
-                fascinated by the interplay of structure, style, and
-                interactivity. That fascination never faded—it evolved.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
               <p>
-                Over the years, I&apos;ve worn many hats: freelancer, startup
-                co-founder, agency developer, and now a solo creator building
-                digital experiences that feel human. I believe the best
-                technology disappears, leaving only the joy of use.
-              </p>
-              <p>
-                When I&apos;m not coding, you&apos;ll find me exploring
-                generative art, producing music, or hiking with my camera. These
-                creative pursuits inform my engineering—I approach problems with
-                both logic and intuition.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
             <Divider />
