@@ -95,7 +95,9 @@ Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
 
 ### Code
 
-The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute the code for any purpose, with attribution.
+The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute the code for any purpose, with attribution, with the following condition:
+
+- You must put a link somewhere back to this repo or my [website](arczenpulse.dev).
 
 See [LICENSE](LICENSE) file for full terms.
 
