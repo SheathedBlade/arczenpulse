@@ -93,4 +93,20 @@ Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
 
 ## License
 
-All Rights Reserved © 2026 Andrew Chuah.
+This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+
+You are free to:
+
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material for any purpose
+
+Under the following terms:
+
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were
+  made.
+
+See the full license text at: <https://creativecommons.org/licenses/by/4.0/>
+
+---
+
+All Rights Reserved © 2026 Andrew Chuah for original content. Code is CC BY 4.0.
