@@ -5,10 +5,14 @@ import { useTransition } from './TransitionProvider';
 interface AppLinkProps extends Omit<LinkProps, 'onClick'> {
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   className?: string;
+  showNewTabIndicator?: boolean;
 }
 
 const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
-  ({ to, onClick, className, children, ...props }, ref) => {
+  (
+    { to, onClick, className, children, showNewTabIndicator, ...props },
+    ref
+  ) => {
     const { startTransition } = useTransition();
     const isInternal =
       typeof to === 'string' && (to.startsWith('/') || to.startsWith('#'));
@@ -26,6 +30,15 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
       if (onClick) onClick(e);
     };
 
+    const content = (
+      <>
+        {children}
+        {!isInternal && showNewTabIndicator !== false && (
+          <span className="sr-only"> (opens in a new tab)</span>
+        )}
+      </>
+    );
+
     if (isInternal) {
       return (
         <Link
@@ -36,7 +49,7 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
           {...props}
           preload="intent"
         >
-          {children}
+          {content}
         </Link>
       );
     }
@@ -49,7 +62,7 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
         className={`${className}`}
         {...props}
       >
-        {children}
+        {content}
       </Link>
     );
   }

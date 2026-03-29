@@ -27,9 +27,14 @@ const ThemeSwitcher = () => {
         className="bg-sakura-accent hover:bg-sakura-bloom ease inline-block rounded-md p-1.5 transition-colors duration-150 md:mr-4"
       >
         {isDark ? (
-          <SunIcon size={32} className="text-sakura-day-text" />
+          <SunIcon
+            aria-hidden="true"
+            size={32}
+            className="text-sakura-day-text"
+          />
         ) : (
           <MoonStarsIcon
+            aria-hidden="true"
             size={32}
             className="text-sakura-night-text"
             weight="fill"

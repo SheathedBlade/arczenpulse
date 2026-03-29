@@ -71,6 +71,7 @@ const Brand = ({
             transform: 'translateX(1px, 0)'
           }}
           className="fill-sakura-text z-10 h-20 w-40"
+          aria-hidden="true"
         />
       </motion.span>
       <motion.span
@@ -79,7 +80,10 @@ const Brand = ({
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         className="flex items-center justify-center"
       >
-        <ARC_CN_Icon className="fill-sakura-text z-10 -mr-2 -ml-4 h-auto w-14" />
+        <ARC_CN_Icon
+          className="fill-sakura-text z-10 -mr-2 -ml-4 h-auto w-14"
+          aria-hidden="true"
+        />
       </motion.span>
     </motion.div>
   );

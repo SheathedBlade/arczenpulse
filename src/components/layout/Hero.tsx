@@ -1,8 +1,17 @@
+import pfp from '@/assets/images/placeholder_me.webp';
 import Divider from '@/components/ui/Divider';
 
 const Hero = () => {
   return (
     <div className="z-2 flex flex-col items-center">
+      <div className="mb-2">
+        <img
+          src={pfp}
+          alt="Andrew Chuah profile pic"
+          loading="eager"
+          className="border-sakura-surface h-32 w-32 rounded-xl border-4 object-cover shadow-lg"
+        />
+      </div>
       <div className="mb-2 text-center">
         <h1 className="text-sakura-text font-zenmaru text-6xl leading-snug font-bold">
           Andrew Chuah.

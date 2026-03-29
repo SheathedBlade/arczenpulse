@@ -20,6 +20,7 @@ export const Route = createFileRoute('/about')({
 function RouteComponent() {
   return (
     <PageContainer>
+      <h1 className="sr-only">About Andrew Chuah</h1>
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -118,14 +119,15 @@ function RouteComponent() {
                 {aboutSkills.map(({ name, Icon, desc }) => (
                   <motion.div
                     key={name}
-                    className="group bg-sakura-card border-sakura-stone/20 hover:border-sakura-accent/50 hover:bg-sakura-surface flex min-h-35 w-full flex-col items-center gap-2 rounded-md border p-4 transition-colors"
+                    className="border-sakura-accent/50 bg-sakura-surface/70 flex min-h-35 w-full flex-col items-center gap-2 rounded-md border p-4 transition-colors"
                   >
                     <Icon
+                      aria-hidden="true"
                       size={48}
                       weight="duotone"
-                      className="text-sakura-stone group-hover:text-sakura-accent transition-colors"
+                      className="text-sakura-accent"
                     />
-                    <span className="font-dmmono text-sakura-cobble group-hover:text-sakura-text text-sm transition-colors">
+                    <span className="font-dmmono text-sakura-text text-sm">
                       {name}
                     </span>
                     <span className="font-zenmaru text-sakura-cobble mt-1 text-center text-xs">
@@ -144,6 +146,7 @@ function RouteComponent() {
                 <div className="bg-sakura-card rounded-lg p-6">
                   <div className="mb-2 flex items-center gap-2">
                     <PencilIcon
+                      aria-hidden="true"
                       size={20}
                       weight="duotone"
                       className="text-sakura-accent"
@@ -167,7 +170,11 @@ function RouteComponent() {
                     to="https://github.com/SheathedBlade/endfield-architect"
                     className="text-sakura-text hover:bg-sakura-bloom/70 flex max-w-max gap-2 rounded-md p-1 transition-colors"
                   >
-                    <GithubLogoIcon weight="duotone" size={24} />
+                    <GithubLogoIcon
+                      aria-hidden="true"
+                      weight="duotone"
+                      size={24}
+                    />
                     Endfield Architect GitHub
                   </AppLink>
                 </div>
@@ -200,7 +207,11 @@ function RouteComponent() {
                     to=""
                     className="text-sakura-text hover:bg-sakura-bloom/70 flex max-w-max gap-2 rounded-md p-1 transition-colors"
                   >
-                    <GithubLogoIcon weight="duotone" size={24} />
+                    <GithubLogoIcon
+                      aria-hidden="true"
+                      weight="duotone"
+                      size={24}
+                    />
                     WIP
                   </AppLink>
                 </div>

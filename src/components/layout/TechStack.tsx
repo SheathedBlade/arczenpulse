@@ -48,15 +48,16 @@ const TechStack = () => {
           <motion.div
             key={name}
             variants={itemVariants}
-            className="group bg-sakura-card border-sakura-stone/20 hover:border-sakura-accent/50 hover:bg-sakura-surface flex flex-col items-center gap-2 rounded-md border p-4 transition-colors"
+            className="border-sakura-accent/50 bg-sakura-surface/70 flex flex-col items-center gap-2 rounded-md border-2 p-4 transition-colors"
             style={{ width: '140px', height: '140px' }}
           >
             <Icon
+              aria-hidden="true"
               size={36}
               weight="duotone"
-              className="text-sakura-stone group-hover:text-sakura-accent transition-colors"
+              className="text-sakura-accent transition-colors"
             />
-            <span className="font-dmmono text-sakura-cobble group-hover:text-sakura-text text-sm transition-colors">
+            <span className="font-dmmono text-sakura-text text-sm transition-colors">
               {name}
             </span>
             <span className="font-zenmaru text-sakura-cobble mt-1 text-center text-xs">

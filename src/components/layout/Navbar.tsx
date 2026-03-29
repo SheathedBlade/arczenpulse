@@ -108,6 +108,7 @@ const Navbar = () => {
             <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-2 p-6">
               <AppLink
                 ref={firstLinkRef}
+                aria-label="Home"
                 to="/"
                 onClick={() => setMobileMenu(false)}
                 className="font-dmmono text-sakura-text hover:bg-sakura-card hover:text-sakura-accent w-full rounded-md py-4 text-center text-2xl transition-colors hover:underline focus:underline focus:outline-none"
@@ -118,6 +119,7 @@ const Navbar = () => {
                 <AppLink
                   key={item.name}
                   to={item.link}
+                  aria-label={item.name}
                   onClick={() => setMobileMenu(false)}
                   className="font-dmmono text-sakura-text hover:bg-sakura-card hover:text-sakura-accent w-full rounded-md py-4 text-center text-2xl transition-colors hover:underline focus:underline focus:outline-none"
                 >
@@ -137,17 +139,22 @@ const Navbar = () => {
             onClick={toggleMobileMenu}
             aria-expanded={mobileMenu}
             aria-controls="mobile-menu"
+            aria-label={mobileMenu ? 'Close menu' : 'Open menu'}
             className="text-sakura-text hover:bg-sakura-bloom/70 focus:ring-sakura-accent flex items-center justify-center rounded-md p-2 transition-colors focus:ring-2 focus:outline-none md:hidden"
           >
             {mobileMenu ? (
-              <XIcon size={24} weight="bold" />
+              <XIcon aria-hidden="true" size={24} weight="bold" />
             ) : (
-              <ListIcon size={24} weight="bold" />
+              <ListIcon aria-hidden="true" size={24} weight="bold" />
             )}
           </button>
         </div>
         <div className="flex flex-1 items-center justify-center gap-4 md:flex-initial md:justify-start">
-          <AppLink to="/" className="flex h-full shrink-0 items-center">
+          <AppLink
+            to="/"
+            className="flex h-full shrink-0 items-center"
+            aria-label="Home"
+          >
             <Brand animation="staggerBack" />
           </AppLink>
           <ul className="hidden h-full flex-1 list-none items-center gap-8 md:flex md:gap-4">

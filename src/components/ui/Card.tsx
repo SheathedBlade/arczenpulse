@@ -44,6 +44,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
               {title}
             </h2>
             <ArrowSquareOutIcon
+              aria-hidden="true"
               size={24}
               className="text-sakura-text mb-2 inline-block"
             />
