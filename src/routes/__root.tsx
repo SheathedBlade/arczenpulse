@@ -22,7 +22,7 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { title: 'ARC Studio' },
-      { rel: 'canonical', href: 'https://arczenpulse.dev' }
+      { rel: 'canonical', href: 'https://terystal.dev' }
     ]
   }),
   component: RootLayout,
