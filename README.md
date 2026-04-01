@@ -72,8 +72,8 @@ This site is configured for deployment on **Cloudflare Pages** with:
 
 ### Redirects
 
-Primary domain: `arczenpulse.dev`
-Secondary domain `arczenpulse.com` redirects to `.dev` (301 permanent).
+Primary domain: `terystal.dev`
+Secondary domain `terystal.com` redirects to `.dev` (301 permanent).
 
 ## Accessibility
 

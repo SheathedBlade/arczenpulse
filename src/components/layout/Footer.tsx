@@ -34,12 +34,12 @@ const Footer = () => {
             <ul className="list-none">
               <li className="mb-1 leading-6">
                 <AppLink
-                  to="mailto:inquiry@arczenpulse.com"
+                  to="mailto:work@terystal.com"
                   className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
                   <span className="text-sakura-text inline-flex items-center justify-center gap-1">
                     <EnvelopeIcon size={20} weight="fill" aria-hidden="true" />
-                    inquiry@arczenpulse.com
+                    work@terystal.com
                   </span>
                 </AppLink>
               </li>

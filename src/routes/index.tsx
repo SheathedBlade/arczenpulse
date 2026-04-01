@@ -94,7 +94,7 @@ function RouteComponent() {
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <AppLink
-            to="mailto:inquiry@arczenpulse.com"
+            to="mailto:work@terystalinquiry@.com"
             className="bg-sakura-accent text-sakura-bg font-dmmono hover:bg-sakura-bloom inline-flex items-center gap-2 rounded-md px-8 py-3 transition-colors"
           >
             Get in Touch!
