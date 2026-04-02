@@ -8,10 +8,6 @@ import {
 } from '@phosphor-icons/react';
 import AppLink from '../ui/AppLink';
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
 const Footer = () => {
   return (
     <footer className="bg-sakura-surface relative z-3 w-full px-12 py-10 backdrop-blur-xs transition-colors">
