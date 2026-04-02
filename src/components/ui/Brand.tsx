@@ -8,6 +8,7 @@ interface BrandProps {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   animation?: BrandAnimVariant;
+  className?: string;
 }
 
 const animateVariants: Record<BrandAnimVariant, Variants> = {
@@ -28,7 +29,8 @@ const animateVariants: Record<BrandAnimVariant, Variants> = {
 const Brand = ({
   onMouseEnter,
   onMouseLeave,
-  animation = 'none'
+  animation = 'none',
+  className
 }: BrandProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const childVariant: Variants = animateVariants[animation];
@@ -56,7 +58,7 @@ const Brand = ({
           }
         }
       }}
-      className="flex h-full w-auto py-2"
+      className={`flex h-full w-auto py-2 ${className || ''}`}
     >
       <motion.span
         key={1}

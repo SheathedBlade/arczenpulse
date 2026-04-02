@@ -13,10 +13,10 @@ const Footer = () => {
     <footer className="bg-sakura-surface relative z-3 w-full px-12 py-10 backdrop-blur-xs transition-colors">
       <div className="mx-auto flex max-w-180 flex-col items-center justify-center">
         <div className="text-sakura-text flex w-full flex-col justify-center gap-8 text-center md:flex-row md:justify-between">
-          <AppLink to="/" className="flex w-full flex-col md:w-auto">
+          <AppLink to="/" className="flex w-full flex-col md:mb-8 md:w-auto">
             <Brand animation="staggerForward" />
-            <div className="text-left md:text-center">
-              <p className="font-dmmono text-sakura-cobble -mt-4 text-sm tracking-tight md:-mt-10">
+            <div className="-mt-4 text-left md:mt-4 md:text-center">
+              <p className="font-dmmono text-sakura-cobble text-sm tracking-tight md:-mt-10">
                 &copy; {new Date().getFullYear()} Andrew Chuah.
               </p>
               <p className="font-dmmono text-sakura-cobble -mt-1 text-sm tracking-tight">
