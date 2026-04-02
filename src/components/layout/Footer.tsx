@@ -1,6 +1,5 @@
 import Brand from '@/components/ui/Brand';
 import {
-  ArrowUpIcon,
   EnvelopeIcon,
   GameControllerIcon,
   GithubLogoIcon,
@@ -107,16 +106,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <button
-          onClick={scrollToTop}
-          aria-label="Back to top"
-          className="text-sakura-cobble hover:text-sakura-text mt-8 flex cursor-pointer flex-row items-center justify-center text-center transition-colors duration-150"
-        >
-          <ArrowUpIcon size={18} weight="bold" aria-hidden="true" />
-          <p className="font-dmmono ml-2 text-base tracking-tight">
-            Return to Top
-          </p>
-        </button>
       </div>
     </footer>
   );
