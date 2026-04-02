@@ -15,7 +15,10 @@ const scrollToTop = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-sakura-surface ease relative z-3 w-full px-12 py-10 backdrop-blur-xs transition-colors">
+    <footer
+      className="bg-sakura-surface relative z-3 w-full px-12 py-10 backdrop-blur-xs transition-colors"
+      style={{ transform: 'translateZ(0)' }}
+    >
       <div className="mx-auto flex max-w-180 flex-col items-center justify-center">
         <div className="text-sakura-text flex w-full flex-col justify-center gap-8 text-center md:flex-row md:justify-between">
           <AppLink to="/" className="flex w-full flex-col md:w-auto">
