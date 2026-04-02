@@ -110,10 +110,12 @@ const Footer = () => {
         <button
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="text-sakura-cobble hover:text-sakura-text ease mt-8 flex cursor-pointer flex-row items-center justify-center text-center transition-colors duration-150"
+          className="text-sakura-cobble hover:text-sakura-text mt-8 flex cursor-pointer flex-row items-center justify-center text-center transition-colors duration-150"
         >
           <ArrowUpIcon size={18} weight="bold" aria-hidden="true" />
-          <p className="font-dmmono text-md ml-2 tracking-tight">Back to Top</p>
+          <p className="font-dmmono ml-2 text-base tracking-tight">
+            Back to Top
+          </p>
         </button>
       </div>
     </footer>
