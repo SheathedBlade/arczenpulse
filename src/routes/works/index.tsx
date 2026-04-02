@@ -36,7 +36,10 @@ function RouteComponent() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.15 }}
             >
-              <AppLink to={`/works/${p.id}`}>
+              <AppLink
+                to={`/works/${p.id}`}
+                className="block transition-transform duration-150 hover:scale-105 focus:scale-105"
+              >
                 <Card
                   title={p.title}
                   description={p.description}

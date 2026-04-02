@@ -15,6 +15,48 @@ const TopoBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      // Render a single static frame and stop
+      const SCALE = 5;
+      canvas.width = window.innerWidth + 40;
+      canvas.height = window.innerHeight + 40;
+      canvas.style.width = `${window.innerWidth + 40}px`;
+      canvas.style.height = `${window.innerHeight + 40}px`;
+      canvas.style.left = '-20px';
+      canvas.style.top = '-20px';
+
+      const worker = new TopoWorker();
+      worker.onmessage = e => {
+        const { contours } = e.data;
+        const transform = d3.geoTransform({
+          point(px: number, py: number) {
+            this.stream.point(px * SCALE, py * SCALE);
+          }
+        });
+        const path = d3.geoPath(transform, ctx);
+        contours.forEach((contour: d3.ContourMultiPolygon, i: number) => {
+          const normalizedValue = i / contours.length;
+          const opacity = 0.06 + normalizedValue * 0.09;
+          ctx.beginPath();
+          path(contour);
+          ctx.strokeStyle = `rgba(201, 100, 120, ${opacity})`;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        });
+        worker.terminate();
+      };
+      worker.postMessage({
+        width: canvas.width,
+        height: canvas.height,
+        scale: SCALE
+      });
+      return;
+    }
+
     const SCALE = 5; // higher = cheaper
 
     const resize = () => {

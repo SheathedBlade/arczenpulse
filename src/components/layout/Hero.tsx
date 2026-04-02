@@ -8,7 +8,7 @@ const Hero = () => {
         <img
           src={pfp}
           alt="Andrew Chuah profile pic"
-          loading="eager"
+          loading="lazy"
           className="border-sakura-surface h-32 w-32 rounded-xl border-4 object-cover shadow-lg"
         />
       </div>

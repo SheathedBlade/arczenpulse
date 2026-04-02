@@ -9,7 +9,7 @@ const Divider = () => {
           <FlowerIcon weight="fill" size={18} />
         </span>
         <div className="bg-sakura-stone/40 h-0.5 flex-1" />
-      </div>{' '}
+      </div>
     </>
   );
 };

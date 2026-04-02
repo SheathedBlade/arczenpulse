@@ -10,7 +10,9 @@ export default defineConfig([
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     plugins: { js, '@react-three': ReactThreeFiber },
     extends: ['js/recommended'],
-    languageOptions: { globals: { ...globals.browser, ...globals.node } }
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    ignores: ['dist/**'],
+    settings: { react: { version: 'detect' } }
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,

@@ -2,6 +2,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
+import Sitemap from 'vite-plugin-sitemap';
 import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
@@ -16,7 +17,8 @@ export default defineConfig({
       quoteStyle: 'single'
     }),
     react(),
-    svgr({ svgrOptions: { icon: true } })
+    svgr({ svgrOptions: { icon: true } }),
+    Sitemap({ hostname: 'https://terystal.dev' })
   ],
   server: {
     watch: {

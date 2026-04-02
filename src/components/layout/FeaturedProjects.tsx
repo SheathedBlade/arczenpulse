@@ -29,7 +29,10 @@ const FeaturedProjects = () => {
               transition={{ duration: 0.15 }}
               variants={childrenVariants}
             >
-              <AppLink to={`/works/${p.id}`}>
+              <AppLink
+                to={`/works/${p.id}`}
+                className="block transition-transform duration-150 hover:scale-105 focus:scale-105"
+              >
                 <Card
                   title={p.title}
                   description={p.description}

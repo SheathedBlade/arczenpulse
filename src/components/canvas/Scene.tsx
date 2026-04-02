@@ -35,6 +35,8 @@ const Scene = () => {
           camera={{ position: [0, 0, 5], fov: 75 }}
           dpr={Math.min(window.devicePixelRatio, 2)}
           resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
+          role="img"
+          aria-label="Three.js scene"
         >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />

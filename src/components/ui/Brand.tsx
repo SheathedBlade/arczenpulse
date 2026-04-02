@@ -68,7 +68,7 @@ const Brand = ({
           preserveAspectRatio="xMidYMid meet"
           style={{
             letterSpacing: '0.5px',
-            transform: 'translateX(1px, 0)'
+            transform: 'translateX(1px)'
           }}
           className="fill-sakura-text z-10 h-20 w-40"
           aria-hidden="true"

@@ -14,7 +14,7 @@ const Timeline = () => {
       <div className="border-sakura-stone/40 relative border-l-2 px-8 md:ml-8">
         {experiences.map((entry, i) => (
           <motion.div
-            key={i}
+            key={`${entry.title}-${entry.date}`}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
