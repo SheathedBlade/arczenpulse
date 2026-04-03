@@ -36,7 +36,10 @@ function PageContent() {
 
   const handleExitComplete = () => {
     if (pendingPath) commitTransition();
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0 });
+      document.getElementById('main-content')?.focus();
+    }
   };
 
   return (

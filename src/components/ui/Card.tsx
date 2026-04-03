@@ -22,7 +22,6 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
         className={`bg-sakura-card hoverable-card z-10 min-h-87.5 max-w-sm cursor-pointer overflow-hidden rounded-md p-4 ${className ?? ''}`}
         style={style}
         ref={ref}
-        tabIndex={-1}
       >
         {image && (
           <img

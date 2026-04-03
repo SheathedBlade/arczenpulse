@@ -1,5 +1,6 @@
 import TopoWorker from '@/workers/topo.worker.ts?worker';
-import * as d3 from 'd3';
+import { ContourMultiPolygon } from 'd3-contour';
+import { geoPath, geoTransform } from 'd3-geo';
 import { useEffect, useRef } from 'react';
 
 const TopoBackground = () => {
@@ -32,13 +33,13 @@ const TopoBackground = () => {
       const worker = new TopoWorker();
       worker.onmessage = e => {
         const { contours } = e.data;
-        const transform = d3.geoTransform({
+        const transform = geoTransform({
           point(px: number, py: number) {
             this.stream.point(px * SCALE, py * SCALE);
           }
         });
-        const path = d3.geoPath(transform, ctx);
-        contours.forEach((contour: d3.ContourMultiPolygon, i: number) => {
+        const path = geoPath(transform, ctx);
+        contours.forEach((contour: ContourMultiPolygon, i: number) => {
           const normalizedValue = i / contours.length;
           const opacity = 0.06 + normalizedValue * 0.09;
           ctx.beginPath();
@@ -91,17 +92,17 @@ const TopoBackground = () => {
 
       // Draw on next animation frame so it never blocks
       frameRef.current = requestAnimationFrame(() => {
-        const transform = d3.geoTransform({
+        const transform = geoTransform({
           point(px, py) {
             this.stream.point(px * SCALE, py * SCALE);
           }
         });
 
-        const path = d3.geoPath(transform, ctx);
+        const path = geoPath(transform, ctx);
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        contours.forEach((contour: d3.ContourMultiPolygon, i: number) => {
+        contours.forEach((contour: ContourMultiPolygon, i: number) => {
           const normalizedValue = i / contours.length;
           const opacity = 0.06 + normalizedValue * 0.09;
 

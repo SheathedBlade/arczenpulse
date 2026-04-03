@@ -36,7 +36,7 @@ const Scene = () => {
           dpr={Math.min(window.devicePixelRatio, 2)}
           resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
           role="img"
-          aria-label="Three.js scene"
+          aria-label="3D torus knot decorative element"
         >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />

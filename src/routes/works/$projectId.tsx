@@ -59,7 +59,7 @@ function RouteComponent() {
         <motion.div variants={childrenVariants}>
           <img
             src={project.image}
-            alt={project.title}
+            alt={project.imageAlt}
             className="mb-8 h-auto w-full rounded-lg object-cover"
           />
         </motion.div>

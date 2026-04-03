@@ -104,8 +104,8 @@ function RouteComponent() {
             download
             className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-surface bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
           >
-            <DownloadIcon size={20} weight="bold" />
-            Download Resume
+            <DownloadIcon size={20} weight="bold" aria-hidden="true" />
+            Download Resume (PDF)
           </a>
         </div>
       </motion.div>

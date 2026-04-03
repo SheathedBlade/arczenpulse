@@ -38,7 +38,6 @@
   --font-zenmaru: 'Zen Maru Gothic', sans-serif;
   --font-jost: 'Jost', sans-serif;
   --font-dmmono: 'DM Mono', monospace;
-  --font-quicksand: 'Quicksand', sans-serif;
 }
 
 /* =============================================
@@ -114,6 +113,10 @@
   ::-webkit-scrollbar-corner {
     background: transparent;
   }
+}
+
+#main-content:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .hoverable-card {

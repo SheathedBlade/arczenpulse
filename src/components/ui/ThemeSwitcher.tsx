@@ -17,11 +17,6 @@ const ThemeSwitcher = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        style={{
-          willChange: 'transform',
-          backfaceVisibility: 'hidden',
-          WebkitFontSmoothing: 'subpixel-antialiased'
-        }}
         aria-label={isDark ? 'Switch to Light theme' : 'Switch to Dark theme'}
         onClick={toggleTheme}
         className="bg-sakura-accent hover:bg-sakura-bloom ease inline-block rounded-md p-1.5 transition-colors duration-150 md:mr-4"

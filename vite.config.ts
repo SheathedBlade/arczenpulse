@@ -29,5 +29,23 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rolldownOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three-vendor';
+            }
+          }
+          if (id.includes('node_modules')) {
+            if (id.includes('d3-geo') || id.includes('d3-contour')) {
+              return 'd3-vendor';
+            }
+          }
+        }
+      }
+    }
   }
 });
