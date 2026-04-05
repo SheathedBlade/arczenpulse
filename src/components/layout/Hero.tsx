@@ -26,11 +26,12 @@ const Hero = () => {
       <Divider />
       <div className="md:px-12">
         <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
-          I&apos;m a full-stack software engineer with experience building
-          mission-critical, robust applications for the NSA, where everything
-          must work the first time, every time. Such discipline originates from
-          my start in cybersecurity and SOC roles, where I developed automations
-          and scripts to ensure smooth operations.
+          I&apos;m a frontend software engineer with experience in full-stack
+          development, building robust applications for for various companies,
+          most notably the NSA, where everything must work the first time, every
+          time. Such discipline originates from my start in cybersecurity and
+          SOC roles, where I developed automations and scripts to ensure smooth
+          operations.
         </p>
         <p className="font-zenmaru mx-auto mb-3 max-w-prose text-base">
           Outside of work, I satisfy my creative itch by keeping my hands busy

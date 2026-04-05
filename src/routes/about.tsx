@@ -46,22 +46,36 @@ function RouteComponent() {
             <h2 className="font-jost mb-6 text-3xl font-bold">Origins</h2>
             <div className="font-zenmaru text-sakura-text/80 space-y-4 text-lg leading-relaxed">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                First and foremost, I consider myself a frontend software
+                engineer. I specialize in making functional, yet unique designs
+                come to life on the web. I&apos;m not one to shy away from
+                challenges, and I always continue to expand my skillset, with a
+                prominent example being my foray into Three.js. By extension, I
+                am also continuing to learn about 3D modeling as it pertains to
+                web design through Three.js. I&apos;m also a big proponent of
+                customization, so while I may use some off-the-shelf UI
+                components like Mantine or Shadcn/UI, I like to heavily modify
+                those components to fit the aesthetics and designs of my
+                projects.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                I often turn to creative outlets as a means of self-improvement
+                and self-expression. I&apos;ve done graphic design while in
+                college, and I&apos;ve dabbled in game development as a way to
+                bridge my gaming hobby with not only my technical skills, but
+                also my design skills. In the back of my mind, I always think
+                about ways my projects can stand out and be truly unique. In
+                this way, I always strive to improve my craft, always looking
+                for new techniques and technolgies to learn and implement in my
+                projects.
+              </p>
+              <p>
+                While frontend design is my ultimate strength, I also have
+                first-hand experience with backend development, including
+                security and application design. Working in a true, full-stack
+                capacity has given me a deeper understanding of application
+                architecture, and what it takes to build a functional and secure
+                product from the ground up.
               </p>
             </div>
             <Divider />
@@ -69,35 +83,33 @@ function RouteComponent() {
             <motion.div className="mt-4 md:mb-16" variants={childrenVariants}>
               <h2 className="font-jost mb-8 text-3xl font-bold">Experience</h2>
               <div className="space-y-6">
-                {experiences
-                  .filter(s => s.type !== 'education')
-                  .map(job => (
-                    <motion.div
-                      key={`${job.title}-${job.subtitle}`}
-                      variants={childrenVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      className="bg-sakura-card rounded-lg p-6"
-                    >
-                      <div className="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
-                        <div>
-                          <h3 className="font-jost text-sakura-text text-xl font-bold">
-                            {job.title}
-                          </h3>
-                          <p className="font-dmmono text-sakura-cobble">
-                            {job.subtitle}
-                          </p>
-                        </div>
-                        <span className="font-dmmono text-sakura-accent text-sm">
-                          {job.date}
-                        </span>
+                {experiences.map(job => (
+                  <motion.div
+                    key={`${job.title}-${job.subtitle}`}
+                    variants={childrenVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="bg-sakura-card rounded-lg p-6"
+                  >
+                    <div className="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                      <div>
+                        <h3 className="font-jost text-sakura-text text-xl font-bold">
+                          {job.title}
+                        </h3>
+                        <p className="font-dmmono text-sakura-cobble">
+                          {job.subtitle}
+                        </p>
                       </div>
-                      <p className="font-zenmaru text-sakura-text/70">
-                        {job.description}
-                      </p>
-                    </motion.div>
-                  ))}
+                      <span className="font-dmmono text-sakura-accent text-sm">
+                        {job.date}
+                      </span>
+                    </div>
+                    <p className="font-zenmaru text-sakura-text/70 whitespace-break-spaces">
+                      {job.extendedDesc || job.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -192,13 +204,13 @@ function RouteComponent() {
                   </div>
                   <p className="font-zenmaru text-sakura-text/80">
                     Currently revamping a college project of mine into a
-                    fully-fledged product. Vantage is an esports management
-                    system where users can create and manage games, teams,
-                    players, matches, you name it. The goal is to internally
-                    expose API endpoints for specific use such as integration
-                    within another website (say for college esports), and to
-                    provide one place to manage college-level teams, which can
-                    change all the time within each semester.
+                    fully-fledged API-as-a-service. Vantage is an esports
+                    management system where users can create and manage games,
+                    teams, players, matches, you name it. The goal is to
+                    internally expose API endpoints for specific use such as
+                    integration within another website (say for college
+                    esports), and to provide one place to manage college-level
+                    teams, which can change all the time within each semester.
                   </p>
                   <p className="text-sakura-text font-zenmaru mt-4 mb-2">
                     Follow development here:
