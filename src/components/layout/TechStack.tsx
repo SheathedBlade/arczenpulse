@@ -1,4 +1,4 @@
-import { allSkills } from '@/data/skills';
+import { techSkills } from '@/data/skills';
 import { motion, Variants } from 'motion/react';
 
 const TechStack = () => {
@@ -44,7 +44,7 @@ const TechStack = () => {
         className="mx-auto flex max-w-4xl flex-wrap justify-center gap-6 px-4"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {allSkills.map(({ name, Icon, desc }) => (
+        {techSkills.map(({ name, Icon, desc }) => (
           <motion.div
             key={name}
             variants={itemVariants}
