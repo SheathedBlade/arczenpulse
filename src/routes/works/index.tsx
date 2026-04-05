@@ -10,7 +10,8 @@ export const Route = createFileRoute('/works/')({
   component: RouteComponent,
   head: () => ({
     meta: [{ title: 'Works · ARC Studio' }]
-  })
+  }),
+  preload: true
 });
 
 function RouteComponent() {

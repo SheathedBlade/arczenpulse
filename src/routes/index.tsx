@@ -15,7 +15,8 @@ export const Route = createFileRoute('/')({
   head: () => ({
     meta: [{ title: 'ARC Studio · Homepage' }]
   }),
-  component: RouteComponent
+  component: RouteComponent,
+  preload: true
 });
 
 const MotionPageContainer = motion.create(PageContainer);

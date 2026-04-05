@@ -24,7 +24,8 @@ export const Route = createFileRoute('/works/$projectId')({
     const { project } = loaderData as { project: Project };
     return { meta: [{ title: `${project.title} · ARC Studio` }] };
   },
-  component: RouteComponent
+  component: RouteComponent,
+  preload: true
 });
 
 function RouteComponent() {

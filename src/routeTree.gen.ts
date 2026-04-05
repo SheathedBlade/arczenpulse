@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as BehindTheCurtainRouteImport } from './routes/behind-the-curtain'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorksIndexRouteImport } from './routes/works/index'
 import { Route as WorksProjectIdRouteImport } from './routes/works/$projectId'
 
+const BehindTheCurtainRoute = BehindTheCurtainRouteImport.update({
+  id: '/behind-the-curtain',
+  path: '/behind-the-curtain',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -38,12 +44,14 @@ const WorksProjectIdRoute = WorksProjectIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/behind-the-curtain': typeof BehindTheCurtainRoute
   '/works/$projectId': typeof WorksProjectIdRoute
   '/works/': typeof WorksIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/behind-the-curtain': typeof BehindTheCurtainRoute
   '/works/$projectId': typeof WorksProjectIdRoute
   '/works': typeof WorksIndexRoute
 }
@@ -51,26 +59,46 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/behind-the-curtain': typeof BehindTheCurtainRoute
   '/works/$projectId': typeof WorksProjectIdRoute
   '/works/': typeof WorksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/works/$projectId' | '/works/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/behind-the-curtain'
+    | '/works/$projectId'
+    | '/works/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/works/$projectId' | '/works'
-  id: '__root__' | '/' | '/about' | '/works/$projectId' | '/works/'
+  to: '/' | '/about' | '/behind-the-curtain' | '/works/$projectId' | '/works'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/behind-the-curtain'
+    | '/works/$projectId'
+    | '/works/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BehindTheCurtainRoute: typeof BehindTheCurtainRoute
   WorksProjectIdRoute: typeof WorksProjectIdRoute
   WorksIndexRoute: typeof WorksIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/behind-the-curtain': {
+      id: '/behind-the-curtain'
+      path: '/behind-the-curtain'
+      fullPath: '/behind-the-curtain'
+      preLoaderRoute: typeof BehindTheCurtainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BehindTheCurtainRoute: BehindTheCurtainRoute,
   WorksProjectIdRoute: WorksProjectIdRoute,
   WorksIndexRoute: WorksIndexRoute,
 }

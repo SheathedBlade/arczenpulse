@@ -75,7 +75,7 @@ const Footer = () => {
             <ul>
               <li>
                 <AppLink
-                  to="https://github.com/SheathedBlade"
+                  to="/behind-the-curtain"
                   className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
                 >
                   <span className="text-sakura-text inline-flex items-center justify-center gap-1">
