@@ -11,7 +11,7 @@ const navItems = [
   { name: 'Works', link: '/works' },
   {
     name: 'Source',
-    link: 'https://github.com/SheathedBlade/arczenpulse',
+    link: 'https://github.com/SheathedBlade/arc-studio',
     icon: GithubLogoIcon
   }
 ];
