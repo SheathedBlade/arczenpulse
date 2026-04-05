@@ -30,27 +30,27 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/SheathedBlade/endfield-architect',
     pinned: true
   },
-  {
-    id: 'windtrace',
-    title: 'WindTrace',
-    description:
-      'Image recognition app to score Mahjong hands based on selected rulesets.',
-    longDescription: `...`,
-    image: EndfieldThumb,
-    imageAlt:
-      'Screenshot of WindTrace, an image recognition app for Mahjong hands',
-    pinned: false
-  },
-  {
-    id: 'vantage',
-    title: 'Vantage',
-    description:
-      'Esports management platform for organizers to manage teams, players, and matches.',
-    longDescription: `...`,
-    image: EndfieldThumb,
-    imageAlt: 'Screenshot of Vantage, an esports management platform',
-    pinned: false
-  },
+  // {
+  //   id: 'windtrace',
+  //   title: 'WindTrace',
+  //   description:
+  //     'Image recognition app to score Mahjong hands based on selected rulesets.',
+  //   longDescription: `...`,
+  //   image: EndfieldThumb,
+  //   imageAlt:
+  //     'Screenshot of WindTrace, an image recognition app for Mahjong hands',
+  //   pinned: false
+  // },
+  // {
+  //   id: 'vantage',
+  //   title: 'Vantage',
+  //   description:
+  //     'Esports management platform for organizers to manage teams, players, and matches.',
+  //   longDescription: `...`,
+  //   image: EndfieldThumb,
+  //   imageAlt: 'Screenshot of Vantage, an esports management platform',
+  //   pinned: false
+  // },
   {
     id: 'nightwatch',
     title: 'Nightwatch',
