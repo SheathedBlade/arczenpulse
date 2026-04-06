@@ -1,16 +1,13 @@
+import AppLink from '@/components/ui/AppLink';
 import Card from '@/components/ui/Card';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { projects } from '@/data/projects';
 import { motion } from 'motion/react';
-import AppLink from '../ui/AppLink';
 
 const FeaturedProjects = () => {
   return (
     <div className="px-12 sm:mx-25">
-      <h2
-        className="font-jost mt-16 mb-6 text-center text-3xl underline xl:my-6"
-        style={{ textDecorationThickness: '3px' }}
-      >
+      <h2 className="font-jost mt-16 mb-6 text-center text-3xl underline decoration-3 xl:my-6">
         Featured Projects
       </h2>
       <motion.div
@@ -23,16 +20,8 @@ const FeaturedProjects = () => {
         {projects
           .filter(p => p.pinned)
           .map(p => (
-            <motion.div
-              key={p.id}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.15 }}
-              variants={childrenVariants}
-            >
-              <AppLink
-                to={`/works/${p.id}`}
-                className="block transition-transform duration-150 hover:scale-105 focus:scale-105"
-              >
+            <motion.div key={p.id} variants={childrenVariants}>
+              <AppLink to={`/works/${p.id}`} className="block">
                 <Card
                   title={p.title}
                   description={p.description}

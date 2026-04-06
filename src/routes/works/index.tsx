@@ -31,16 +31,8 @@ function RouteComponent() {
         </motion.h1>
         <motion.div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(p => (
-            <motion.div
-              key={p.id}
-              variants={childrenVariants}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.15 }}
-            >
-              <AppLink
-                to={`/works/${p.id}`}
-                className="block transition-transform duration-150 hover:scale-105 focus:scale-105"
-              >
+            <motion.div key={p.id} variants={childrenVariants}>
+              <AppLink to={`/works/${p.id}`} className="block">
                 <Card
                   title={p.title}
                   description={p.description}
