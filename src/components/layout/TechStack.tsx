@@ -26,41 +26,41 @@ const TechStack = () => {
   };
 
   return (
-    <section className="relative z-10 py-12">
-      <motion.h3
+    <section className="relative z-10 mx-4 lg:mx-0">
+      <motion.h2
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
-        className="font-jost mb-8 text-center text-2xl underline"
+        className="font-jost mb-8 text-center text-3xl underline"
         style={{ textDecorationThickness: '3px' }}
       >
         Current Technologies
-      </motion.h3>
+      </motion.h2>
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        className="mx-auto flex max-w-4xl flex-wrap justify-center gap-6 px-4"
+        className="flex flex-wrap justify-center gap-4"
         viewport={{ once: true, amount: 0.2 }}
       >
         {techSkills.map(({ name, Icon, desc }) => (
           <motion.div
             key={name}
             variants={itemVariants}
-            className="border-sakura-accent/50 bg-sakura-surface/70 flex flex-col items-center gap-2 rounded-md border-2 p-4 transition-colors"
-            style={{ width: '140px', height: '140px' }}
+            className="border-sakura-accent/50 bg-sakura-surface/70 flex flex-col items-center rounded-md border-2 p-3 transition-colors"
+            style={{ width: '150px', height: '150px' }}
           >
             <Icon
               aria-hidden="true"
-              size={36}
+              size={48}
               weight="duotone"
-              className="text-sakura-accent transition-colors"
+              className="text-sakura-accent mb-4 transition-colors"
             />
-            <span className="font-dmmono text-sakura-text text-sm transition-colors">
+            <span className="font-dmmono text-sakura-text text-base transition-colors">
               {name}
             </span>
-            <span className="font-zenmaru text-sakura-cobble mt-1 text-center text-xs">
+            <span className="font-zenmaru text-sakura-cobble mt-0.5 text-center text-sm leading-tight">
               {desc}
             </span>
           </motion.div>

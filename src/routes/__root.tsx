@@ -51,9 +51,11 @@ function PageContent() {
         exit="out"
         variants={pageVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
-        className="flex flex-col"
+        className="flex min-h-screen flex-col"
       >
-        <Outlet />
+        <div className="flex-1">
+          <Outlet />
+        </div>
         <Footer />
       </motion.div>
     </AnimatePresence>
@@ -67,7 +69,7 @@ function RootLayout() {
       <ThemeProvider defaultTheme="light" storageKey="ui-theme">
         <TopoBackground />
         <TransitionProvider>
-          <div className="relative z-10">
+          <div className="relative z-10 flex min-h-screen flex-col">
             <a
               href="#main-content"
               className="focus:bg-sakura-accent focus:text-sakura-bg sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:rounded-md focus:px-4 focus:py-2 focus:outline-none"
@@ -75,7 +77,7 @@ function RootLayout() {
               Skip to Main Content
             </a>
             <Navbar />
-            <div className="flex-1" id="main-content" tabIndex={-1}>
+            <div id="main-content" tabIndex={-1}>
               <PageContent />
             </div>
           </div>

@@ -1,107 +1,79 @@
-import Brand from '@/components/ui/Brand';
 import {
   EnvelopeIcon,
-  GameControllerIcon,
   GithubLogoIcon,
   LinkedinLogoIcon,
   ScrollIcon
 } from '@phosphor-icons/react';
 import AppLink from '../ui/AppLink';
 
+const footerLinks = [
+  {
+    icon: EnvelopeIcon,
+    label: 'work@terystal.com',
+    to: 'mailto:work@terystal.com'
+  },
+  {
+    icon: GithubLogoIcon,
+    label: 'GitHub',
+    to: 'https://github.com/SheathedBlade'
+  },
+  {
+    icon: LinkedinLogoIcon,
+    label: 'LinkedIn',
+    to: 'https://www.linkedin.com/in/andrewchuah/'
+  },
+  {
+    icon: ScrollIcon,
+    label: 'Behind the Curtain',
+    to: '/behind-the-curtain'
+  }
+];
+
 const Footer = () => {
   return (
-    <footer className="bg-sakura-surface relative z-3 w-full px-12 py-10 backdrop-blur-xs transition-colors">
-      <div className="mx-auto flex max-w-180 flex-col items-center justify-center">
-        <div className="text-sakura-text flex w-full flex-col justify-center gap-8 text-center md:flex-row md:justify-between">
-          <AppLink to="/" className="flex w-full flex-col md:mb-8 md:w-auto">
-            <Brand animation="staggerForward" />
-            <div className="-mt-4 text-left md:mt-4 md:text-center">
-              <p className="font-dmmono text-sakura-cobble text-sm tracking-tight md:-mt-10">
-                &copy; {new Date().getFullYear()} Andrew Chuah.
-              </p>
-              <p className="font-dmmono text-sakura-cobble -mt-1 text-sm tracking-tight">
-                All Rights Reserved.
-              </p>
-            </div>
-          </AppLink>
-          <div className="w-full text-left font-bold md:w-auto">
-            <div className="font-dmmono mb-4 text-lg">Contact</div>
-            <ul className="list-none">
-              <li className="mb-1 leading-6">
+    <footer className="bg-sakura-surface relative z-3 w-full px-6 pt-8 pb-6 backdrop-blur-xs">
+      <div
+        className="from-sakura-bg to-sakura-surface pointer-events-none absolute top-0 right-0 left-0 h-8 bg-gradient-to-b"
+        aria-hidden="true"
+      />
+      <div className="mx-auto flex max-w-3xl flex-col items-center justify-start gap-5 pt-6">
+        {/* Epilogue phrase */}
+        <p className="font-zenmaru text-sakura-cobble text-center text-lg leading-relaxed italic">
+          Every path has an origin, every place a story.
+        </p>
+
+        {/* Soft separator */}
+        <div
+          className="via-sakura-stone/30 h-px w-24 bg-linear-to-r from-transparent to-transparent"
+          aria-hidden="true"
+        />
+
+        {/* Link cluster */}
+        <nav aria-label="Footer navigation">
+          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-3">
+            {footerLinks.map(({ icon: Icon, label, to }) => (
+              <li key={label}>
                 <AppLink
-                  to="mailto:work@terystal.com"
-                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
+                  to={to}
+                  className="group footer-link font-zenmaru text-sakura-text hover:text-sakura-accent hover:border-sakura-accent/30 focus-visible:border-sakura-accent/30 inline-flex items-center gap-1.5 rounded-md border-2 border-transparent px-3 py-2 transition-colors duration-200"
                 >
-                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
-                    <EnvelopeIcon size={20} weight="fill" aria-hidden="true" />
-                    work@terystal.com
-                  </span>
+                  <Icon
+                    size={18}
+                    weight="duotone"
+                    aria-hidden="true"
+                    className="self-center transition-transform duration-200 group-hover:translate-y-px"
+                  />
+                  <span className="text-sm">{label}</span>
                 </AppLink>
               </li>
-              <li className="mb-1 leading-6">
-                <AppLink
-                  to="https://github.com/SheathedBlade"
-                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
-                >
-                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
-                    <GithubLogoIcon
-                      size={20}
-                      weight="duotone"
-                      aria-hidden="true"
-                    />
-                    GitHub
-                  </span>
-                </AppLink>
-              </li>
-              <li className="mb-1 leading-6">
-                <AppLink
-                  to="https://www.linkedin.com/in/andrewchuah/"
-                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
-                >
-                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
-                    <LinkedinLogoIcon
-                      size={20}
-                      weight="duotone"
-                      aria-hidden="true"
-                    />
-                    LinkedIn
-                  </span>
-                </AppLink>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full text-left font-bold md:w-auto">
-            <div className="font-dmmono mb-4 text-lg">More</div>
-            <ul>
-              <li>
-                <AppLink
-                  to="/behind-the-curtain"
-                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
-                >
-                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
-                    <ScrollIcon size={20} weight="duotone" aria-hidden="true" />
-                    Behind the Curtain
-                  </span>
-                </AppLink>
-              </li>
-              <li>
-                <AppLink
-                  to="https://sheathblade.itch.io/"
-                  className="hover:bg-sakura-bloom/70 font-zenmaru flex max-w-max rounded-md p-1 no-underline transition-colors"
-                >
-                  <span className="text-sakura-text inline-flex items-center justify-center gap-1">
-                    <GameControllerIcon
-                      size={20}
-                      weight="duotone"
-                      aria-hidden="true"
-                    />
-                    My Itch.io
-                  </span>
-                </AppLink>
-              </li>
-            </ul>
-          </div>
-        </div>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Copyright */}
+        <p className="font-dmmono text-sakura-cobble text-sm">
+          &copy; {new Date().getFullYear()} Andrew Chuah. All rights reserved.
+        </p>
       </div>
     </footer>
   );

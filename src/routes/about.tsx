@@ -43,40 +43,38 @@ function RouteComponent() {
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
           {/* Left Col */}
           <motion.div variants={childrenVariants} className="lg:col-span-2">
-            <h2 className="font-jost mb-6 text-3xl font-bold">Origins</h2>
+            <h2 className="font-jost mb-6 text-3xl font-bold">About Me</h2>
             <div className="font-zenmaru text-sakura-text/80 space-y-4 text-lg leading-relaxed">
               <p>
-                First and foremost, I consider myself a frontend software
-                engineer. I specialize in making functional, yet unique designs
-                come to life on the web. I&apos;m not one to shy away from
-                challenges, and I always continue to expand my skillset, with a
-                prominent example being my foray into Three.js. By extension, I
-                am also continuing to learn about 3D modeling as it pertains to
-                web design through Three.js. I&apos;m also a big proponent of
-                customization, so while I may use some off-the-shelf UI
-                components like Mantine or Shadcn/UI, I like to heavily modify
-                those components to fit the aesthetics and designs of my
-                projects.
+                I&apos;m Andrew Chuah, a software engineer based out of
+                Columbia, Maryland, United States. I specialize in making
+                functional, yet unique designs come to life on the web. I
+                started out as someone who took an extreme interest in graphic
+                design, and that interest transformed many times over; from
+                graphic design, to game development, and finally to web
+                development. I&apos;m not one to shy away from challenges, and I
+                always continue to expand my skillset.
               </p>
               <p>
-                I often turn to creative outlets as a means of self-improvement
-                and self-expression. I&apos;ve done graphic design while in
-                college, and I&apos;ve dabbled in game development as a way to
-                bridge my gaming hobby with not only my technical skills, but
-                also my design skills. In the back of my mind, I always think
-                about ways my projects can stand out and be truly unique. In
-                this way, I always strive to improve my craft, always looking
-                for new techniques and technolgies to learn and implement in my
-                projects.
+                Outside of work, I satisfy my creative itch by keeping my hands
+                busy with electronics, digital art, or 3D modeling. I also love
+                traveling and experiencing all that a culture has to offer; some
+                of my favorite trips have been through Malaysia, Thailand, and
+                Japan. Gaming and watching anime are also some of my favorite
+                pastimes.
               </p>
               <p>
-                While frontend design is my ultimate strength, I also have
-                first-hand experience with backend development, including
-                security and application design. Working in a true, full-stack
-                capacity has given me a deeper understanding of application
-                architecture, and what it takes to build a functional and secure
-                product from the ground up.
+                I also do a lot of creative writing, which you can see for
+                yourself at my personal worldbuilding website:{' '}
+                <AppLink
+                  className="text-sakura-accent hover:text-sakura-text font-bold underline underline-offset-2 transition-colors"
+                  to="https://luciradis.terystal.dev"
+                  target="_blank"
+                >
+                  Luciradis
+                </AppLink>
               </p>
+              <p>If you want to chat, feel free to send me an email!</p>
             </div>
             <Divider />
 

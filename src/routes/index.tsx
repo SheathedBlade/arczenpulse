@@ -1,8 +1,7 @@
 import Scene from '@/components/canvas/Scene';
+import ExperienceTechSection from '@/components/layout/ExperienceTechSection';
 import FeaturedProjects from '@/components/layout/FeaturedProjects';
 import Hero from '@/components/layout/Hero';
-import TechStack from '@/components/layout/TechStack';
-import Timeline from '@/components/layout/Timeline';
 import AppLink from '@/components/ui/AppLink';
 import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
@@ -43,30 +42,9 @@ function RouteComponent() {
           <Hero />
         </motion.div>
       </MotionPageContainer>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <Timeline />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <Divider />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <TechStack />
-      </motion.div>
+      <Divider />
+
+      <ExperienceTechSection />
       <motion.div
         variants={childrenVariants}
         initial="hidden"

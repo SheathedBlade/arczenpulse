@@ -7,12 +7,12 @@ import AppLink from '../ui/AppLink';
 const FeaturedProjects = () => {
   return (
     <div className="px-12 sm:mx-25">
-      <h1
-        className="font-jost mt-16 mb-6 text-center text-2xl underline xl:my-6"
+      <h2
+        className="font-jost mt-16 mb-6 text-center text-3xl underline xl:my-6"
         style={{ textDecorationThickness: '3px' }}
       >
         Featured Projects
-      </h1>
+      </h2>
       <motion.div
         variants={containerVariants}
         initial="hidden"

@@ -4,14 +4,18 @@ import { motion } from 'motion/react';
 
 const Timeline = () => {
   return (
-    <div className="mx-auto max-w-3xl px-12 py-10">
-      <h2
-        className="font-jost mb-8 text-center text-2xl underline"
+    <div className="mx-auto mb-10 max-w-3xl lg:mr-12">
+      <motion.h2
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        className="font-jost mb-8 text-center text-3xl underline lg:ml-8 lg:text-left"
         style={{ textDecorationThickness: '3px' }}
       >
         Experience & Education
-      </h2>
-      <div className="border-sakura-stone/40 relative border-l-2 px-8 md:ml-8">
+      </motion.h2>
+      <div className="border-sakura-stone/40 relative mr-auto ml-20 border-l-2 px-8 lg:mx-0 lg:ml-8">
         {experiences.map((entry, i) => (
           <motion.div
             key={`${entry.title}-${entry.date}`}

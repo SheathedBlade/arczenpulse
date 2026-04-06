@@ -67,9 +67,14 @@
     --sakura-text: var(--color-sakura-night-text);
   }
 
-  html,
-  body,
   #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  html,
+  body {
     background-color: var(--sakura-bg);
     color: var(--sakura-text);
     transition:
