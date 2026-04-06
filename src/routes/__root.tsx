@@ -43,7 +43,7 @@ function PageContent() {
   };
 
   return (
-    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+    <AnimatePresence mode="sync" onExitComplete={handleExitComplete}>
       <motion.div
         key={displayPath}
         initial="initial"

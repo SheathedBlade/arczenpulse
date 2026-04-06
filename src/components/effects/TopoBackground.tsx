@@ -58,16 +58,25 @@ const TopoBackground = () => {
       return;
     }
 
+    const THROTTLE_MS = 64; // ~15fps compute rate — ambient without constant churn
     const SCALE = 5; // higher = cheaper
 
+    let resizeTimer: ReturnType<typeof setTimeout> | null = null;
+    let computeTimer: ReturnType<typeof setTimeout> | null = null;
+
     const resize = () => {
-      const OVERFLOW = 20; // extend beyond viewport
-      canvas.width = window.innerWidth + OVERFLOW * 2;
-      canvas.height = window.innerHeight + OVERFLOW * 2;
-      canvas.style.width = `${window.innerWidth + OVERFLOW * 2}px`;
-      canvas.style.height = `${window.innerHeight + OVERFLOW * 2}px`;
-      canvas.style.left = `-${OVERFLOW}px`;
-      canvas.style.top = `-${OVERFLOW}px`;
+      if (resizeTimer) return;
+      resizeTimer = setTimeout(() => {
+        resizeTimer = null;
+        const OVERFLOW = 20;
+        canvas.width = window.innerWidth + OVERFLOW * 2;
+        canvas.height = window.innerHeight + OVERFLOW * 2;
+        canvas.style.width = `${window.innerWidth + OVERFLOW * 2}px`;
+        canvas.style.height = `${window.innerHeight + OVERFLOW * 2}px`;
+        canvas.style.left = `-${OVERFLOW}px`;
+        canvas.style.top = `-${OVERFLOW}px`;
+        requestCompute();
+      }, 100);
     };
 
     resize();
@@ -116,7 +125,7 @@ const TopoBackground = () => {
         isDrawing.current = false;
 
         // Schedule next compute after a delay for throttling
-        setTimeout(requestCompute, 16); // ~60fps compute rate
+        computeTimer = setTimeout(requestCompute, THROTTLE_MS);
       });
     };
 
@@ -126,7 +135,9 @@ const TopoBackground = () => {
     // Pause when tab is not visible
     const handleVisibility = () => {
       if (document.hidden) {
-        clearTimeout(frameRef.current);
+        if (resizeTimer) clearTimeout(resizeTimer);
+        if (computeTimer) clearTimeout(computeTimer);
+        cancelAnimationFrame(frameRef.current);
         isDrawing.current = false;
       } else {
         requestCompute();
@@ -145,13 +156,15 @@ const TopoBackground = () => {
           requestCompute();
         }
       },
-      { threshold: 0 }
+      { threshold: 0.3 }
     );
 
     observer.observe(canvas);
 
     return () => {
       cancelAnimationFrame(frameRef.current);
+      if (resizeTimer) clearTimeout(resizeTimer);
+      if (computeTimer) clearTimeout(computeTimer);
       workerRef.current?.terminate();
       window.removeEventListener('resize', resize);
       document.removeEventListener('visibilitychange', handleVisibility);

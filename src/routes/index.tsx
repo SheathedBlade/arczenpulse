@@ -61,15 +61,15 @@ function RouteComponent() {
         className="md:px-auto relative z-10 px-4 py-16 text-center"
       >
         <h2
-          className="font-jost mb-4 text-2xl underline"
+          className="font-jost mb-4 text-3xl underline"
           style={{ textDecorationThickness: '3px' }}
         >
           Let&apos;s Work Together
         </h2>
-        <p className="text-sakura-text/70 font-zenmaru mx-auto mb-6 max-w-md">
+        <p className="text-sakura-text/70 font-zenmaru mx-auto mb-6 max-w-md text-lg">
           I&apos;m always interested in hearing about new opportunities and
           creative collaborations. Whether you have a project in mind or just
-          want to connect, I&apos;d love to hear from you!
+          want to connect, definitely reach out!
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <AppLink

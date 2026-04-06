@@ -32,6 +32,9 @@ function RouteComponent() {
             <img
               src={banner}
               loading="eager"
+              fetchPriority="high"
+              width="1200"
+              height="400"
               alt="Andrew Chuah - banner image"
               onLoad={e => {
                 e.currentTarget.classList.remove('opacity-0');
