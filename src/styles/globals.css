@@ -128,6 +128,13 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: 0 1px 3px rgba(58, 40, 48, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.hoverable-card:hover,
+.hoverable-card:focus-within {
+  box-shadow: 0 4px 20px rgba(58, 40, 48, 0.1);
 }
 
 .hoverable-card::before {
@@ -196,4 +203,12 @@
 :focus-visible {
   outline: 2px solid var(--sakura-accent);
   outline-offset: 2px;
+}
+
+/* Text ellipsis clamp — requires -webkit-box for ellipsis to render */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

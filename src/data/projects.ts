@@ -13,6 +13,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   pinned?: boolean;
+  year?: string;
 }
 
 export const projects: Project[] = [
@@ -26,10 +27,26 @@ export const projects: Project[] = [
     image: EndfieldThumb,
     imageAlt:
       'Screenshot of Endfield Architect, a production planning simulator for Arknights: Endfield',
-    techStack: ['React', 'TypeScript', 'React Flow'],
+    techStack: ['React', 'Elk.js', 'React Flow'],
     githubUrl: 'https://github.com/SheathedBlade/endfield-architect',
-    pinned: true
+    pinned: true,
+    year: '2025'
   },
+  // {
+  //   id: 'arc-studio',
+  //   title: 'ARC Studio',
+  //   description:
+  //     'Production planning simulator for Arknights: Endfield with A* pathfinding and DFS tree search.',
+  //   longDescription:
+  //     'An app based on the game Arknights: Endfield that simulates a production plan onto an in-game factory layout, being as efficient as possible with limited space and resources. It achieves this through DFS tree search to find the amount of facilities needed, and A* pathfinding to find the most optimal placement of those facilities onto a constrained grid.',
+  //   image: EndfieldThumb,
+  //   imageAlt:
+  //     'Screenshot of Endfield Architect, a production planning simulator for Arknights: Endfield',
+  //   techStack: ['React', 'Three.js', 'd3'],
+  //   githubUrl: 'https://github.com/SheathedBlade/arc-studio',
+  //   pinned: true,
+  //   year: '2025'
+  // },
   // {
   //   id: 'windtrace',
   //   title: 'WindTrace',
@@ -62,7 +79,8 @@ export const projects: Project[] = [
     techStack: ['Unity', 'C#'],
     githubUrl: 'https://github.com/SheathedBlade/Nightwatch',
     liveUrl: 'https://sheathblade.itch.io/nightwatch',
-    pinned: true
+    pinned: true,
+    year: '2023'
   },
   {
     id: 'endless-machinations',
@@ -75,6 +93,7 @@ export const projects: Project[] = [
       'Screenshot of Endless Machinations, a 2D hack-and-slash game prototype',
     techStack: ['Unity', 'C#', 'Aseprite'],
     liveUrl: 'https://sheathblade.itch.io/endless-machinations',
-    pinned: true
+    pinned: true,
+    year: '2021'
   }
 ];

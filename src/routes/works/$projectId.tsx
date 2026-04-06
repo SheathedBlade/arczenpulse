@@ -1,6 +1,11 @@
 import AppLink from '@/components/ui/AppLink';
 import PageContainer from '@/components/ui/PageContainer';
-import { childrenVariants, containerVariants } from '@/data/motionVariants';
+import {
+  childrenVariants,
+  containerVariants,
+  projectHeroVariants,
+  projectMetaVariants
+} from '@/data/motionVariants';
 import { Project, projects } from '@/data/projects';
 import {
   ArrowLeftIcon,
@@ -57,37 +62,40 @@ function RouteComponent() {
           <span className="font-dmmono text-sakura-text">{project.title}</span>
         </motion.nav>
 
-        <motion.div variants={childrenVariants}>
+        <motion.div
+          variants={projectHeroVariants}
+          className="mb-8 overflow-hidden rounded-lg"
+        >
           <img
             src={project.image}
             alt={project.imageAlt}
-            className="mb-8 h-auto w-full rounded-lg object-cover"
+            className="h-auto w-full object-cover"
           />
         </motion.div>
 
         <motion.h1
-          variants={childrenVariants}
+          variants={projectMetaVariants}
           className="font-jost mb-4 text-4xl font-bold"
         >
           {project.title}
         </motion.h1>
 
         {project.techStack && (
-          <motion.div variants={childrenVariants} className="mb-6">
+          <motion.div variants={projectMetaVariants} className="mb-6">
             <p className="font-dmmono text-sakura-cobble">
               {project.techStack.join(' · ')}
             </p>
           </motion.div>
         )}
 
-        <motion.div variants={childrenVariants}>
+        <motion.div variants={projectMetaVariants}>
           <p className="font-zenmaru text-sakura-text/80 mb-8 text-lg leading-relaxed whitespace-pre-line">
             {project.longDescription}
           </p>
         </motion.div>
 
         <motion.div
-          variants={childrenVariants}
+          variants={projectMetaVariants}
           className="flex flex-wrap gap-4"
         >
           {project.githubUrl && (

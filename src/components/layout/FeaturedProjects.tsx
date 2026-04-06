@@ -26,6 +26,8 @@ const FeaturedProjects = () => {
                   title={p.title}
                   description={p.description}
                   image={p.image}
+                  year={p.year}
+                  techStack={p.techStack}
                 />
               </AppLink>
             </motion.div>

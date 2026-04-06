@@ -58,7 +58,7 @@ const TopoBackground = () => {
       return;
     }
 
-    const THROTTLE_MS = 64; // ~15fps compute rate — ambient without constant churn
+    const THROTTLE_MS = 16; // ~15fps compute rate — ambient without constant churn
     const SCALE = 5; // higher = cheaper
 
     let resizeTimer: ReturnType<typeof setTimeout> | null = null;
