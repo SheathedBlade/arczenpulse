@@ -45,7 +45,7 @@ function RouteComponent() {
         <div className="mx-auto flex max-w-3xl flex-col gap-14">
           {/* Large creative statement */}
           <motion.div variants={childrenVariants}>
-            <p className="font-jost text-sakura-text text-center text-3xl leading-snug md:text-4xl">
+            <p className="font-dmmono text-sakura-text text-center text-3xl leading-snug tracking-tighter md:text-4xl">
               I like work that feels intentional from the first impression to
               the last detail.
             </p>
