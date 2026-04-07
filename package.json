@@ -16,6 +16,7 @@
     "motion": "^12.37.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-router-dom": "^7.14.0",
     "simplex-noise": "^4.0.3",
     "three": "^0.183.2"
   },

@@ -2,18 +2,9 @@ import banner from '@/assets/images/placeholder_me.webp';
 import AppLink from '@/components/ui/AppLink';
 import PageContainer from '@/components/ui/PageContainer';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
-import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
 
-export const Route = createFileRoute('/about')({
-  head: () => ({
-    meta: [{ title: 'About · ARC Studio' }]
-  }),
-  component: RouteComponent,
-  preload: true
-});
-
-function RouteComponent() {
+function AboutPage() {
   return (
     <PageContainer>
       <h1 className="sr-only">About Andrew Chuah</h1>
@@ -107,3 +98,5 @@ function RouteComponent() {
     </PageContainer>
   );
 }
+
+export default AboutPage;

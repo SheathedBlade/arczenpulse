@@ -7,20 +7,11 @@ import Divider from '@/components/ui/Divider';
 import PageContainer from '@/components/ui/PageContainer';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { DownloadIcon } from '@phosphor-icons/react';
-import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
-
-export const Route = createFileRoute('/')({
-  head: () => ({
-    meta: [{ title: 'ARC Studio · Homepage' }]
-  }),
-  component: RouteComponent,
-  preload: true
-});
 
 const MotionPageContainer = motion.create(PageContainer);
 
-function RouteComponent() {
+function HomePage() {
   return (
     <>
       <MotionPageContainer
@@ -88,3 +79,5 @@ function RouteComponent() {
     </>
   );
 }
+
+export default HomePage;

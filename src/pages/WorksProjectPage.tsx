@@ -1,3 +1,4 @@
+import { useParams, Link } from 'react-router-dom';
 import AppLink from '@/components/ui/AppLink';
 import PageContainer from '@/components/ui/PageContainer';
 import {
@@ -6,35 +7,22 @@ import {
   projectHeroVariants,
   projectMetaVariants
 } from '@/data/motionVariants';
-import { Project, projects } from '@/data/projects';
+import { projects } from '@/data/projects';
 import {
   ArrowLeftIcon,
   GithubLogoIcon,
   TagChevronIcon
 } from '@phosphor-icons/react';
-import {
-  createFileRoute,
-  notFound,
-  useLoaderData
-} from '@tanstack/react-router';
 import { motion } from 'motion/react';
+import NotFound from '@/components/layout/NotFound';
 
-export const Route = createFileRoute('/works/$projectId')({
-  loader: async ({ params: { projectId } }) => {
-    const project = projects.find(p => p.id === projectId);
-    if (!project) throw notFound();
-    return { project };
-  },
-  head: ({ loaderData }) => {
-    const { project } = loaderData as { project: Project };
-    return { meta: [{ title: `${project.title} · ARC Studio` }] };
-  },
-  component: RouteComponent,
-  preload: true
-});
+function WorksProjectPage() {
+  const { projectId } = useParams<{ projectId: string }>();
+  const project = projects.find(p => p.id === projectId);
 
-function RouteComponent() {
-  const { project } = useLoaderData({ from: '/works/$projectId' });
+  if (!project) {
+    return <NotFound />;
+  }
 
   return (
     <PageContainer>
@@ -48,12 +36,12 @@ function RouteComponent() {
           variants={childrenVariants}
           className="mb-8 flex items-center gap-2 text-sm"
         >
-          <AppLink
+          <Link
             to="/works"
             className="font-dmmono text-sakura-accent hover:underline"
           >
             Works
-          </AppLink>
+          </Link>
           <TagChevronIcon
             size={14}
             weight="fill"
@@ -127,3 +115,5 @@ function RouteComponent() {
     </PageContainer>
   );
 }
+
+export default WorksProjectPage;
