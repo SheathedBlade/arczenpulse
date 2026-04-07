@@ -3,18 +3,9 @@ import Card from '@/components/ui/Card';
 import PageContainer from '@/components/ui/PageContainer';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { projects } from '@/data/projects';
-import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
 
-export const Route = createFileRoute('/works/')({
-  component: RouteComponent,
-  head: () => ({
-    meta: [{ title: 'Works · ARC Studio' }]
-  }),
-  preload: true
-});
-
-function RouteComponent() {
+function WorksPage() {
   return (
     <PageContainer>
       <motion.div
@@ -48,3 +39,5 @@ function RouteComponent() {
     </PageContainer>
   );
 }
+
+export default WorksPage;

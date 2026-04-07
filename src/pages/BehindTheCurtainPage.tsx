@@ -1,24 +1,9 @@
 import AppLink from '@/components/ui/AppLink';
 import PageContainer from '@/components/ui/PageContainer';
 import { ArrowLeftIcon } from '@phosphor-icons/react';
-import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
 
-export const Route = createFileRoute('/behind-the-curtain')({
-  head: () => ({
-    meta: [
-      {
-        title: 'Behind the Curtain · ARC Studio',
-        description:
-          'A few notes on why this place looks and feels the way it does.'
-      }
-    ]
-  }),
-  component: RouteComponent,
-  preload: true
-});
-
-function RouteComponent() {
+function BehindTheCurtainPage() {
   return (
     <PageContainer>
       <motion.div
@@ -104,7 +89,7 @@ function RouteComponent() {
           <div className="font-zenmaru text-sakura-text/80 space-y-4 text-lg leading-relaxed">
             <p>
               [Placeholder — Build fragment: stack choices and why they serve
-              the feeling. TanStack Router, motion, the topo background as
+              the feeling. React Router, motion, the topo background as
               atmosphere rather than spectacle.]
             </p>
             <p>
@@ -151,3 +136,5 @@ function RouteComponent() {
     </PageContainer>
   );
 }
+
+export default BehindTheCurtainPage;
