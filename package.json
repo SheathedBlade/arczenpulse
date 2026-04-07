@@ -1,5 +1,5 @@
 {
-  "name": "arczenpulse",
+  "name": "arc-studio",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -46,6 +46,11 @@
     "vite-plugin-pwa": "^1.2.0",
     "vite-plugin-sitemap": "^0.8.2",
     "vite-plugin-svgr": "^4.5.0"
+  },
+  "overrides": {
+    "vite-plugin-pwa": {
+      "vite": "$vite"
+    }
   },
   "description": "Personal website for Andrew Chuah",
   "main": "vite.config.ts",
