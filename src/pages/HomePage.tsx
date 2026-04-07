@@ -67,7 +67,7 @@ function HomePage() {
             Get in Touch!
           </AppLink>
           <a
-            href="/Andrew_Chuah_Resume.pdf"
+            href="/resume.pdf"
             download
             className="border-sakura-stone/50 text-sakura-text font-dmmono hover:bg-sakura-surface bg-sakura-card inline-flex items-center gap-2 rounded-md border px-8 py-3 transition-colors"
           >
