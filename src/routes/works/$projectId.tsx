@@ -90,7 +90,7 @@ function RouteComponent() {
 
         <motion.div variants={projectMetaVariants}>
           <p className="font-zenmaru text-sakura-text/80 mb-8 text-lg leading-relaxed whitespace-pre-line">
-            {project.longDescription}
+            {project.description}
           </p>
         </motion.div>
 

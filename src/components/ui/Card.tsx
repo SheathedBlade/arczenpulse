@@ -52,7 +52,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
             {meta}
           </p>
         )}
-        <h2 className="font-jost text-sakura-text mr-1 mb-2 text-xl font-bold tracking-wide underline decoration-2">
+        <h2 className="font-jost text-sakura-text mr-1 mb-2 text-xl font-bold tracking-wide underline decoration-1 underline-offset-4">
           {title}
         </h2>
         <p className="font-zenmaru text-sakura-text mx-auto mb-3 line-clamp-2 text-base">

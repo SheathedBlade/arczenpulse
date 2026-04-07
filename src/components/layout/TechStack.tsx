@@ -32,8 +32,7 @@ const TechStack = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
-        className="font-jost mb-8 text-center text-3xl underline"
-        style={{ textDecorationThickness: '3px' }}
+        className="font-jost mb-8 text-center text-3xl underline decoration-3"
       >
         Current Technologies
       </motion.h2>

@@ -10,8 +10,7 @@ const Timeline = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
-        className="font-jost mb-8 text-center text-3xl underline lg:ml-8 lg:text-left"
-        style={{ textDecorationThickness: '3px' }}
+        className="font-jost mb-8 text-center text-3xl underline decoration-3 lg:ml-8 lg:text-left"
       >
         Experience & Education
       </motion.h2>

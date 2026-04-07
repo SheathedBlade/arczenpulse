@@ -45,7 +45,7 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
           to={to}
           ref={ref}
           onClick={handleClick}
-          className={`${className}`}
+          className={`focus-visible:outline-none ${className ?? ''}`}
           {...props}
           preload="intent"
         >
@@ -59,7 +59,7 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
         ref={ref}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${className}`}
+        className={`focus-visible:outline-none ${className ?? ''}`}
         {...props}
       >
         {content}

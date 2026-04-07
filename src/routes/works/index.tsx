@@ -32,7 +32,7 @@ function RouteComponent() {
         <motion.div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(p => (
             <motion.div key={p.id} variants={childrenVariants}>
-              <AppLink to={`/works/${p.id}`} className="block">
+              <AppLink to={`/works/${p.id}`} className="card-interactive block">
                 <Card
                   title={p.title}
                   description={p.description}

@@ -60,10 +60,7 @@ function RouteComponent() {
         transition={{ duration: 0.5 }}
         className="md:px-auto relative z-10 px-4 py-16 text-center"
       >
-        <h2
-          className="font-jost mb-4 text-3xl underline"
-          style={{ textDecorationThickness: '3px' }}
-        >
+        <h2 className="font-jost mb-4 text-3xl underline decoration-3">
           Let&apos;s Work Together
         </h2>
         <p className="text-sakura-text/70 font-zenmaru mx-auto mb-6 max-w-md text-lg">

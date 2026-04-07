@@ -21,7 +21,7 @@ const FeaturedProjects = () => {
           .filter(p => p.pinned)
           .map(p => (
             <motion.div key={p.id} variants={childrenVariants}>
-              <AppLink to={`/works/${p.id}`} className="block">
+              <AppLink to={`/works/${p.id}`} className="card-interactive block">
                 <Card
                   title={p.title}
                   description={p.description}
