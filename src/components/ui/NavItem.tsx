@@ -1,6 +1,5 @@
 import { Icon } from '@phosphor-icons/react';
-import { AnimatePresence, motion } from 'motion/react';
-import { useState } from 'react';
+import { motion } from 'motion/react';
 import AppLink from './AppLink';
 
 interface NavItemProps {
@@ -9,66 +8,37 @@ interface NavItemProps {
     link: string;
     icon?: Icon;
   };
+  isActive?: boolean;
 }
 
-const NavItem = ({ item }: NavItemProps) => {
-  const [hovered, setHovered] = useState(false);
+const NavItem = ({ item, isActive }: NavItemProps) => {
   const Icon = item.icon;
 
   return (
-    <li
-      key={item.name}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="ease relative isolate flex h-full items-center hover:underline"
-    >
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            exit={{ scaleY: 0 }}
-            transition={{ duration: 0.15, ease: 'easeInOut' }}
-            style={{ transformOrigin: 'top center' }}
-            className="pointer-events-none absolute inset-x-0 top-0 -z-10 flex flex-col items-center"
-          >
-            <motion.div
-              initial={{ height: 80 }}
-              animate={{ height: 96 }}
-              exit={{ height: 80 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="bg-sakura-bloom h-20 w-full overflow-hidden"
-            />
-            <svg
-              viewBox="0 0 100 20"
-              preserveAspectRatio="none"
-              className="w-full"
-              style={{ height: 16 }}
-            >
-              <polygon points="0,0 100,0 50,20" fill="var(--sakura-bloom)" />
-            </svg>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <li className="ease relative flex h-full items-center">
       <AppLink
         to={item.link}
-        className="text-sakura-text font-dmmono relative inset-0 z-10 flex h-full w-full items-center justify-center px-6"
+        className={`font-dmmono hover:text-sakura-accent focus:text-sakura-accent group relative flex h-full items-center justify-center px-4 text-sm tracking-wider transition-colors duration-200 ${
+          isActive ? 'text-sakura-accent' : 'text-sakura-text'
+        }`}
       >
-        <motion.span
-          animate={{ y: hovered ? 8 : 0 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-          className="inline-flex items-center justify-center"
-        >
-          {Icon && (
-            <Icon
-              size={24}
-              weight="duotone"
-              className="relative mr-1.5 inline-block"
-              aria-hidden="true"
-            />
-          )}
-          {item.name}
-        </motion.span>
+        {Icon && (
+          <Icon
+            size={16}
+            weight="duotone"
+            className={`mr-1.5 inline-block transition-transform duration-200 group-hover:-translate-y-px ${
+              isActive ? 'text-sakura-accent' : ''
+            }`}
+            aria-hidden="true"
+          />
+        )}
+        <span className="relative">{item.name}</span>
+        <motion.div
+          className="bg-sakura-accent absolute right-0 bottom-0 left-0 h-px origin-left transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+          style={{ transform: isActive ? 'scaleX(1)' : undefined }}
+          animate={{ scaleX: isActive ? 1 : 0 }}
+          aria-hidden="true"
+        />
       </AppLink>
     </li>
   );

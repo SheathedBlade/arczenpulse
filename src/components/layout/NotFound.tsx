@@ -1,12 +1,10 @@
 import { InfoIcon } from '@phosphor-icons/react';
-import { useEffect } from 'react';
 import AppLink from '../ui/AppLink';
 import PageContainer from '../ui/PageContainer';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 const NotFound = () => {
-  useEffect(() => {
-    document.title = 'Not Found · ARC Studio';
-  }, []);
+  useDocumentTitle('Not Found');
 
   return (
     <PageContainer>
@@ -18,8 +16,7 @@ const NotFound = () => {
         />
         <h1 className="font-jost mb-4 text-4xl font-bold">404</h1>
         <p className="font-zenmaru text-sakura-text/70 mb-8 max-w-md">
-          Oops! The page you&apos;re looking for doesn&apos;t exist or has been
-          moved.
+          This page doesn&apos;t exist or has been moved.
         </p>
         <AppLink
           to="/"

@@ -1,10 +1,19 @@
 import banner from '@/assets/images/placeholder_me.webp';
-import AppLink from '@/components/ui/AppLink';
+import EditorialDivider from '@/components/ui/EditorialDivider';
 import PageContainer from '@/components/ui/PageContainer';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { motion } from 'motion/react';
+import {
+  EditorialPullQuote,
+  MarginNote,
+  CurrentStatusBlock,
+  ElsewhereLinks,
+  AboutHeroBanner
+} from '@/components/about';
 
 function AboutPage() {
+  useDocumentTitle('About');
   return (
     <PageContainer>
       <h1 className="sr-only">About Andrew Chuah</h1>
@@ -14,82 +23,78 @@ function AboutPage() {
         animate="visible"
         className="mx-auto max-w-6xl px-6 py-16"
       >
-        {/* Banner */}
-        <motion.div variants={childrenVariants} className="-mx-6 mb-14 sm:mx-0">
-          <div className="bg-sakura-card relative h-auto w-full overflow-hidden rounded-lg sm:rounded-lg">
-            <img
-              src={banner}
-              loading="eager"
-              fetchPriority="high"
-              width="1200"
-              height="400"
-              alt="Andrew Chuah - banner image"
-              onLoad={e => {
-                e.currentTarget.classList.remove('opacity-0');
-              }}
-              className="h-full w-full object-cover object-top opacity-0 transition-opacity duration-500"
-            />
-          </div>
-        </motion.div>
+        <AboutHeroBanner src={banner} alt="Andrew Chuah - banner image" />
 
-        {/* Single-column editorial layout */}
         <div className="mx-auto flex max-w-3xl flex-col gap-14">
-          {/* Large creative statement */}
-          <motion.div variants={childrenVariants}>
-            <p className="font-dmmono text-sakura-text text-center text-3xl leading-snug tracking-tighter md:text-4xl">
-              I like work that feels intentional from the first impression to
-              the last detail.
-            </p>
-          </motion.div>
+          <EditorialPullQuote quote="I like work that feels intentional from the first impression to the last detail." />
 
-          {/* About copy */}
           <motion.div
-            variants={childrenVariants}
-            className="font-zenmaru text-sakura-text/80 space-y-5 text-lg leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
-            <p>
-              I&apos;m Andrew Chuah, a software engineer based out of Columbia,
-              Maryland. I specialize in making functional, yet unique designs
-              come to life on the web, where the choices being made are rooted
-              in intention. I started out as someone who took an extreme
-              interest in graphic design, and that interest transformed many
-              times over; from graphic design, to game development, and finally
-              to web development, where I&apos;m able to create products that
-              are not only utilitarian, but also unique and full of character.
-            </p>
-            <p>
-              Outside of work, I keep my hands busy with electronics, digital
-              art, and 3D modeling. I love traveling to experience how other
-              cultures build and express their worlds; some of my favorite trips
-              have been through Malaysia, Thailand, and Japan. I also do a lot
-              of creative writing, which you can explore at my worldbuilding
-              site.{' '}
-              <AppLink
-                className="text-sakura-accent hover:text-sakura-text font-bold underline underline-offset-2 transition-colors"
-                to="https://luciradis.terystal.dev"
-                target="_blank"
-              >
-                Luciradis
-              </AppLink>
-              . If you want to reach out or want to chat, feel free to send me a
-              message!
-            </p>
+            <EditorialDivider weight="light" />
           </motion.div>
 
-          {/* Currently */}
-          <motion.div variants={childrenVariants}>
-            <p className="font-dmmono text-sakura-cobble mb-2 text-xs tracking-widest uppercase">
-              Currently
-            </p>
-            <p className="font-zenmaru text-sakura-text text-base">
-              Building Endfield Architect, a production planner and simulator
-              for Arknights: Endfield.
-            </p>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_200px] md:gap-8">
+            <motion.div
+              variants={childrenVariants}
+              className="font-zenmaru text-sakura-text/80 space-y-5 text-base leading-relaxed md:text-lg"
+            >
+              <p>
+                I&apos;m Andrew Chuah, a software engineer based out of
+                Columbia, Maryland. I specialize in making functional, yet
+                unique designs come to life on the web, where the choices being
+                made are rooted in intention. I started out as someone who took
+                an extreme interest in graphic design, and that interest
+                transformed many times over; from graphic design, to game
+                development, and finally to web development, where I&apos;m able
+                to create products that are not only utilitarian, but also
+                unique and full of character.
+              </p>
+              <p>
+                Outside of work, I keep my hands busy with electronics, digital
+                art, and 3D modeling. I love traveling to experience how other
+                cultures build and express their worlds; some of my favorite
+                trips have been through Malaysia, Thailand, and Japan. I also do
+                a lot of creative writing, which you can explore at my
+                worldbuilding site.{' '}
+                <span className="text-sakura-accent font-medium">
+                  Luciradis
+                </span>
+                . If you want to reach out or want to chat, feel free to send me
+                a message!
+              </p>
+            </motion.div>
+
+            <motion.aside
+              variants={childrenVariants}
+              className="hidden md:block"
+            >
+              <div className="sticky top-24 space-y-6">
+                <MarginNote label="Location">Columbia, Maryland</MarginNote>
+                <MarginNote label="Identity">
+                  Developer · Artist · Maker
+                </MarginNote>
+                <ElsewhereLinks />
+              </div>
+            </motion.aside>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.05 }}
+          >
+            <EditorialDivider weight="light" />
           </motion.div>
 
-          {/* Quiet ending */}
+          <CurrentStatusBlock description="Building Endfield Architect, a production planner and simulator for Arknights: Endfield." />
+
           <motion.div variants={childrenVariants} className="pt-4">
-            <p className="font-zenmaru text-sakura-cobble text-base">
+            <p className="font-zenmaru text-sakura-cobble text-sm">
               Thanks for reading.
             </p>
           </motion.div>

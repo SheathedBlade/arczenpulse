@@ -1,117 +1,81 @@
-import { useParams, Link } from 'react-router-dom';
-import AppLink from '@/components/ui/AppLink';
+import { useParams } from 'react-router-dom';
 import PageContainer from '@/components/ui/PageContainer';
-import {
-  childrenVariants,
-  containerVariants,
-  projectHeroVariants,
-  projectMetaVariants
-} from '@/data/motionVariants';
+import EditorialDivider from '@/components/ui/EditorialDivider';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { projects } from '@/data/projects';
 import {
-  ArrowLeftIcon,
-  GithubLogoIcon,
-  TagChevronIcon
-} from '@phosphor-icons/react';
-import { motion } from 'motion/react';
+  ProjectHero,
+  ProjectMetaSidebar,
+  ProjectNarrative,
+  ProjectProcess,
+  ProjectOutcomes,
+  ProjectNav
+} from '@/components/work/project';
 import NotFound from '@/components/layout/NotFound';
 
 function WorksProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
   const project = projects.find(p => p.id === projectId);
 
+  useDocumentTitle(project?.title ?? 'Not Found');
+
   if (!project) {
     return <NotFound />;
   }
 
+  const currentIndex = projects.findIndex(p => p.id === projectId);
+  const previous = currentIndex > 0 ? projects[currentIndex - 1] : undefined;
+  const next =
+    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : undefined;
+
   return (
     <PageContainer>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="mx-auto max-w-4xl px-6 py-16"
-      >
-        <motion.nav
-          variants={childrenVariants}
-          className="mb-8 flex items-center gap-2 text-sm"
-        >
-          <Link
-            to="/works"
-            className="font-dmmono text-sakura-accent hover:underline"
-          >
-            Works
-          </Link>
-          <TagChevronIcon
-            size={14}
-            weight="fill"
-            className="text-sakura-stone"
-          />
-          <span className="font-dmmono text-sakura-text">{project.title}</span>
-        </motion.nav>
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <ProjectHero project={project} />
 
-        <motion.div
-          variants={projectHeroVariants}
-          className="mb-8 overflow-hidden rounded-lg"
-        >
-          <img
-            src={project.image}
-            alt={project.imageAlt}
-            className="h-auto w-full object-cover"
-          />
-        </motion.div>
+        <div className="mt-12">
+          <EditorialDivider weight="light" />
+        </div>
 
-        <motion.h1
-          variants={projectMetaVariants}
-          className="font-jost mb-4 text-4xl font-bold"
-        >
-          {project.title}
-        </motion.h1>
+        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_280px] lg:gap-16">
+          <div>
+            <ProjectNarrative project={project} />
+          </div>
+          <div className="lg:sticky lg:top-8 lg:self-start">
+            <ProjectMetaSidebar project={project} />
+          </div>
+        </div>
 
-        {project.techStack && (
-          <motion.div variants={projectMetaVariants} className="mb-6">
-            <p className="font-dmmono text-sakura-cobble">
-              {project.techStack.join(' · ')}
-            </p>
-          </motion.div>
-        )}
+        {project.processSteps?.length || project.outcome ? (
+          <>
+            <div className="mt-12">
+              <EditorialDivider weight="light" />
+            </div>
+            <div className="mt-12">
+              <ProjectProcess
+                processSteps={project.processSteps}
+                outcome={project.outcome}
+              />
+            </div>
+          </>
+        ) : null}
 
-        <motion.div variants={projectMetaVariants}>
-          <p className="font-zenmaru text-sakura-text/80 mb-8 text-lg leading-relaxed whitespace-pre-line">
-            {project.description}
-          </p>
-        </motion.div>
+        <div className="mt-12">
+          <EditorialDivider weight="light" />
+        </div>
 
-        <motion.div
-          variants={projectMetaVariants}
-          className="flex flex-wrap gap-4"
-        >
-          {project.githubUrl && (
-            <AppLink
-              to={project.githubUrl}
-              className="border-sakura-stone/50 bg-sakura-card font-dmmono text-sakura-text hover:bg-sakura-surface inline-flex items-center gap-2 rounded-md border px-6 py-3 transition-colors"
-            >
-              <GithubLogoIcon weight="duotone" size={24} />
-              <span>View on GitHub</span>
-            </AppLink>
-          )}
-          {project.liveUrl && (
-            <AppLink
-              to={project.liveUrl}
-              className="bg-sakura-accent font-dmmono text-sakura-bg hover:bg-sakura-bloom inline-flex items-center gap-2 rounded-md px-6 py-3 transition-colors"
-            >
-              <span>Visit Live Site</span>
-            </AppLink>
-          )}
-          <AppLink
-            to="/works"
-            className="border-sakura-stone/50 bg-sakura-card font-dmmono text-sakura-text hover:bg-sakura-surface inline-flex items-center gap-2 rounded-md border px-6 py-3 transition-colors"
-          >
-            <ArrowLeftIcon size={20} weight="bold" />
-            <span>Back to Works</span>
-          </AppLink>
-        </motion.div>
-      </motion.div>
+        <div className="mt-12">
+          <ProjectOutcomes project={project} />
+        </div>
+
+        <div className="mt-12">
+          <EditorialDivider weight="light" />
+        </div>
+
+        <div className="mt-8">
+          <ProjectNav previous={previous} next={next} />
+        </div>
+      </div>
     </PageContainer>
   );
 }

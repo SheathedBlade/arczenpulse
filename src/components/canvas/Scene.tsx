@@ -53,11 +53,16 @@ const Scene = () => {
           role="img"
           aria-label="3D torus knot decorative element"
         >
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={0.3} />
           <pointLight position={[10, 10, 10]} />
           <mesh>
             <torusKnotGeometry args={[1, 0.3, 128, 16]} />
-            <meshStandardMaterial color="#C96478" wireframe />
+            <meshBasicMaterial
+              color="#c8b8bc"
+              wireframe
+              transparent
+              opacity={0.25}
+            />
           </mesh>
         </Canvas>
       </div>

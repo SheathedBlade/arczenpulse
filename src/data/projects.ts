@@ -2,6 +2,21 @@ import EndfieldThumb from '@/assets/images/endfield_thumbnail.png';
 import MachinationThumb from '@/assets/images/machination_thumb.webp';
 import NightWatchThumb from '@/assets/images/nightwatch_thumb.webp';
 
+export type ProjectType = 'tool' | 'game' | 'visual' | 'system';
+export type ProjectStatus = 'released' | 'ongoing' | 'prototype';
+export type ProjectLayout = 'hero' | 'wide' | 'stack' | 'standard';
+
+export interface ProjectGalleryItem {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface ProjectNote {
+  label: string;
+  text: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -13,6 +28,17 @@ export interface Project {
   liveUrl?: string;
   pinned?: boolean;
   year?: string;
+  type?: ProjectType;
+  status?: ProjectStatus;
+  blurb?: string;
+  layout?: ProjectLayout;
+  accentWord?: string;
+  longDescription?: string;
+  pullQuote?: string;
+  gallery?: ProjectGalleryItem[];
+  processSteps?: string[];
+  outcome?: string;
+  notes?: ProjectNote[];
 }
 
 export const projects: Project[] = [
@@ -27,7 +53,25 @@ export const projects: Project[] = [
     techStack: ['React', 'Elk.js', 'React Flow'],
     githubUrl: 'https://github.com/SheathedBlade/endfield-architect',
     pinned: true,
-    year: '2026'
+    year: '2026',
+    type: 'tool',
+    status: 'released',
+    blurb:
+      'Factory planning meets graph search — when games become systems problems',
+    layout: 'hero',
+    accentWord: 'Systems',
+    longDescription: `The core problem wasn't really about game mechanics — it was about constraint satisfaction. Given a set of production goals and a limited grid, what is the minimum number of facilities needed, and where should each one be placed to maximize throughput?\n\nThe first approach was brute force: try every combination. That broke down almost immediately once the grid grew beyond 4×4. The breakthrough came when I realized the problem had a tree structure — production chains form directed acyclic graphs, not arbitrary meshes. Once I switched to DFS for facility counting and A* for placement optimization, the solver ran in milliseconds even for complex layouts.\n\nReact Flow made the visualization side clean, but the real challenge was the data layer: translating between the game's internal facility model and a graph the solver could reason about. That translation layer took the most time to get right.`,
+    pullQuote:
+      'The breakthrough was realizing production chains form a tree structure — not an arbitrary mesh.',
+    processSteps: [
+      'Mapped game production mechanics to a formal constraint satisfaction problem',
+      'Implemented DFS tree search for optimal facility counting',
+      'Built A* pathfinding for placement optimization on constrained grid',
+      'Designed React Flow visualization layer with real-time feedback',
+      'Added Elk.js logging for production line efficiency analytics'
+    ],
+    outcome:
+      'A tool that takes seconds to solve layouts that would take hours to plan manually. Used by the Endfield community for optimizing late-game factory design.'
   },
   // {
   //   id: 'arc-studio',
@@ -76,7 +120,24 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/SheathedBlade/Nightwatch',
     liveUrl: 'https://sheathblade.itch.io/nightwatch',
     pinned: true,
-    year: '2023'
+    year: '2023',
+    type: 'game',
+    status: 'prototype',
+    blurb: 'Noir atmosphere and stealth mechanics — an unfinished case file',
+    layout: 'wide',
+    accentWord: 'Atmosphere',
+    longDescription: `The goal was atmosphere first, mechanics second. I wanted players to feel the weight of a rain-soaked cyberpunk city before they ever encountered a puzzle or enemy. Cinemachine gave me the camera control to direct attention precisely — where to look, when to look, how the environment frames the player.\n\nThe stealth mechanics are deliberately forgiving. This was a conscious choice: the prototype was scoped to prove the environment and narrative hook, not to ship a balanced stealth game. The guards have simple patrol logic, detection windows are wide, and the penalty for being seen is a quick restart rather than a systemic consequence.\n\nWhat didn't make it in: talking NPCs in the opening section, a post-game cutscene with recorded voicelines, and a more aggressive difficulty curve. Those were scoped out due to the college semester timeline, not design decisions.`,
+    pullQuote:
+      'Atmosphere first, mechanics second — every scene was lit to feel like a film still.',
+    processSteps: [
+      'Built environment in Unity using ProBuilder and Cinemachine for cinematic camera work',
+      'Implemented simple patrol AI with line-of-sight detection',
+      'Designed noir lighting using volumetric fog and custom point lights',
+      'Storyboarded opening sequence before implementing any mechanics',
+      'Cut NPC dialogue and post-game cutscene due to semester deadline'
+    ],
+    outcome:
+      'A vertical slice that proved the atmosphere and narrative hook. Community feedback highlighted the environment design as the standout element.'
   },
   {
     id: 'endless-machinations',
@@ -89,6 +150,23 @@ export const projects: Project[] = [
     techStack: ['Unity', 'C#', 'Aseprite'],
     liveUrl: 'https://sheathblade.itch.io/endless-machinations',
     pinned: true,
-    year: '2021'
+    year: '2021',
+    type: 'game',
+    status: 'released',
+    blurb: 'Solo-built automata warfare — sprite, code, and deadline reality',
+    layout: 'stack',
+    accentWord: 'Craft',
+    longDescription: `Solo development forces a particular kind of clarity. When you can't hand off the sprite work or the enemy AI to someone else, every decision has to be made with the whole project in mind. That constraint is what kept Endless Machinations coherent.\n\nAll sprites and tilesets were made in Aseprite — pixel art with a limited palette that tried to give each actor a readable silhouette. The automata protagonist needed to read as both mechanical and sympathetic. The enemy battalions needed to feel numerous and relentless without drowning the player in visual noise.\n\nThe wave system was a scope adjustment, not a design failure. The original plan had structured levels, but the solo timeline made that unrealistic. The wave format turned out to serve the game's rhythm well: escalation without requiring level design for each stage.`,
+    pullQuote:
+      'Every sprite had to earn its place — solo development means every pixel is a deliberate choice.',
+    processSteps: [
+      'Designed protagonist and enemy sprites in Aseprite with readable silhouettes',
+      'Built wave-based enemy spawning system with escalating reinforcement logic',
+      'Implemented actor state management for damage, health, and animation transitions',
+      'Composed game feel through hit-stop frames and screen-shake on impact',
+      'Scoped structured levels down to a 20-wave survival format under deadline pressure'
+    ],
+    outcome:
+      'A complete, playable prototype that shipped on itch.io. Community response was strongest around the sprite work and the weight of the combat feel.'
   }
 ];
