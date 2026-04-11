@@ -23,3 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 .tanstack
+
+# Agents / AI tooling
+.agents
+.claude
+.codex
+.cursor
+.gemini
+.zed
+opencode.json
+.mcp.json
+config

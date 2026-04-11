@@ -12,8 +12,12 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
     { to, onClick, className, children, showNewTabIndicator, ...props },
     ref
   ) => {
+    const isAssetFile =
+      typeof to === 'string' && /\.[a-z0-9]+($|\?|#)/i.test(to);
     const isInternal =
-      typeof to === 'string' && (to.startsWith('/') || to.startsWith('#'));
+      !isAssetFile &&
+      typeof to === 'string' &&
+      (to.startsWith('/') || to.startsWith('#'));
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
       const isLeftClick = e.button === 0;
@@ -46,8 +50,8 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
       );
     }
     return (
-      <Link
-        to={to}
+      <a
+        href={to as string}
         ref={ref}
         target="_blank"
         rel="noopener noreferrer"
@@ -55,7 +59,7 @@ const AppLink = forwardRef<HTMLAnchorElement, AppLinkProps>(
         {...props}
       >
         {content}
-      </Link>
+      </a>
     );
   }
 );

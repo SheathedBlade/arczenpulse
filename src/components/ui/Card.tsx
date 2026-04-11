@@ -1,4 +1,5 @@
-import { CSSProperties, forwardRef, ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
+import ImageWithSkeleton from '@/components/ui/ImageWithSkeleton';
 
 interface CardProps {
   title: string;
@@ -6,7 +7,6 @@ interface CardProps {
   image?: string;
   imageAlt?: string;
   className?: string;
-  style?: CSSProperties;
   category?: string;
   year?: string;
   techStack?: string[];
@@ -20,7 +20,6 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       image,
       imageAlt,
       className,
-      style,
       category,
       year,
       techStack
@@ -32,17 +31,15 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         className={`bg-sakura-card hoverable-card z-10 flex flex-col overflow-hidden rounded-md p-4 ${className ?? ''}`}
-        style={style}
         ref={ref}
       >
         {image && (
           <div className="mb-4 aspect-video overflow-hidden rounded-sm">
-            <img
+            <ImageWithSkeleton
               src={image}
               alt={imageAlt ?? title}
-              loading="lazy"
-              width={384}
-              className="h-full w-full cursor-pointer object-cover"
+              className="h-full"
+              imgClassName="cursor-pointer"
             />
           </div>
         )}
@@ -63,7 +60,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
             {techStack.slice(0, 3).map(tag => (
               <span
                 key={tag}
-                className="font-dmmono text-sakura-cobble border-sakura-stone/30 bg-sakura-day-bg rounded-sm border px-1.5 py-0.5 text-xs"
+                className="font-dmmono text-sakura-cobble bg-sakura-bg border-sakura-stone/30 rounded-sm border px-1.5 py-0.5 text-xs"
               >
                 {tag}
               </span>

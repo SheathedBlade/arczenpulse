@@ -4,11 +4,13 @@ import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
 import { GithubLogoIcon, ListIcon, XIcon } from '@phosphor-icons/react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import AppLink from '../ui/AppLink';
 
 const navItems = [
+  { name: 'Work', link: '/works' },
+  { name: 'Experience', link: '/experience' },
   { name: 'About', link: '/about' },
-  { name: 'Works', link: '/works' },
   {
     name: 'Source',
     link: 'https://github.com/SheathedBlade/arc-studio',
@@ -21,6 +23,9 @@ const Navbar = () => {
   const toggleMobileMenu = () => setMobileMenu(prev => !prev);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname.startsWith(path);
 
   // Closes mobile menu when window size is above mobile size
   useEffect(() => {
@@ -99,9 +104,9 @@ const Navbar = () => {
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
-            initial={{ x: '-100%' }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
+            exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
             className="bg-sakura-surface/95 fixed inset-x-0 top-20 bottom-0 z-40 flex flex-col overflow-y-auto pt-8 backdrop-blur-sm transition-colors"
           >
@@ -131,41 +136,45 @@ const Navbar = () => {
         )}
       </AnimatePresence>
       <nav
-        className="bg-sakura-surface/80 ease border-sakura-stone/20 sticky top-0 z-50 flex h-20 border-b backdrop-blur-sm transition-colors"
+        className="bg-sakura-surface/60 sticky top-0 z-50 backdrop-blur-sm"
         aria-label="main navigation"
       >
-        <div className="flex items-center pl-4 md:flex-1 md:pl-0">
-          <button
-            onClick={toggleMobileMenu}
-            aria-expanded={mobileMenu}
-            aria-controls="mobile-menu"
-            aria-label={mobileMenu ? 'Close menu' : 'Open menu'}
-            className="text-sakura-text hover:bg-sakura-bloom/70 focus:ring-sakura-accent flex items-center justify-center rounded-md p-2 transition-colors focus:ring-2 focus:outline-none md:hidden"
-          >
-            {mobileMenu ? (
-              <XIcon aria-hidden="true" size={24} weight="bold" />
-            ) : (
-              <ListIcon aria-hidden="true" size={24} weight="bold" />
-            )}
-          </button>
-        </div>
-        <div className="flex flex-1 items-center justify-center gap-4 md:flex-initial md:justify-start">
+        <div className="flex h-16 items-center justify-between">
+          {/* Brand — far left */}
           <AppLink
             to="/"
-            className="flex h-full shrink-0 items-center"
+            className="flex shrink-0 items-center"
             aria-label="Home"
           >
-            <Brand animation="staggerBack" />
+            <Brand animation="staggerForward" />
           </AppLink>
-          <ul className="hidden h-full flex-1 list-none items-center gap-8 md:flex md:gap-4">
-            {navItems.map(item => (
-              <NavItem key={item.name} item={item} />
-            ))}
-          </ul>
-        </div>
-        <div className="hidden flex-1 md:flex" />
-        <div className="flex items-center pr-4">
-          <ThemeSwitcher />
+
+          {/* Nav items — right aligned, next to theme switcher */}
+          <div className="flex items-center gap-6">
+            <div className="hidden items-center gap-8 md:flex">
+              {navItems.map(item => (
+                <NavItem
+                  key={item.name}
+                  item={item}
+                  isActive={isActive(item.link)}
+                />
+              ))}
+            </div>
+            <ThemeSwitcher />
+            <button
+              onClick={toggleMobileMenu}
+              aria-expanded={mobileMenu}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenu ? 'Close menu' : 'Open menu'}
+              className="text-sakura-text hover:bg-sakura-bloom/70 focus:ring-sakura-accent mr-2 flex items-center justify-center rounded-md p-2 transition-colors focus:ring-2 focus:outline-none md:hidden"
+            >
+              {mobileMenu ? (
+                <XIcon aria-hidden="true" size={24} weight="bold" />
+              ) : (
+                <ListIcon aria-hidden="true" size={24} weight="bold" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
     </>

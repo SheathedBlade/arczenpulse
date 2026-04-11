@@ -11,7 +11,7 @@ const ExperienceTechSection = () => {
       transition={{ duration: 0.5 }}
       className="relative z-10 px-4 py-12"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:flex-row lg:gap-12">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row lg:gap-16">
         <div className="w-full lg:w-7/12">
           <Timeline />
         </div>
