@@ -10,11 +10,7 @@ const EditorialDivider = ({
   const thickness =
     weight === 'light' ? 'h-px' : weight === 'heavy' ? 'h-0.5' : 'h-px';
   const opacity =
-    weight === 'light'
-      ? 'opacity-30'
-      : weight === 'heavy'
-        ? 'opacity-60'
-        : 'opacity-40';
+    weight === 'light' ? 'opacity-70' : weight === 'heavy' ? 'opacity-90' : '';
 
   return (
     <div
