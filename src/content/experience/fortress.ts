@@ -1,0 +1,6 @@
+export const fortressNarrative: string[] = [
+  'This was my second role as a Cybersecurity Analyst, and though I was not part of the SecOps team, I was able to take on more responsibilities and work on more complex projects.',
+  'I developed a web application that integrates with the Tenable API (a cybersecurity product) to track internal IT assets and vulnerabilities. This was developed using ASP.NET for the frontend, Python for the backend, and using SQL to connect to the company IT database. The use case was to have a centralized dashboard for the IT and SecOps teams to keep tabs on company assets and to remediate any vulnerabilities that may arise.',
+  'I also created and implemented a solution to track the point-in-time user permissions of SharePoint objects, using custom PowerShell scripts. This was a solution to a problem that the company had been facing for a while, and it was well-received by the IT team.',
+  'All of this converged to a task to improve the integration of ServiceNow with the company ecosystem by implementing various automations to streamline alerts handling, connecting existing products with my new applications. This was the culmination of my work at not only Fortress, but also my first cybersecurity role at Jefferies.'
+];

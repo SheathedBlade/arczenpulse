@@ -9,8 +9,8 @@ function ExperiencePage() {
   return (
     <PageContainer>
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
         className="mx-auto max-w-6xl px-6 py-16"

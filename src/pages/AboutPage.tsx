@@ -11,6 +11,12 @@ import {
   ElsewhereLinks,
   AboutHeroBanner
 } from '@/components/about';
+import {
+  aboutIntroParagraphs,
+  aboutOutroParagraphs,
+  currentStatusText,
+  luciradisLink
+} from '@/content/about';
 
 function AboutPage() {
   useDocumentTitle('About');
@@ -42,29 +48,11 @@ function AboutPage() {
               variants={childrenVariants}
               className="font-zenmaru text-sakura-text/80 space-y-5 text-base leading-relaxed md:text-lg"
             >
+              {aboutIntroParagraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
               <p>
-                I&apos;m Andrew Chuah, a software engineer based out of
-                Columbia, Maryland. I specialize in making functional, yet
-                unique designs come to life on the web, where the choices being
-                made are rooted in intention. I started out as someone who took
-                an extreme interest in graphic design, and that interest
-                transformed many times over; from graphic design, to game
-                development, and finally to web development, where I&apos;m able
-                to create products that are not only utilitarian, but also
-                unique and full of character.
-              </p>
-              <p>
-                Outside of work, I keep my hands busy with electronics, digital
-                art, and 3D modeling. I love traveling to experience how other
-                cultures build and express their worlds; some of my favorite
-                trips have been through Malaysia, Thailand, and Japan. I also do
-                a lot of creative writing, which you can explore at my
-                worldbuilding site.{' '}
-                <span className="text-sakura-accent font-medium">
-                  Luciradis
-                </span>
-                . If you want to reach out or want to chat, feel free to send me
-                a message!
+                {luciradisLink}. {aboutOutroParagraphs[0]}
               </p>
             </motion.div>
 
@@ -91,7 +79,7 @@ function AboutPage() {
             <EditorialDivider weight="light" />
           </motion.div>
 
-          <CurrentStatusBlock description="Building Endfield Architect, a production planner and simulator for Arknights: Endfield." />
+          <CurrentStatusBlock description={currentStatusText} />
 
           <motion.div variants={childrenVariants} className="pt-4">
             <p className="font-zenmaru text-sakura-cobble text-sm">

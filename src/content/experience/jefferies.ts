@@ -1,0 +1,5 @@
+export const jefferiesNarrative: string[] = [
+  'This was my first job during college (using their Co-Op program), and I worked as a cybersecurity analyst on the Security Operations team. Though that was the formal title, my work role leaned more on the developer side, in charge of creating automations for the products the SecOps team was utilizing.',
+  'My work heavily revolved around the ServiceNow platform. The team triaged help desk tickets via ServiceNow, and I was responsible for integrating new ServiceNow workflows for actioning on AWS security alerts and events. I also developed a security feature to scan Google Chrome extensions on every company workstation and restrict the installation and use of malicious or suspicious extensions. This was developed using Python, and I also integrated this feature into the ServiceNow ticketing workflow for SOC review and approval.',
+  'Overall, this was a great first work experience, and it taught me a lot about SecOps and numerous ways to utilize Python scripting to complete difficult tasks.'
+];

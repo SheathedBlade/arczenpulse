@@ -5,8 +5,8 @@ import { motion } from 'motion/react';
 const ExperienceTechSection = () => {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className="relative z-10 px-4 py-12"

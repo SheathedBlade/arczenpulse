@@ -7,7 +7,7 @@ interface ProjectNarrativeProps {
 }
 
 const ProjectNarrative = ({ project }: ProjectNarrativeProps) => {
-  const body = project.longDescription ?? project.description;
+  const body = project.longDescription ?? [project.description];
 
   return (
     <motion.div
@@ -20,7 +20,7 @@ const ProjectNarrative = ({ project }: ProjectNarrativeProps) => {
       {project.pullQuote && <EditorialPullQuote quote={project.pullQuote} />}
 
       <div className="space-y-4">
-        {body.split('\n\n').map((para, i) => (
+        {body.map((para, i) => (
           <p
             key={i}
             className="font-zenmaru text-sakura-text/80 text-lg leading-relaxed"
