@@ -78,12 +78,12 @@ const TechCategorySection = ({
       <div className="mb-4 flex items-center gap-3 lg:justify-start">
         <motion.span
           variants={lineVariants}
-          className="bg-sakura-accent block h-px"
+          className="bg-sakura-accent/50 block h-px"
           style={{ width: '2rem' }}
         />
         <motion.span
           variants={labelVariants}
-          className="label-editorial text-sakura-accent"
+          className="font-dmmono text-sakura-cobble text-xs tracking-widest uppercase"
         >
           {label}
         </motion.span>
@@ -94,24 +94,16 @@ const TechCategorySection = ({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-3 gap-2 sm:grid-cols-4"
+        className="flex flex-wrap gap-x-4 gap-y-1"
       >
-        {skills.map(({ name, Icon }) => (
-          <motion.div
+        {skills.map(({ name }) => (
+          <motion.span
             key={name}
             variants={itemVariants}
-            className="group border-sakura-stone/20 bg-sakura-card/50 hover:border-sakura-accent/40 hover:bg-sakura-card flex flex-col items-center justify-center rounded-sm border p-3"
+            className="font-dmmono text-sakura-stone text-xs"
           >
-            <Icon
-              aria-hidden="true"
-              size={24}
-              weight="duotone"
-              className="text-sakura-accent mb-1.5"
-            />
-            <span className="font-dmmono text-sakura-text text-center text-xs">
-              {name}
-            </span>
-          </motion.div>
+            {name}
+          </motion.span>
         ))}
       </motion.div>
     </motion.div>

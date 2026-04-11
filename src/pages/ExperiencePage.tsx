@@ -44,8 +44,7 @@ function ExperiencePage() {
               transition={{ duration: 0.4, delay: 0.15 }}
               className="font-zenmaru text-sakura-cobble max-w-sm text-base md:text-right md:text-lg"
             >
-              A record of work, education, and the occasional project. Each role
-              shaped how I think about building things.
+              Where I've been, what I learned, and what I'm still figuring out.
             </motion.p>
           </div>
         </motion.header>
@@ -62,7 +61,7 @@ function ExperiencePage() {
           className="mx-auto mt-16 max-w-2xl text-center"
         >
           <p className="font-zenmaru text-sakura-cobble text-sm md:text-base">
-            Still building. Still learning. The path continues.
+            The path continues.
           </p>
         </motion.div>
       </motion.div>

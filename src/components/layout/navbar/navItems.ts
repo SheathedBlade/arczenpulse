@@ -10,6 +10,7 @@ export const navItems: NavItem[] = [
   { name: 'Work', link: '/works' },
   { name: 'Experience', link: '/experience' },
   { name: 'About', link: '/about' },
+  { name: 'Craft', link: '/behind-the-curtain' },
   {
     name: 'Source',
     link: 'https://github.com/SheathedBlade/arc-studio',

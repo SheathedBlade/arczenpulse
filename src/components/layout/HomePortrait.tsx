@@ -25,7 +25,7 @@ const HomePortrait = ({
         whileInView={{ clipPath: 'inset(0% 0 0 0)' }}
         viewport={{ once: true }}
         transition={{ duration: 1.0, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-        className="relative overflow-hidden shadow-[0_8px_40px_-12px_rgba(58,40,48,0.35)]"
+        className="relative aspect-[3/4] overflow-hidden shadow-[0_8px_40px_-12px_rgba(58,40,48,0.35)]"
       >
         <ImageWithSkeleton
           src={portrait}

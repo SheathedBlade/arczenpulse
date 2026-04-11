@@ -1,5 +1,5 @@
 export type ProjectType = 'tool' | 'game' | 'visual' | 'system';
-export type ProjectStatus = 'released' | 'ongoing' | 'prototype';
+export type ProjectStatus = 'Released' | 'Ongoing' | 'Prototype';
 export type ProjectLayout = 'hero' | 'wide' | 'stack' | 'standard';
 
 export interface ProjectGalleryItem {

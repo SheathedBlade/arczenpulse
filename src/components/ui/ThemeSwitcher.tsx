@@ -1,5 +1,4 @@
 import { MoonStarsIcon, SunIcon } from '@phosphor-icons/react';
-import { AnimatePresence, motion } from 'motion/react';
 import { useTheme } from './ThemeProvider';
 
 const ThemeSwitcher = () => {
@@ -10,33 +9,29 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.button
-        key={isDark ? 'dark' : 'light'}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 20, opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        aria-label={isDark ? 'Switch to Light theme' : 'Switch to Dark theme'}
-        onClick={toggleTheme}
-        className="bg-sakura-accent hover:bg-sakura-bloom ease inline-block rounded-md p-1.5 transition-colors duration-150 md:mr-4"
-      >
-        {isDark ? (
-          <SunIcon
-            aria-hidden="true"
-            size={32}
-            className="text-sakura-day-text"
-          />
-        ) : (
-          <MoonStarsIcon
-            aria-hidden="true"
-            size={32}
-            className="text-sakura-night-text"
-            weight="fill"
-          />
-        )}
-      </motion.button>
-    </AnimatePresence>
+    <button
+      aria-label={isDark ? 'Switch to Light mode' : 'Switch to Dark mode'}
+      onClick={toggleTheme}
+      className="bg-sakura-accent hover:bg-sakura-bloom ease mr-4 inline-flex items-center gap-2 rounded-md px-2 py-1.5 transition-colors duration-150"
+    >
+      {isDark ? (
+        <SunIcon
+          aria-hidden="true"
+          size={18}
+          className="text-sakura-day-text"
+        />
+      ) : (
+        <MoonStarsIcon
+          aria-hidden="true"
+          size={18}
+          className="text-sakura-night-text"
+          weight="fill"
+        />
+      )}
+      <span className="font-dmmono text-sakura-bg inline w-12 text-center text-xs tracking-widest uppercase">
+        {isDark ? 'Light' : 'Dark'}
+      </span>
+    </button>
   );
 };
 

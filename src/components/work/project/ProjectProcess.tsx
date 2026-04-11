@@ -34,15 +34,15 @@ const ProjectProcess = ({ processSteps, outcome }: ProjectProcessProps) => {
                   delay: i * 0.06,
                   ease: 'easeOut'
                 }}
-                className="group flex items-start gap-3"
+                className="group flex items-center gap-3"
               >
                 <CheckCircleIcon
                   size={16}
                   weight="fill"
-                  className="text-sakura-accent mt-0.5 shrink-0"
+                  className="text-sakura-accent shrink-0"
                   aria-hidden="true"
                 />
-                <p className="font-zenmaru text-sakura-text/80 text-base leading-relaxed">
+                <p className="font-zenmaru text-sakura-text/90 text-base leading-relaxed">
                   {step}
                 </p>
               </motion.div>
@@ -52,11 +52,11 @@ const ProjectProcess = ({ processSteps, outcome }: ProjectProcessProps) => {
       )}
 
       {outcome && (
-        <div className="border-sakura-accent/50 rounded-md border-l-4 pl-5">
-          <p className="label-editorial text-sakura-cobble mb-2 text-xs tracking-widest uppercase">
+        <div className="border-sakura-accent/40 border-t pt-6">
+          <p className="label-editorial text-sakura-cobble mb-3 text-xs tracking-widest uppercase">
             Outcome
           </p>
-          <p className="font-zenmaru text-sakura-text/80 text-base leading-relaxed">
+          <p className="font-zenmaru text-sakura-text/90 text-base leading-relaxed">
             {outcome}
           </p>
         </div>

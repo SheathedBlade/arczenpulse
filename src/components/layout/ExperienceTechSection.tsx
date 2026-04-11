@@ -16,6 +16,12 @@ const ExperienceTechSection = () => {
           <Timeline />
         </div>
         <div className="w-full lg:w-5/12">
+          <div className="border-sakura-stone/20 mb-6 border-t pt-6">
+            <p className="label-editorial text-sakura-accent mb-2">Stack</p>
+            <h2 className="font-jost text-sakura-text text-2xl font-bold tracking-wide">
+              What I work with
+            </h2>
+          </div>
           <TechStack />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import banner from '@/assets/images/placeholder_me.webp';
 import EditorialDivider from '@/components/ui/EditorialDivider';
 import PageContainer from '@/components/ui/PageContainer';
+import AppLink from '@/components/ui/AppLink';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { childrenVariants, containerVariants } from '@/data/motionVariants';
 import { motion } from 'motion/react';
@@ -46,7 +47,7 @@ function AboutPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_200px] md:gap-8">
             <motion.div
               variants={childrenVariants}
-              className="font-zenmaru text-sakura-text/80 space-y-5 text-base leading-relaxed md:text-lg"
+              className="font-zenmaru text-sakura-text/90 space-y-5 text-base leading-relaxed md:text-lg"
             >
               {aboutIntroParagraphs.map((para, i) => (
                 <p key={i}>{para}</p>
@@ -84,6 +85,14 @@ function AboutPage() {
           <motion.div variants={childrenVariants} className="pt-4">
             <p className="font-zenmaru text-sakura-cobble text-sm">
               Thanks for reading.
+            </p>
+            <p className="font-dmmono text-sakura-stone mt-3 text-xs tracking-wide">
+              <AppLink
+                to="/behind-the-curtain"
+                className="hover:text-sakura-accent transition-colors"
+              >
+                How this site was made →
+              </AppLink>
             </p>
           </motion.div>
         </div>

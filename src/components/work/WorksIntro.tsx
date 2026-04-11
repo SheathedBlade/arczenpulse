@@ -20,7 +20,7 @@ const WorksIntro = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.05 }}
-            className="font-jost text-sakura-text text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl"
+            className="font-jost text-sakura-text text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
             Things I&apos;ve built
             <br />
@@ -33,7 +33,7 @@ const WorksIntro = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          className="font-zenmaru text-sakura-cobble max-w-sm text-base md:text-right md:text-lg"
+          className="font-zenmaru text-sakura-cobble/90 max-w-sm text-base md:text-right md:text-lg"
         >
           A handful of projects — some finished, some ongoing, all intentional.
           Tools, games, and the occasional experiment.

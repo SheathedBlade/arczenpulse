@@ -23,7 +23,7 @@ const ProjectNarrative = ({ project }: ProjectNarrativeProps) => {
         {body.map((para, i) => (
           <p
             key={i}
-            className="font-zenmaru text-sakura-text/80 text-lg leading-relaxed"
+            className="font-zenmaru text-sakura-text/90 text-lg leading-relaxed"
           >
             {para.trim()}
           </p>

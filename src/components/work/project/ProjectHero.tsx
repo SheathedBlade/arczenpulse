@@ -16,15 +16,35 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
       transition={{ duration: 0.4 }}
       className="relative"
     >
-      <div className="mb-6">
-        <Link
-          to="/works"
-          className="font-dmmono text-sakura-cobble hover:text-sakura-accent inline-flex items-center gap-2 text-xs transition-colors"
-        >
-          <ArrowLeftIcon size={14} weight="bold" aria-hidden="true" />
-          All Work
-        </Link>
-      </div>
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex items-center gap-2">
+          <li>
+            <Link
+              to="/works"
+              className="font-dmmono text-sakura-cobble hover:text-sakura-accent inline-flex items-center gap-2 text-xs transition-colors"
+            >
+              <ArrowLeftIcon size={14} weight="bold" aria-hidden="true" />
+              Work
+            </Link>
+          </li>
+          <li>
+            <span
+              className="font-dmmono text-sakura-stone text-xs"
+              aria-hidden="true"
+            >
+              /
+            </span>
+          </li>
+          <li>
+            <span
+              className="font-dmmono text-sakura-stone text-xs"
+              aria-current="page"
+            >
+              {project.title}
+            </span>
+          </li>
+        </ol>
+      </nav>
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -33,19 +53,14 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
         className="mb-8"
       >
         <div className="mb-3 flex flex-wrap items-center gap-3">
-          {project.accentWord && (
-            <span className="font-dmmono text-sakura-accent text-xs tracking-widest uppercase">
-              {project.accentWord}
-            </span>
-          )}
           {project.type && (
-            <span className="bg-sakura-surface border-sakura-stone/30 font-dmmono text-sakura-cobble rounded-sm border px-2 py-0.5 text-xs tracking-widest uppercase">
+            <span className="font-dmmono text-sakura-cobble text-xs tracking-widest uppercase">
               {project.type}
             </span>
           )}
-          {project.status && (
-            <span className="bg-sakura-surface border-sakura-stone/30 font-dmmono text-sakura-stone rounded-sm border px-2 py-0.5 text-xs tracking-widest uppercase">
-              {project.status}
+          {project.year && (
+            <span className="font-dmmono text-sakura-stone text-xs tracking-widest">
+              {project.year}
             </span>
           )}
         </div>
@@ -72,11 +87,9 @@ const ProjectHero = ({ project }: ProjectHeroProps) => {
             src={project.image}
             alt={project.imageAlt}
             priority
-            imgClassName="animate-ken-burns"
             className="h-full"
           />
           <div className="from-sakura-bg/40 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
-          <div className="from-sakura-bg/20 absolute inset-0 z-10 bg-linear-to-b via-transparent to-transparent" />
         </div>
       </motion.div>
     </motion.div>
