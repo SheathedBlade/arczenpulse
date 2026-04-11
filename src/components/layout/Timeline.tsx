@@ -1,8 +1,18 @@
+import { useState } from 'react';
 import { ExpandableTimelineEntry } from '@/components/experience';
 import { experiences } from '@/data/experience';
 import { motion } from 'motion/react';
 
 const Timeline = () => {
+  const [enteredIndices, setEnteredIndices] = useState<Set<number>>(new Set());
+
+  const handleEntered = (index: number) => {
+    setEnteredIndices(prev => {
+      if (prev.has(index)) return prev;
+      return new Set([...prev, index]);
+    });
+  };
+
   return (
     <div className="mx-auto mb-10 max-w-3xl lg:mr-12">
       <motion.h2
@@ -25,6 +35,8 @@ const Timeline = () => {
             entry={entry}
             index={i}
             isLast={i === experiences.length - 1}
+            showConnector={enteredIndices.has(i + 1)}
+            onEntered={handleEntered}
           />
         ))}
       </div>

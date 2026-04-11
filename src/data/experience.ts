@@ -14,7 +14,7 @@ export interface ExperienceItem {
   skills?: string[];
   notes?: string[];
   highlight?: boolean;
-  era?: string;
+  defaultExpanded?: boolean;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -28,7 +28,7 @@ export const experiences: ExperienceItem[] = [
       'Developed and maintained a specialized, mission-critical, enterprise compliance product to ensure 24/7 uptime for our customers. Transitioned said product to AWS Cloud services by migrating existing systems to currently available AWS services.',
     skills: ['TypeScript', 'React', 'AWS', 'Terraform', 'Docker'],
     highlight: true,
-    era: 'Now'
+    defaultExpanded: true
   },
   {
     date: 'May 2023',
@@ -39,15 +39,7 @@ export const experiences: ExperienceItem[] = [
     description:
       'Graduated with a major in Computer Science, and a minor in Visual Arts & Technology',
     extendedDesc: stevensNarrative,
-    skills: [
-      'Python',
-      'C++',
-      'Java',
-      'Unity',
-      'Web Development',
-      'Game Design'
-    ],
-    era: 'Foundation'
+    skills: ['Python', 'C++', 'Java', 'Unity', 'Web Development', 'Game Design']
   },
   {
     date: 'January 2022 - July 2022',
@@ -58,8 +50,7 @@ export const experiences: ExperienceItem[] = [
     description:
       'Developed a web application that integrates with Tenable API to track internal IT assets and vulnerabilities using ASP.NET, Python, and SQL.',
     extendedDesc: fortressNarrative,
-    skills: ['ASP.NET', 'Python', 'SQL', 'PowerShell', 'ServiceNow', 'Tenable'],
-    era: 'Growth'
+    skills: ['ASP.NET', 'Python', 'SQL', 'PowerShell', 'ServiceNow', 'Tenable']
   },
   {
     date: 'June 2021 - August 2021',
@@ -70,8 +61,7 @@ export const experiences: ExperienceItem[] = [
     description:
       "Developed a customer portal and redesigned the UI/UX for the company's zero trust product. Refactored the codebase from ExtJS to React, improving maintainability and user experience.",
     extendedDesc: truefortNarrative,
-    skills: ['React', 'ExtJS', 'TypeScript', 'UI/UX Design'],
-    era: 'Exploration'
+    skills: ['React', 'ExtJS', 'TypeScript', 'UI/UX Design']
   },
   {
     date: 'January 2020 - December 2020',
@@ -82,7 +72,6 @@ export const experiences: ExperienceItem[] = [
     description:
       'Developed a security feature using Python to scan Google Chrome extensions on every workstation and restrict the use of malicious or suspicious extensions. Integrated this feature into the ServiceNow ticketing workflow for SOC review and approval.',
     extendedDesc: jefferiesNarrative,
-    skills: ['Python', 'ServiceNow', 'AWS', 'Security Automation'],
-    era: 'Origin'
+    skills: ['Python', 'ServiceNow', 'AWS', 'Security Automation']
   }
 ];

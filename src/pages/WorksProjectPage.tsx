@@ -12,6 +12,7 @@ import {
   ProjectNav
 } from '@/components/work/project';
 import NotFound from '@/components/layout/NotFound';
+import { ArrowUpIcon } from '@phosphor-icons/react';
 
 function WorksProjectPage() {
   const { projectId } = useParams<{ projectId: string }>();
@@ -74,6 +75,16 @@ function WorksProjectPage() {
 
         <div className="mt-8">
           <ProjectNav previous={previous} next={next} />
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <a
+            href="#main-content"
+            className="font-dmmono text-sakura-cobble hover:text-sakura-accent inline-flex items-center gap-1.5 text-xs tracking-widest uppercase transition-colors"
+          >
+            <ArrowUpIcon size={12} weight="bold" aria-hidden="true" />
+            Back to top
+          </a>
         </div>
       </div>
     </PageContainer>

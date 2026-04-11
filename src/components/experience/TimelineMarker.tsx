@@ -16,9 +16,15 @@ interface TimelineMarkerProps {
   type: ExperienceItem['type'];
   highlight?: boolean;
   isLast: boolean;
+  showConnector?: boolean;
 }
 
-const TimelineMarker = ({ type, highlight, isLast }: TimelineMarkerProps) => {
+const TimelineMarker = ({
+  type,
+  highlight,
+  isLast,
+  showConnector
+}: TimelineMarkerProps) => {
   const Icon = iconMap[type] ?? FlowerIcon;
 
   return (
@@ -40,7 +46,18 @@ const TimelineMarker = ({ type, highlight, isLast }: TimelineMarkerProps) => {
           />
         </div>
       </motion.div>
-      {!isLast && <div className="bg-sakura-stone/50 w-px flex-1" />}
+      {!isLast && (
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={showConnector ? { scaleY: 1 } : { scaleY: 0 }}
+          transition={{
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1]
+          }}
+          style={{ transformOrigin: 'top' }}
+          className="bg-sakura-stone/50 w-px flex-1"
+        />
+      )}
     </div>
   );
 };

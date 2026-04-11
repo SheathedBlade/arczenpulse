@@ -7,26 +7,26 @@ interface EditorialPullQuoteProps {
 const EditorialPullQuote = ({ quote }: EditorialPullQuoteProps) => {
   return (
     <motion.blockquote
-      initial={{ opacity: 0, y: 12 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="relative my-12 py-8 md:my-16"
+      className="relative my-4 py-5 md:my-6"
     >
       <span
         aria-hidden="true"
-        className="font-jost text-sakura-accent/30 absolute -top-2 -left-4 text-[6rem] leading-none md:-left-8 md:text-[8rem]"
+        className="font-jost text-sakura-accent/20 absolute -top-3 left-0 text-5xl leading-none md:text-6xl"
       >
         &ldquo;
       </span>
 
-      <p className="font-dmmono text-sakura-text relative z-10 px-6 text-2xl leading-snug tracking-tight md:px-10 md:text-3xl lg:text-4xl">
+      <p className="font-jost text-sakura-text relative z-10 px-6 text-xl leading-snug tracking-tight md:text-2xl lg:text-3xl">
         {quote}
       </p>
 
       <span
         aria-hidden="true"
-        className="font-jost text-sakura-accent/30 absolute right-0 -bottom-8 text-[6rem] leading-none md:text-[8rem]"
+        className="font-jost text-sakura-accent/20 absolute right-0 -bottom-3 text-5xl leading-none md:text-6xl"
       >
         &rdquo;
       </span>

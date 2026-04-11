@@ -14,7 +14,11 @@ import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const toggleMobileMenu = () => setMobileMenu(prev => !prev);
-  const closeMobileMenu = () => setMobileMenu(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const closeMobileMenu = () => {
+    setMobileMenu(false);
+    menuToggleRef.current?.focus();
+  };
   const menuRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const location = useLocation();
@@ -82,6 +86,7 @@ const Navbar = () => {
             </div>
             <ThemeSwitcher />
             <button
+              ref={menuToggleRef}
               onClick={toggleMobileMenu}
               aria-expanded={mobileMenu}
               aria-controls="mobile-menu"

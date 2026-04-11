@@ -5,12 +5,14 @@ interface TimelineEntryHeaderProps {
   entry: ExperienceItem;
   isExpanded: boolean;
   onToggle: () => void;
+  detailsId: string;
 }
 
 const TimelineEntryHeader = ({
   entry,
   isExpanded,
-  onToggle
+  onToggle,
+  detailsId
 }: TimelineEntryHeaderProps) => {
   const hasExtended = Boolean(entry.extendedDesc);
 
@@ -21,36 +23,36 @@ const TimelineEntryHeader = ({
           <p className="font-dmmono text-sakura-accent text-xs tracking-widest">
             {entry.date}
           </p>
-          {entry.era && (
-            <span className="bg-sakura-accent/10 font-dmmono text-sakura-accent rounded px-1.5 py-0.5 text-[10px] tracking-wider uppercase">
-              {entry.era}
-            </span>
-          )}
         </div>
         <h3 className="font-jost text-sakura-text mt-1 text-lg font-bold tracking-wide md:text-xl">
           {entry.title}
         </h3>
         <p className="font-dmmono text-sakura-cobble text-sm">
           {entry.subtitle}
-          {entry.location && (
-            <span className="text-sakura-stone"> · {entry.location}</span>
-          )}
         </p>
+        {entry.location && (
+          <p className="font-dmmono text-sakura-stone text-sm">
+            {entry.location}
+          </p>
+        )}
       </div>
 
       {hasExtended && (
         <button
           onClick={onToggle}
-          className="group border-sakura-stone/30 hover:border-sakura-accent hover:bg-sakura-accent/10 mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border transition-all"
+          aria-controls={detailsId}
+          className="group border-sakura-stone/30 hover:border-sakura-accent hover:bg-sakura-accent/10 mt-1 flex items-center gap-1.5 rounded-sm border px-2 py-1 transition-all"
           aria-expanded={isExpanded}
           aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
         >
+          <span className="font-dmmono text-sakura-stone group-hover:text-sakura-accent text-xs tracking-widest uppercase transition-colors">
+            {isExpanded ? 'Less' : 'More'}
+          </span>
           <CaretDownIcon
-            size={14}
+            size={12}
             weight="bold"
-            className={`text-sakura-stone group-hover:text-sakura-accent transition-transform duration-200 ${
-              isExpanded ? 'rotate-180' : ''
-            }`}
+            className={`text-sakura-stone group-hover:text-sakura-accent transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+            aria-hidden="true"
           />
         </button>
       )}

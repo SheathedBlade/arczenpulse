@@ -17,7 +17,9 @@ export {
   monoLabelVariants,
   linkHoverVariants,
   linkDescriptionVariants,
-  sectionRevealVariants
+  sectionRevealVariants,
+  chineseCharVariants,
+  chineseCharContainerVariants
 } from './motion/shared';
 export {
   projectCardImageVariants,

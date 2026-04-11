@@ -34,7 +34,7 @@ const NavItem = ({ item, isActive }: NavItemProps) => {
         )}
         <span className="relative">{item.name}</span>
         <motion.div
-          className="bg-sakura-accent absolute right-0 bottom-0 left-0 h-px origin-left transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+          className="bg-sakura-accent absolute right-0 bottom-0 left-0 h-0.5 origin-left transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"
           style={{ transform: isActive ? 'scaleX(1)' : undefined }}
           animate={{ scaleX: isActive ? 1 : 0 }}
           aria-hidden="true"

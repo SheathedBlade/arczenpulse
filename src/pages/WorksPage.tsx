@@ -5,7 +5,6 @@ import { projects } from '@/data/projects';
 import {
   FeaturedProjectCard,
   ProjectMosaicCard,
-  ProjectArchiveRail,
   WorksIntro
 } from '@/components/work';
 import { motion } from 'motion/react';
@@ -14,12 +13,8 @@ function WorksPage() {
   useDocumentTitle('Work');
 
   const heroProject = projects.find(p => p.layout === 'hero');
-  const archiveProjects = projects.filter(p => !p.layout);
-
   const featuredProject = heroProject ?? projects[0];
-  const indexProjects = projects
-    .filter(p => p.id !== featuredProject?.id && p.layout !== 'hero')
-    .slice(0, 3);
+  const indexProjects = projects.filter(p => p.id !== featuredProject?.id);
 
   return (
     <PageContainer>
@@ -43,39 +38,35 @@ function WorksPage() {
 
         {featuredProject && (
           <section className="mb-16">
-            <FeaturedProjectCard project={featuredProject} index={0} />
+            <FeaturedProjectCard project={featuredProject} />
           </section>
         )}
 
         {indexProjects.length > 0 && (
-          <section className="mb-16">
+          <section>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="mb-8 flex items-center gap-4"
+              className="mb-12"
             >
-              <h2 className="font-jost text-sakura-text text-xl font-bold tracking-wide">
-                Project Index
-              </h2>
-              <div className="bg-sakura-stone/20 h-px flex-1" />
+              <div className="mb-10 flex items-baseline justify-between">
+                <h2 className="font-jost text-sakura-text text-2xl font-bold tracking-tight md:text-3xl">
+                  More work
+                </h2>
+                <span className="font-dmmono text-sakura-stone text-xs tracking-widest uppercase">
+                  {indexProjects.length}
+                </span>
+              </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {indexProjects.map((project, i) => (
-                <ProjectMosaicCard
-                  key={project.id}
-                  project={project}
-                  index={i + 1}
-                />
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+              {indexProjects.map(project => (
+                <ProjectMosaicCard key={project.id} project={project} />
               ))}
             </div>
           </section>
-        )}
-
-        {archiveProjects.length > 0 && (
-          <ProjectArchiveRail projects={archiveProjects} />
         )}
       </motion.div>
     </PageContainer>

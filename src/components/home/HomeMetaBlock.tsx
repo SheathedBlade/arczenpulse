@@ -9,10 +9,10 @@ const HomeMetaBlock = () => {
       transition={{ duration: 0.35, delay: 0.25 }}
       className="mt-5"
     >
-      <p className="meta-mono text-sakura-cobble tracking-wide uppercase">
+      <p className="font-dmmono text-sakura-text/80 text-xs tracking-widest uppercase">
         Developer · Artist · Maker
       </p>
-      <p className="meta-mono text-sakura-stone mt-1 tracking-wide uppercase">
+      <p className="font-dmmono text-sakura-stone/90 mt-1.5 text-xs tracking-wide">
         Columbia, Maryland · Available for projects
       </p>
     </motion.div>

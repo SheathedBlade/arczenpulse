@@ -12,34 +12,15 @@ const ProjectMetaSidebar = ({ project }: ProjectMetaSidebarProps) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="space-y-6"
+      className="space-y-5"
+      aria-label="Project details"
     >
-      {project.year && (
-        <div>
-          <p className="label-editorial text-sakura-cobble mb-1 text-xs tracking-widest uppercase">
-            Year
-          </p>
-          <p className="font-dmmono text-sakura-text text-sm">{project.year}</p>
-        </div>
-      )}
-
-      {project.type && (
-        <div>
-          <p className="label-editorial text-sakura-cobble mb-1 text-xs tracking-widest uppercase">
-            Type
-          </p>
-          <p className="font-dmmono text-sakura-text text-sm capitalize">
-            {project.type}
-          </p>
-        </div>
-      )}
-
       {project.status && (
         <div>
-          <p className="label-editorial text-sakura-cobble mb-1 text-xs tracking-widest uppercase">
+          <p className="font-dmmono text-sakura-cobble/80 mb-1 text-xs tracking-widest uppercase">
             Status
           </p>
-          <p className="font-dmmono text-sakura-text text-sm capitalize">
+          <p className="font-dmmono text-sakura-stone text-sm tracking-wide">
             {project.status}
           </p>
         </div>
@@ -47,14 +28,14 @@ const ProjectMetaSidebar = ({ project }: ProjectMetaSidebarProps) => {
 
       {project.techStack && project.techStack.length > 0 && (
         <div>
-          <p className="label-editorial text-sakura-cobble mb-2 text-xs tracking-widest uppercase">
-            Stack
+          <p className="font-dmmono text-sakura-cobble/80 mb-2 text-xs tracking-widest uppercase">
+            Built with
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col gap-1">
             {project.techStack.map(tech => (
               <span
                 key={tech}
-                className="bg-sakura-surface font-dmmono text-sakura-cobble rounded-sm px-2 py-1 text-xs"
+                className="font-dmmono text-sakura-stone/90 text-sm leading-snug"
               >
                 {tech}
               </span>
@@ -64,15 +45,15 @@ const ProjectMetaSidebar = ({ project }: ProjectMetaSidebarProps) => {
       )}
 
       {project.notes && project.notes.length > 0 && (
-        <div className="border-sakura-stone/20 space-y-3 border-t pt-5">
+        <div className="border-sakura-stone/15 border-t pt-5">
           {project.notes.map((note, i) => (
-            <div key={i} className="border-sakura-accent/40 border-l-2 pl-3">
+            <div key={i} className="mb-3 last:mb-0">
               {note.label && (
-                <p className="label-editorial text-sakura-accent/70 mb-1 text-xs tracking-widest uppercase">
+                <p className="font-dmmono text-sakura-accent/70 mb-1 text-xs tracking-widest uppercase">
                   {note.label}
                 </p>
               )}
-              <p className="font-dmmono text-sakura-stone text-xs leading-relaxed tracking-wide">
+              <p className="font-zenmaru text-sakura-stone/90 text-sm leading-relaxed">
                 {note.text}
               </p>
             </div>

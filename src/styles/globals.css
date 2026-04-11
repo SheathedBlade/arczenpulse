@@ -38,6 +38,7 @@
   --font-zenmaru: 'Zen Maru Gothic', sans-serif;
   --font-jost: 'Jost', sans-serif;
   --font-dmmono: 'DM Mono', monospace;
+  --font-wdxl-lubrifont-sc: 'WDXL Lubrifont SC', serif;
 }
 
 /* =============================================
@@ -200,7 +201,7 @@
   }
 }
 
-/* Accessiblity */
+/* Accessibility */
 :focus-visible {
   outline: 2px solid var(--sakura-accent);
   outline-offset: 2px;
@@ -311,7 +312,7 @@
       theme('colors.sakura.surface') 0%,
       color-mix(
           in srgb,
-          theme('colors.sakura.surface') 80%,
+          theme('colors.sakura.surface') 92%,
           theme('colors.sakura.accent')
         )
         40%,
@@ -363,13 +364,16 @@
     width: 100%;
   }
 
-  /* Dark mode card text contrast overrides
-     cobble/stone are too muted on dark card backgrounds — boost them for legibility */
+  /* Dark mode card text — use night palette values directly */
   .dark .card-text-muted {
-    color: #a89ca0;
+    color: var(--color-sakura-night-cobble);
   }
 
   .dark .card-text-meta {
-    color: #9a8e94;
+    color: color-mix(
+      in srgb,
+      var(--color-sakura-night-cobble) 70%,
+      var(--color-sakura-night-stone) 30%
+    );
   }
 }
