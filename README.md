@@ -1,42 +1,65 @@
 # ARC Studio
 
-My personal website/portfolio showcasing my experience and work, as well as stuff about me.
+My personal website and portfolio — showcasing experience, work, and the craft behind the site.
 
 ## Tech Stack
 
 - **Framework:** React 19 with TypeScript
 - **Build Tool:** Vite 8
-- **Routing:** TanStack Router v1
+- **Routing:** React Router v7
 - **Styling:** Tailwind CSS 4
-- **Animations:** Framer Motion
+- **Animations:** Motion (Framer Motion)
 - **Icons:** Phosphor Icons
-- **Background:** Custom Three.js canvas with Perlin noise topology
+- **Background:** D3.js animated topography canvas (global background on every page)
 
 ## Design System
 
 ### Color Theme: Sakura
 
-I personally love the Japanese color palette, so there is a day and night theme with colors inspired by parchment and sakura (day) and deep plum hues (night).
+A Japanese-inspired palette split into two modes:
+
+- **Sakura Day** — parchment warmth with sakura pink accents (花見 · Hanami)
+- **Sakura Night** — deep plum and rose tones for low-light viewing (夜桜 · Yozakura)
+
+The theme switcher in the navbar toggles between them.
 
 ### Typography
 
-- **Headings:** Jost (sans-serif, geometric)
-- **Body:** Zen Maru Gothic (friendly, readable)
-- **Mono:** DM Mono (technical labels, metadata)
+- **Headings:** Jost (geometric, confident)
+- **Body:** Zen Maru Gothic (warm, readable)
+- **Mono / Labels:** DM Mono (technical precision)
+- **Chinese typography:** WDXL Lubrifont SC (subset to 5.6KB for editorial flourishes)
+
+## Pages
+
+| Route                 | Page       | Description                                    |
+| --------------------- | ---------- | ---------------------------------------------- |
+| `/`                   | Home       | Hero portrait, identity, statement, links      |
+| `/about`              | About      | Bio, philosophy, and the story behind the site |
+| `/experience`         | Experience | Timeline of roles, labs, and lessons           |
+| `/works`              | Works      | Featured project + mosaic grid of all work     |
+| `/works/:projectId`   | Project    | Per-project detail page                        |
+| `/behind-the-curtain` | The Craft  | Design decisions and technical details         |
 
 ## Project Structure
 
 ```
 src/
+├── assets/            # Images, fonts
 ├── components/
-│   ├── canvas/        # Three.js background
-│   ├── effects/       # Visual effects (topography)
-│   ├── layout/        # Page sections
-│   └── ui/            # Reusable UI components
-├── data/              # Static data
-├── routes/            # TanStack Router file-based routes
-├── styles/            # Global CSS, fonts, theme
-└── main.tsx           # App entry point
+│   ├── canvas/        # Three.js hero scene (torus knot)
+│   ├── effects/       # D3 topography background
+│   ├── experience/    # Timeline components
+│   ├── home/          # Home page section blocks
+│   ├── layout/        # Navbar, footer, page wrappers
+│   ├── ui/            # Reusable UI (Card, Divider, etc.)
+│   └── work/          # Project cards, mosaic, hero
+├── content/           # Static markdown/content
+├── data/              # Projects, experience, motion variants
+├── hooks/             # Custom React hooks
+├── pages/             # Route-level page components
+├── styles/            # Global CSS, fonts, theme tokens
+└── workers/           # Web workers (topo computation)
 ```
 
 ## Getting Started
@@ -78,17 +101,18 @@ Secondary domain `terystal.com` redirects to `.dev` (301 permanent).
 ## Accessibility
 
 - Skip to main content link
-- Focus management in modals
-- Keyboard navigation support
-- Respects `prefers-reduced-motion`
-- ARIA labels on interactive elements
+- Focus management in modals and route transitions
+- Keyboard navigation support throughout
+- Respects `prefers-reduced-motion` (all animations honor this)
+- ARIA labels on interactive and landmark elements
 - Screen-reader announcements for external links
+- Semantic HTML structure with correct heading hierarchy
 
 ## Browser Support
 
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - ES2020+ output
-- CSS custom properties & Nesting
+- CSS custom properties, nesting, and modern Tailwind features
 - No polyfills for legacy browsers
 
 ## License
@@ -97,7 +121,7 @@ Secondary domain `terystal.com` redirects to `.dev` (301 permanent).
 
 The source code in this repository is licensed under the **MIT License**. You are free to use, modify, and distribute the code for any purpose, with attribution, with the following condition:
 
-- You must put a link somewhere back to this repo or my [website](arczenpulse.dev).
+- You must put a link somewhere back to this repo or my [website](terystal.dev).
 
 See [LICENSE](LICENSE) file for full terms.
 

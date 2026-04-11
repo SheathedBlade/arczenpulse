@@ -1,23 +1,22 @@
 import banner from '@/assets/images/placeholder_me.webp';
+import {
+  AboutHeroBanner,
+  CurrentStatusBlock,
+  EditorialPullQuote,
+  ElsewhereLinks,
+  MarginNote
+} from '@/components/about';
+import AppLink from '@/components/ui/AppLink';
 import EditorialDivider from '@/components/ui/EditorialDivider';
 import PageContainer from '@/components/ui/PageContainer';
-import AppLink from '@/components/ui/AppLink';
-import { useDocumentTitle } from '@/hooks/useDocumentTitle';
-import { childrenVariants, containerVariants } from '@/data/motionVariants';
-import { motion } from 'motion/react';
-import {
-  EditorialPullQuote,
-  MarginNote,
-  CurrentStatusBlock,
-  ElsewhereLinks,
-  AboutHeroBanner
-} from '@/components/about';
 import {
   aboutIntroParagraphs,
   aboutOutroParagraphs,
-  currentStatusText,
-  luciradisLink
+  currentStatusText
 } from '@/content/about';
+import { childrenVariants, containerVariants } from '@/data/motionVariants';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
+import { motion } from 'motion/react';
 
 function AboutPage() {
   useDocumentTitle('About');
@@ -52,9 +51,7 @@ function AboutPage() {
               {aboutIntroParagraphs.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
-              <p>
-                {luciradisLink}. {aboutOutroParagraphs[0]}
-              </p>
+              <p>{aboutOutroParagraphs[0]}</p>
             </motion.div>
 
             <motion.aside
