@@ -16,7 +16,6 @@ export interface ProjectNote {
 export interface Project {
   id: string;
   title: string;
-  description: string;
   image: string;
   imageAlt: string;
   techStack?: string[];
@@ -29,7 +28,7 @@ export interface Project {
   blurb?: string;
   layout?: ProjectLayout;
   accentWord?: string;
-  longDescription?: string[];
+  longDescription: string[];
   pullQuote?: string;
   gallery?: ProjectGalleryItem[];
   processSteps?: string[];
