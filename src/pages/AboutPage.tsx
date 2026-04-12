@@ -32,7 +32,7 @@ function AboutPage() {
         <AboutHeroBanner src={banner} alt="Andrew Chuah - banner image" />
 
         <div className="mx-auto flex max-w-3xl flex-col gap-14">
-          <EditorialPullQuote quote="I like to create things that are worth remembering, and leave an impression." />
+          <EditorialPullQuote quote="I like to create things that are worth remembering and leave a lasting impression." />
 
           <motion.div
             initial={{ opacity: 0 }}

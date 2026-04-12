@@ -44,7 +44,7 @@ export const projects: Project[] = [
     image: EndfieldThumb,
     imageAlt:
       'Screenshot of Endfield Architect, a production planning simulator for Arknights: Endfield',
-    techStack: ['React', 'Elk.js', 'React Flow'],
+    techStack: ['React', 'Elk.js', 'React Flow', 'A* Pathfinding'],
     githubUrl: 'https://github.com/SheathedBlade/endfield-architect',
     pinned: true,
     year: '2026',
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     title: 'Nightwatch',
     image: NightWatchThumb,
     imageAlt: 'Screenshot of Nightwatch, a 3D stealth game prototype',
-    techStack: ['Unity', 'C#'],
+    techStack: ['Unity', 'C#', 'Cinemachine'],
     githubUrl: 'https://github.com/SheathedBlade/Nightwatch',
     liveUrl: 'https://sheathblade.itch.io/nightwatch',
     pinned: true,
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     type: 'system',
     status: 'Released',
     blurb:
-      'This portfolio — built to feel less like a resume and more like an editorial. Sakura palette, typography-led design, and motion that serves comprehension.',
+      'This portfolio was built to feel less like a resume and more like an editorial. A personal project to experiment with motion, layout, and storytelling on the web.',
     layout: 'standard',
     accentWord: 'Craft',
     longDescription: arcStudioNarrative,
