@@ -1,4 +1,3 @@
-import Scene from '@/components/canvas/Scene';
 import HomeIdentityBlock from '@/components/home/HomeIdentityBlock';
 import HomeMetaBlock from '@/components/home/HomeMetaBlock';
 import HomeStatement from '@/components/home/HomeStatement';
@@ -6,9 +5,9 @@ import HomeHeroLinks from '@/components/layout/HomeHeroLinks';
 import HomePortrait from '@/components/layout/HomePortrait';
 import Divider from '@/components/ui/Divider';
 import {
-  monoLabelVariants,
+  chineseCharContainerVariants,
   chineseCharVariants,
-  chineseCharContainerVariants
+  monoLabelVariants
 } from '@/data/motionVariants';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { motion } from 'motion/react';
@@ -17,10 +16,10 @@ function HomePage() {
   useDocumentTitle('');
 
   return (
-    <div className="relative mx-auto flex min-h-screen max-w-[1500px] flex-col">
-      <div className="pointer-events-none absolute inset-0 z-0 opacity-25">
+    <div className="relative mx-auto flex min-h-screen max-w-375 flex-col">
+      {/* <div className="pointer-events-none absolute inset-0 z-0 opacity-25">
         <Scene />
-      </div>
+      </div> */}
 
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:pt-18">
         <div className="relative flex items-center lg:w-5/12">
