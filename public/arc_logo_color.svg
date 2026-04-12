@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450.07547 450.07547">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b92a5a;
+        font-family: WDXLLubrifontSC-Regular, 'WDXL Lubrifont SC';
+        font-size: 380.79999px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #b92a5a;
+        stroke-miterlimit: 10;
+        stroke-width: 31px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="225.03773" cy="225.03773" r="209.53773"/>
+  <text class="cls-1" transform="translate(81.35344 362.50652)"><tspan x="0" y="0">蔡</tspan></text>
+</svg>
