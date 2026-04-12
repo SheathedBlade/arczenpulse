@@ -22,9 +22,9 @@ const WorksIntro = () => {
             transition={{ duration: 0.4, delay: 0.05 }}
             className="font-jost text-sakura-text text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
           >
-            Things I&apos;ve built
+            Things I&apos;ve created
             <br />
-            <span className="text-sakura-accent">with intention.</span>
+            <span className="text-sakura-accent">with purpose.</span>
           </motion.h1>
         </div>
 
@@ -35,7 +35,7 @@ const WorksIntro = () => {
           transition={{ duration: 0.4, delay: 0.15 }}
           className="font-zenmaru text-sakura-cobble/90 max-w-sm text-base md:text-right md:text-lg"
         >
-          A handful of projects — some finished, some ongoing, all intentional.
+          A collection of projects; some finished, some ongoing, all distinct.
           Tools, games, and the occasional experiment.
         </motion.p>
       </div>
