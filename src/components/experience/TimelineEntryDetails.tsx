@@ -1,6 +1,5 @@
-import { motion } from 'motion/react';
-import { AnimatePresence } from 'motion/react';
 import type { ExperienceItem } from '@/data/experience';
+import { AnimatePresence, motion } from 'motion/react';
 import TimelineEntrySkills from './TimelineEntrySkills';
 
 interface TimelineEntryDetailsProps {
@@ -34,7 +33,7 @@ const TimelineEntryDetails = ({
                 {entry.extendedDesc.map((para, i) => (
                   <p
                     key={i}
-                    className="font-zenmaru text-sakura-text/90 text-sm leading-relaxed"
+                    className="font-zenmaru text-sakura-text/90 mb-4 text-sm leading-relaxed"
                   >
                     {para}
                   </p>
