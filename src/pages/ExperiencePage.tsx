@@ -32,7 +32,7 @@ function ExperiencePage() {
                 transition={{ duration: 0.4, delay: 0.05 }}
                 className="font-jost text-sakura-text text-4xl font-bold md:text-5xl lg:text-6xl"
               >
-                The roles, the labs,
+                The roles, the journey,
                 <br />
                 <span className="text-sakura-accent">and the lessons.</span>
               </motion.h1>
@@ -44,7 +44,8 @@ function ExperiencePage() {
               transition={{ duration: 0.4, delay: 0.15 }}
               className="font-zenmaru text-sakura-cobble max-w-sm text-base md:text-right md:text-lg"
             >
-              Where I've been, what I learned, and what I'm still figuring out.
+              Where I&apos;ve been, what I learned, and what I&apos;m still
+              figuring out.
             </motion.p>
           </div>
         </motion.header>

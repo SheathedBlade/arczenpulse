@@ -17,7 +17,7 @@ function HomePage() {
   useDocumentTitle('');
 
   return (
-    <div className="relative flex min-h-screen flex-col">
+    <div className="relative mx-auto flex min-h-screen max-w-[1500px] flex-col">
       <div className="pointer-events-none absolute inset-0 z-0 opacity-25">
         <Scene />
       </div>

@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
 import { homeStatementVariants } from '@/data/motionVariants';
+import { motion } from 'motion/react';
 
 const HomeStatement = () => {
   return (
@@ -11,9 +11,9 @@ const HomeStatement = () => {
       className="mt-6"
     >
       <p className="font-zenmaru text-sakura-text text-xl leading-relaxed lg:text-2xl">
-        I make digital work that feels intentional — from first impression to
-        last detail. Currently building tools at the NSA that help keep things
-        running.
+        I create digital work shaped by visual impact, functionality, and
+        careful refinement. Currently building tools at the NSA that help
+        analysts perform their best work.
       </p>
     </motion.div>
   );
