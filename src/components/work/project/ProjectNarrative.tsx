@@ -7,7 +7,7 @@ interface ProjectNarrativeProps {
 }
 
 const ProjectNarrative = ({ project }: ProjectNarrativeProps) => {
-  const body = project.longDescription ?? [project.description];
+  const body = project.longDescription;
 
   return (
     <motion.div
