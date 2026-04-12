@@ -18,7 +18,7 @@ const ProjectNav = ({ previous, next }: ProjectNavProps) => {
       {previous ? (
         <AppLink
           to={`/works/${previous.id}`}
-          className="group border-sakura-stone/30 flex items-center gap-4 border-r py-3 pr-6"
+          className="group flex items-center gap-4 py-3 pr-6"
         >
           <span className="text-sakura-stone group-hover:text-sakura-accent transition-colors">
             <ArrowLeftIcon size={18} weight="bold" aria-hidden="true" />
