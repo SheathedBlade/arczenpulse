@@ -27,7 +27,7 @@ export const experiences: ExperienceItem[] = [
     location: 'Fort Meade, MD',
     description:
       'Developed and directed the design and implementation of innovative solutions for 2 critical initiatives, efficiently navigating between competing demands across both projects.',
-    skills: ['TypeScript', 'React', 'AWS', 'Terraform', 'Docker'],
+    skills: ['TypeScript', 'React', 'Angular', 'AWS', 'Terraform', 'Docker'],
     highlight: true,
     extendedDesc: DoDNarrative,
     defaultExpanded: true
