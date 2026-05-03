@@ -1,7 +1,8 @@
-import { stevensNarrative } from '@/content/experience/stevens';
+import { DoDNarrative } from '@/content/experience/dod';
 import { fortressNarrative } from '@/content/experience/fortress';
-import { truefortNarrative } from '@/content/experience/truefort';
 import { jefferiesNarrative } from '@/content/experience/jefferies';
+import { stevensNarrative } from '@/content/experience/stevens';
+import { truefortNarrative } from '@/content/experience/truefort';
 
 export interface ExperienceItem {
   date: string;
@@ -25,9 +26,10 @@ export const experiences: ExperienceItem[] = [
     subtitle: 'National Security Agency',
     location: 'Fort Meade, MD',
     description:
-      'Developed and maintained a specialized, mission-critical, enterprise compliance product to ensure 24/7 uptime for our customers. Transitioned said product to AWS Cloud services by migrating existing systems to currently available AWS services.',
+      'Developed and directed the design and implementation of innovative solutions for 2 critical initiatives, efficiently navigating between competing demands across both projects.',
     skills: ['TypeScript', 'React', 'AWS', 'Terraform', 'Docker'],
     highlight: true,
+    extendedDesc: DoDNarrative,
     defaultExpanded: true
   },
   {
